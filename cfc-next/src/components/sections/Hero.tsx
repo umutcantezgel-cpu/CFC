@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <>
-      <section className="pt-24 lg:pt-32 pb-12 lg:pb-16 px-6 sm:px-8 relative overflow-hidden flex justify-center">
+      <section className="min-h-[100dvh] pt-20 pb-12 px-6 sm:px-8 relative overflow-hidden flex items-center justify-center">
         
-        <div className="max-w-[1200px] w-full relative z-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+        <div className="max-w-[1200px] w-full relative z-20 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
           
           {/* Left Column (Text) */}
           <div className="flex-1 w-full max-w-[700px] flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -15,12 +15,12 @@ export default function Hero() {
               100% Halal · Wetzlars Bestes
             </div>
             
-            <h1 className="font-display text-[clamp(45px,12vw,80px)] lg:text-[clamp(50px,5vw,90px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
+            <h1 className="font-display text-[clamp(40px,11vw,75px)] lg:text-[clamp(45px,5vw,85px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
               <span className="block text-stroke-maroon text-brand-red">FÜHLE DIE</span>
               <span className="block text-stroke-maroon text-cream-bg">VERÄNDERUNG.</span>
             </h1>
             
-            <p className="font-bold text-base sm:text-lg text-maroon-stroke/80 max-w-[480px] leading-relaxed mb-8">
+            <p className="font-bold text-sm sm:text-base lg:text-lg text-maroon-stroke/80 max-w-[480px] leading-relaxed mb-8">
               Knusprig für die Mutigen, gemacht für die Hungrigen. Tauche ein in echtes Fried Chicken — jede knusprige Kante zählt.
             </p>
             
@@ -35,8 +35,8 @@ export default function Hero() {
           </div>
 
           {/* Right Column (Video) */}
-          <div className="w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[300px] xl:max-w-[360px] relative mt-8 lg:mt-0 perspective-1000 mx-auto lg:mx-0">
-            <div className="relative z-10 border-4 border-charcoal-dark shadow-[8px_8px_0px_#4C0016] lg:shadow-[12px_12px_0px_#4C0016] rounded-2xl overflow-hidden aspect-[9/16] bg-charcoal-dark transform lg:rotate-y-[-5deg] lg:rotate-x-[2deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-transform duration-500">
+          <div className="relative mt-8 lg:mt-0 perspective-1000 mx-auto lg:mx-0 h-[45vh] lg:h-[60vh] max-h-[550px] aspect-[9/16]">
+            <div className="w-full h-full relative z-10 border-4 border-charcoal-dark shadow-[8px_8px_0px_#4C0016] lg:shadow-[12px_12px_0px_#4C0016] rounded-2xl overflow-hidden bg-charcoal-dark transform lg:rotate-y-[-5deg] lg:rotate-x-[2deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-transform duration-500">
               <video 
                 src="/videos/cfc-promo.mp4" 
                 autoPlay 
