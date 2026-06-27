@@ -4,32 +4,26 @@ import { useEffect } from "react";
 import CanvasBackground from "@/components/ui/quantum-canvas";
 import Preloader from "@/components/ui/Preloader";
 import PageTransitionSVG from "@/components/ui/PageTransition";
+import MobileMenu from "@/components/ui/MobileMenu";
 import Hero from "@/components/sections/Hero";
 import MenuGrid from "@/components/sections/MenuGrid";
 import Contact from "@/components/sections/Contact";
 import Reviews from "@/components/sections/Reviews";
+import Impressum from "@/components/sections/Impressum";
+import Datenschutz from "@/components/sections/Datenschutz";
+import AGB from "@/components/sections/AGB";
 import { useStore } from "@/store";
 
 export default function Home() {
-  const { currentView, isPreloaded, setView, setPreloaded } = useStore();
+  const { currentView, isPreloaded, isMobileMenuOpen, setView, setPreloaded, setMobileMenuOpen } = useStore();
 
-  const handleNavigate = (target: "home" | "menu" | "contact") => {
+  const handleNavigate = (target: any) => {
     if (currentView === target) return;
-    
-    // Fallback if browser doesn't support View Transitions
-    if (!document.startViewTransition) {
-      setView(target);
-      window.scrollTo(0, 0);
-      return;
-    }
-
-    document.startViewTransition(() => {
-      setView(target);
-      window.scrollTo(0, 0);
-    });
+    setView(target);
+    window.scrollTo(0, 0);
   };
 
-  const navItem = (target: "home" | "menu" | "contact", label: string) => (
+  const navItem = (target: any, label: string) => (
     <button
       onClick={() => handleNavigate(target)}
       className={`font-black text-sm tracking-[2px] uppercase pb-1 border-b-2 transition-colors ${currentView === target ? "text-brand-red border-brand-red" : "text-maroon-stroke border-transparent"}`}
@@ -42,16 +36,19 @@ export default function Home() {
     <div className="flex flex-col flex-1 relative min-h-screen">
       {!isPreloaded && <Preloader onComplete={() => setPreloaded(true)} />}
       <PageTransitionSVG />
+      <MobileMenu />
       
       {isPreloaded && (
         <>
           <CanvasBackground />
           
-          <nav className="sticky top-0 z-40 bg-white/90 backdrop-blur-md px-12 py-4 border-b-2 border-cream-bg flex items-center justify-between shadow-sm">
+          <nav className="sticky top-0 z-40 bg-white/90 backdrop-blur-md px-6 md:px-12 py-4 border-b-2 border-cream-bg flex items-center justify-between shadow-sm">
             <button onClick={() => handleNavigate("home")} className="bg-transparent border-none cursor-pointer p-0">
-              <img src="/favicon.png" alt="CFC Logo" className="h-[50px] w-auto rounded-full border-2 border-maroon-stroke" />
+              <img src="/favicon.png" alt="CFC Logo" className="h-[40px] md:h-[50px] w-auto rounded-full border-2 border-maroon-stroke" />
             </button>
-            <div className="flex gap-8 items-center hidden md:flex">
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex gap-8 items-center">
               {navItem("home", "STARTSEITE")}
               {navItem("menu", "SPEISEKARTE")}
               {navItem("contact", "KONTAKT")}
@@ -59,6 +56,16 @@ export default function Home() {
                 JETZT BESTELLEN
               </a>
             </div>
+
+            {/* Mobile Hamburger */}
+            <button 
+              className="md:hidden flex flex-col gap-1.5 p-2 z-[9000]"
+              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <div className={`w-8 h-1 bg-maroon-stroke transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5 bg-cream-bg' : ''}`} />
+              <div className={`w-8 h-1 bg-maroon-stroke transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+              <div className={`w-8 h-1 bg-maroon-stroke transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5 bg-cream-bg' : ''}`} />
+            </button>
           </nav>
 
           <div className="relative z-10 flex-1 flex flex-col">
@@ -68,17 +75,23 @@ export default function Home() {
                 <Reviews />
               </div>
             )}
-            {currentView === "menu" && (
-              <div className="flex flex-col">
-                <MenuGrid />
-              </div>
-            )}
-            {currentView === "contact" && (
-              <div className="flex flex-col">
-                <Contact />
-              </div>
-            )}
+            {currentView === "menu" && <MenuGrid />}
+            {currentView === "contact" && <Contact />}
+            {currentView === "impressum" && <Impressum />}
+            {currentView === "datenschutz" && <Datenschutz />}
+            {currentView === "agb" && <AGB />}
           </div>
+
+          <footer className="bg-charcoal-dark text-cream-bg py-8 px-8 border-t-8 border-brand-red relative z-20">
+            <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="font-display text-2xl uppercase tracking-widest text-stroke-maroon">CFC Wetzlar</div>
+              <div className="flex gap-6 font-bold text-sm tracking-wider uppercase text-cream-bg/70">
+                <button onClick={() => handleNavigate('impressum')} className="hover:text-accent-yellow">Impressum</button>
+                <button onClick={() => handleNavigate('datenschutz')} className="hover:text-accent-yellow">Datenschutz</button>
+                <button onClick={() => handleNavigate('agb')} className="hover:text-accent-yellow">AGB</button>
+              </div>
+            </div>
+          </footer>
         </>
       )}
     </div>
