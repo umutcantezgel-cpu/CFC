@@ -5,38 +5,38 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <>
-      <section className="pt-20 pb-20 px-8 relative overflow-hidden flex items-center justify-center min-h-[85vh]">
+      <section className="pt-32 sm:pt-40 pb-16 lg:pb-24 px-6 sm:px-8 relative overflow-hidden flex items-start lg:items-center justify-center min-h-[100dvh] lg:min-h-[85vh]">
         
-        <div className="max-w-[1200px] w-full relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="max-w-[1200px] w-full relative z-20 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 lg:gap-16">
           
           {/* Left Column (Text) */}
-          <div className="flex-1 max-w-[700px]">
-            <div className="inline-block bg-accent-yellow text-charcoal-dark font-black text-xs tracking-widest uppercase px-5 py-2 rounded-full mb-6 shadow-[2px_2px_0px_rgba(0,0,0,0.12)]">
+          <div className="flex-1 w-full max-w-[700px] flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="inline-block bg-accent-yellow text-charcoal-dark font-black text-[10px] sm:text-xs tracking-widest uppercase px-4 sm:px-5 py-2 rounded-full mb-6 shadow-[2px_2px_0px_rgba(0,0,0,0.12)]">
               100% Halal · Wetzlars Bestes
             </div>
             
-            <h1 className="font-display text-[clamp(40px,10vw,70px)] lg:text-[clamp(50px,5vw,90px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
+            <h1 className="font-display text-[clamp(45px,12vw,80px)] lg:text-[clamp(50px,6vw,95px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
               <span className="block text-stroke-maroon text-brand-red">FÜHLE DIE</span>
               <span className="block text-stroke-maroon text-cream-bg">VERÄNDERUNG.</span>
             </h1>
             
-            <p className="font-bold text-lg text-maroon-stroke/80 max-w-[480px] leading-relaxed mb-8">
+            <p className="font-bold text-base sm:text-lg text-maroon-stroke/80 max-w-[480px] leading-relaxed mb-8">
               Knusprig für die Mutigen, gemacht für die Hungrigen. Tauche ein in echtes Fried Chicken — jede knusprige Kante zählt.
             </p>
             
-            <div className="flex gap-4 flex-wrap items-center">
-              <Link href="/speisekarte" className="bg-brand-red text-white border-none px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer shadow-[4px_4px_0px_#1C1917] hover:translate-y-1 hover:shadow-[1px_1px_0px_#1C1917] transition-all text-center">
+            <div className="flex gap-4 flex-col sm:flex-row w-full sm:w-auto items-center justify-center lg:justify-start">
+              <Link href="/speisekarte" className="w-full sm:w-auto bg-brand-red text-white border-none px-8 sm:px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer shadow-[4px_4px_0px_#1C1917] hover:translate-y-1 hover:shadow-[1px_1px_0px_#1C1917] transition-all text-center">
                 JETZT BESTELLEN
               </Link>
-              <Link href="/speisekarte" className="bg-transparent text-charcoal-dark border-3 border-charcoal-dark px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer hover:bg-charcoal-dark hover:text-white transition-colors text-center">
+              <Link href="/speisekarte" className="w-full sm:w-auto bg-transparent text-charcoal-dark border-3 border-charcoal-dark px-8 sm:px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer hover:bg-charcoal-dark hover:text-white transition-colors text-center">
                 SPEISEKARTE
               </Link>
             </div>
           </div>
 
           {/* Right Column (Video) */}
-          <div className="flex-1 w-full max-w-[400px] lg:max-w-[420px] xl:max-w-[500px] relative mt-10 lg:mt-0 perspective-1000">
-            <div className="relative z-10 border-4 border-charcoal-dark shadow-[12px_12px_0px_#4C0016] rounded-2xl overflow-hidden aspect-[9/16] bg-charcoal-dark transform rotate-y-[-5deg] rotate-x-[2deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-transform duration-500">
+          <div className="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-[360px] xl:max-w-[420px] relative mt-8 lg:mt-0 perspective-1000 mx-auto lg:mx-0">
+            <div className="relative z-10 border-4 border-charcoal-dark shadow-[8px_8px_0px_#4C0016] lg:shadow-[12px_12px_0px_#4C0016] rounded-2xl overflow-hidden aspect-[9/16] bg-charcoal-dark transform lg:rotate-y-[-5deg] lg:rotate-x-[2deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-transform duration-500">
               <video 
                 src="/videos/cfc-promo.mp4" 
                 autoPlay 
