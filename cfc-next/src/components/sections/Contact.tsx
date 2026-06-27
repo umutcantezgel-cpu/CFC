@@ -1,6 +1,5 @@
 "use client";
 import StickerCard from "@/components/ui/sticker-card";
-import { locationsData } from "@/data/db";
 
 export default function Contact() {
   const isCurrentlyOpen = () => {
@@ -42,31 +41,30 @@ export default function Contact() {
             </form>
           </StickerCard>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {locationsData.map((loc) => (
-              <StickerCard key={loc.id} className="p-6 bg-cream-bg h-full flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                  <h4 
-                    className="font-display text-2xl text-brand-red uppercase bg-accent-yellow px-2 py-1 border-2 border-maroon-stroke shadow-[2px_2px_0px_#4C0016]"
-                    style={{ transform: `rotate(${loc.rotation}deg)` }}
-                  >
-                    {loc.city}
-                  </h4>
-                  <svg width="40" height="40" viewBox="0 0 100 100" className="opacity-20 fill-brand-red">
-                    <path d={loc.mapPolygon} />
-                  </svg>
-                </div>
-                <p className="font-bold text-sm text-charcoal-dark mb-2">{loc.desc}</p>
-                <p className="font-mono text-xs text-maroon-stroke/70 flex-grow">{loc.address}</p>
-                
-                {/* @ts-ignore */}
-                {loc.mapsUrl && (
-                  <a href={(loc as any).mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-4 block text-center bg-charcoal-dark text-white py-3 font-black text-xs uppercase tracking-widest border-2 border-maroon-stroke shadow-[4px_4px_0px_#4C0016] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#4C0016] transition-all">
-                    Route Planen
-                  </a>
-                )}
-              </StickerCard>
-            ))}
+          <div className="flex flex-col h-full">
+            <StickerCard className="p-8 md:p-12 bg-cream-bg flex-1 flex flex-col justify-center items-center text-center border-4 border-charcoal-dark shadow-[12px_12px_0px_#4C0016] relative overflow-hidden">
+              <div className="w-full flex justify-center mb-8 relative z-10">
+                <h4 className="font-display text-4xl md:text-5xl text-brand-red uppercase bg-accent-yellow px-6 py-3 border-4 border-maroon-stroke shadow-[6px_6px_0px_#4C0016] transform -rotate-3">
+                  WETZLAR
+                </h4>
+              </div>
+              
+              <svg width="120" height="120" viewBox="0 0 100 100" className="opacity-10 fill-brand-red absolute -bottom-10 -right-10 transform rotate-12">
+                <path d="M10,10 L90,10 L80,90 L20,90 Z" />
+              </svg>
+
+              <h3 className="font-black text-2xl md:text-3xl text-charcoal-dark uppercase tracking-widest mb-6 relative z-10">
+                Unser Zuhause —<br/>frisch aus der Fritteuse.
+              </h3>
+              
+              <p className="font-mono text-lg md:text-xl text-maroon-stroke mb-10 font-bold relative z-10">
+                Garbenheimer Str. 20A<br/>35582 Wetzlar
+              </p>
+              
+              <a href="https://maps.app.goo.gl/iUmDmDBVQ4PnRgXu9" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-block bg-brand-red text-cream-bg py-5 px-10 md:px-12 font-black text-xl md:text-2xl uppercase tracking-widest border-4 border-maroon-stroke shadow-[8px_8px_0px_#4C0016] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_#4C0016] transition-all">
+                ROUTE PLANEN
+              </a>
+            </StickerCard>
           </div>
         </div>
       </div>

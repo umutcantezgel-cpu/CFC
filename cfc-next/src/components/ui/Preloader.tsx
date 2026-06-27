@@ -15,21 +15,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     return () => clearTimeout(t);
   }, [onComplete]);
 
-  // Liquid SVG Wipe Animation
-  const anim = {
-    initial: {
-      d: "M 0 100 L 100 100 L 100 0 L 0 0 Z"
-    },
-    exit: {
-      d: [
-        "M 0 100 L 100 100 L 100 0 L 0 0 Z",
-        "M 0 0 C 30 80, 70 80, 100 0 L 100 0 L 0 0 Z",
-        "M 0 0 C 30 0, 70 0, 100 0 L 100 0 L 0 0 Z"
-      ],
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] as const, times: [0, 0.6, 1] }
-    }
-  };
-
   return (
     <AnimatePresence>
       {isAnimating && (
@@ -50,18 +35,17 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             </div>
           </motion.div>
 
-          {/* Liquid Background */}
-          <motion.svg 
-            viewBox="0 0 100 100" 
-            preserveAspectRatio="none" 
-            className="w-full h-full fill-brand-red absolute inset-0 z-10"
-          >
-            <motion.path 
-              variants={anim}
-              initial="initial"
-              exit="exit"
-            />
-          </motion.svg>
+          {/* Premium Transition Wipe - Hardware Accelerated & Aspect Ratio Independent */}
+          <motion.div 
+            className="absolute inset-0 z-10 bg-brand-red pointer-events-auto"
+            initial={{ y: "0%", borderBottomLeftRadius: "0%", borderBottomRightRadius: "0%" }}
+            exit={{ 
+              y: "-100%", 
+              borderBottomLeftRadius: ["0%", "200px", "0%"], 
+              borderBottomRightRadius: ["0%", "200px", "0%"]
+            }}
+            transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+          />
         </motion.div>
       )}
     </AnimatePresence>
