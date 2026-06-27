@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+  <link rel="icon" href="uploads/Gemini_Generated_Image_xcfxgjxcfxgjxcfx.jpeg" />
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <style>
+    @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+    @keyframes float { 0%,100% { transform: translateY(0px) rotate(-8deg) } 50% { transform: translateY(-16px) rotate(-8deg) } }
+    @keyframes float2 { 0%,100% { transform: translateY(0px) rotate(5deg) } 50% { transform: translateY(-12px) rotate(5deg) } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(32px) } to { opacity: 1; transform: translateY(0) } }
+    @keyframes popIn { from { opacity: 0; transform: scale(0.8) } to { opacity: 1; transform: scale(1) } }
+    * { box-sizing: border-box; }
+    body { overflow-x: hidden; margin: 0; }
+    ::placeholder { color: rgba(255,255,255,0.55) !important; font-family: 'Nunito', sans-serif; font-weight: 700; letter-spacing: 2px; }
+    input:focus, textarea:focus { outline: none; }
+    button:focus { outline: none; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet"/>
+</helmet>
+
+<!-- MARQUEE BANNER -->
+<div style="background: #FFC72C; overflow: hidden; position: relative; z-index: 101;">
+  <div style="display: inline-flex; animation: marquee 24s linear infinite; white-space: nowrap; will-change: transform;">
+    <span style="display: block; padding: 11px 80px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 2.5px; color: #1C1917; text-transform: uppercase;"> 10% RABATT BEI WHATSAPP-BESTELLUNG (0176 4212513) &nbsp;|&nbsp; LIEFERUNG AB 15,00 € &nbsp;|&nbsp; 100% HALAL &nbsp;|&nbsp; TÄGLICH GEÖFFNET BIS 22:00  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span style="display: block; padding: 11px 80px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 2.5px; color: #1C1917; text-transform: uppercase;"> 10% RABATT BEI WHATSAPP-BESTELLUNG (0176 4212513) &nbsp;|&nbsp; LIEFERUNG AB 15,00 € &nbsp;|&nbsp; 100% HALAL &nbsp;|&nbsp; TÄGLICH GEÖFFNET BIS 22:00  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav style="position: sticky; top: 0; z-index: 100; background: white; border-bottom: 2px solid #F3E9DC; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 68px; font-family: 'Nunito', sans-serif;">
+  <button onClick="{{ goHome }}" style="background:none;border:none;cursor:pointer;padding:0;"><img src="{{ logoSrc }}" alt="CFC Logo" style="height:50px;width:auto;border-radius:50%;border:2px solid #E31837;"/></button>
+  <div style="display: flex; gap: 32px; align-items: center;">
+    <button onClick="{{ goHome }}" style="{{ navBtnHome }}">STARTSEITE</button>
+    <button onClick="{{ goMenu }}" style="{{ navBtnMenu }}">SPEISEKARTE</button>
+    <button onClick="{{ goContact }}" style="{{ navBtnContact }}">KONTAKT</button>
+  </div>
+  <a href="https://wa.me/491764212513" target="_blank" style="background: #E31837; color: white; padding: 10px 22px; border-radius: 9999px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; text-decoration: none; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; box-shadow: 3px 3px 0 #1C1917;">JETZT BESTELLEN</a>
+</nav>
+
+<!-- ===== HOME VIEW ===== -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+
+  <!-- HERO -->
+  <section style="background: #F3E9DC; padding: 80px 60px 0; position: relative; overflow: hidden; min-height: 88vh; display: flex; align-items: center;">
+    
+    <div style="max-width: 660px; animation: fadeUp 0.7s ease-out both; position: relative; z-index: 3;">
+      <div style="display: inline-block; background: #FFC72C; color: #1C1917; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 7px 18px; border-radius: 9999px; margin-bottom: 28px; box-shadow: 2px 2px 0 rgba(0,0,0,0.12);">100% Halal · Wetzlars Bestes</div>
+      <h1 style="font-family: 'Bangers', cursive; font-size: clamp(72px, 12vw, 150px); color: #1C1917; line-height: 0.9; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 8px;">
+        <span style="display: block;">CRISPY.</span>
+        <span style="display: block; color: #E31837;">FRISCH.</span>
+        <span style="display: block;">BESSER.</span>
+      </h1>
+      <p style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 17px; color: #5a4535; max-width: 460px; line-height: 1.65; margin: 28px 0 36px;">Wetzlars bestes Fried Chicken. 100% Halal. Besuche uns vor Ort, nutze den Drive-in oder bestelle kontaktlos über WhatsApp.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+        <button onClick="{{ goMenu }}" style="background: #E31837; color: white; border: none; padding: 17px 40px; border-radius: 9999px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; box-shadow: 4px 4px 0 #1C1917; transition: transform 0.15s;">JETZT BESTELLEN</button>
+        <button onClick="{{ goMenu }}" style="background: transparent; color: #1C1917; border: 3px solid #1C1917; padding: 14px 36px; border-radius: 9999px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: transform 0.15s;">SPEISEKARTE</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE cream → red -->
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px; background: #E31837;">
+    <path fill="#F3E9DC" d="M0,0 C200,80 480,10 720,50 C960,90 1200,10 1440,40 L1440,0 L0,0 Z"/>
+  </svg>
+
+  <!-- RED SECTION -->
+  <section style="background: #E31837; padding: 60px 60px 80px; text-align: center; position: relative; overflow: hidden;">
+    <h2 style="font-family: 'Bangers', cursive; font-size: clamp(44px, 8vw, 100px); color: white; letter-spacing: 6px; text-transform: uppercase; line-height: 1; margin: 0 0 48px;">ESSEN DAS GUT TUT</h2>
+    <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+      <div style="background: white; border-radius: 20px; padding: 24px 28px; text-align: center; min-width: 160px; box-shadow: 5px 5px 0 rgba(0,0,0,0.18);">
+        <div style="font-size: 38px; margin-bottom: 8px;"></div>
+        <div style="font-family: 'Bangers', cursive; font-size: 26px; color: #E31837; letter-spacing: 2px; line-height: 1;">CRISPY</div>
+        <div style="font-family: 'Nunito', sans-serif; font-size: 12px; color: #888; font-weight: 800; letter-spacing: 1px; margin-top: 4px;">HÄHNCHENTEILE</div>
+      </div>
+      <div style="background: white; border-radius: 20px; padding: 24px 28px; text-align: center; min-width: 160px; box-shadow: 5px 5px 0 rgba(0,0,0,0.18);">
+        <div style="font-size: 38px; margin-bottom: 8px;"></div>
+        <div style="font-family: 'Bangers', cursive; font-size: 26px; color: #E31837; letter-spacing: 2px; line-height: 1;">HOT</div>
+        <div style="font-family: 'Nunito', sans-serif; font-size: 12px; color: #888; font-weight: 800; letter-spacing: 1px; margin-top: 4px;">WINGS &amp; NUGGETS</div>
+      </div>
+      <div style="background: white; border-radius: 20px; padding: 24px 28px; text-align: center; min-width: 160px; box-shadow: 5px 5px 0 rgba(0,0,0,0.18);">
+        <div style="font-size: 38px; margin-bottom: 8px;"></div>
+        <div style="font-family: 'Bangers', cursive; font-size: 26px; color: #E31837; letter-spacing: 2px; line-height: 1;">BURGER</div>
+        <div style="font-family: 'Nunito', sans-serif; font-size: 12px; color: #888; font-weight: 800; letter-spacing: 1px; margin-top: 4px;">WRAPS &amp; MEHR</div>
+      </div>
+      <div style="background: #FFC72C; border-radius: 20px; padding: 24px 28px; text-align: center; min-width: 160px; box-shadow: 5px 5px 0 rgba(0,0,0,0.18);">
+        <div style="font-size: 38px; margin-bottom: 8px;"></div>
+        <div style="font-family: 'Bangers', cursive; font-size: 26px; color: #1C1917; letter-spacing: 2px; line-height: 1;">HALAL</div>
+        <div style="font-family: 'Nunito', sans-serif; font-size: 12px; color: #5a4020; font-weight: 800; letter-spacing: 1px; margin-top: 4px;">100% ZERTIFIZIERT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE red → cream -->
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px; background: #F3E9DC;">
+    <path fill="#E31837" d="M0,0 C200,80 480,10 720,50 C960,90 1200,10 1440,40 L1440,0 L0,0 Z"/>
+  </svg>
+
+  <!-- REVIEWS -->
+  <section style="background: #F3E9DC; padding: 60px 60px 100px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="display: inline-block; font-family: 'Bangers', cursive; font-size: 18px; color: #E31837; letter-spacing: 3px; border: 2.5px solid #E31837; padding: 4px 16px; border-radius: 6px; margin-bottom: 16px;">FEEL IT</div>
+      <h2 style="font-family: 'Bangers', cursive; font-size: clamp(52px, 9vw, 108px); color: #E31837; letter-spacing: 2px; text-transform: uppercase; line-height: 0.9; margin: 0 0 52px;">FÜHLE DIE<br/>VERÄNDERUNG</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <sc-for list="{{ reviews }}" as="review" hint-placeholder-count="3">
+          <div style="background: white; border-radius: 18px; padding: 28px; box-shadow: 4px 4px 0 rgba(0,0,0,0.07);">
+            <div style="color: #FFC72C; font-size: 20px; margin-bottom: 12px; letter-spacing: 2px;">★★★★★</div>
+            <p style="font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 700; color: #333; line-height: 1.65; margin: 0 0 16px; font-style: italic;">"{{ review.text }}"</p>
+            <div style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 13px; color: #E31837; text-transform: uppercase; letter-spacing: 1px;">— {{ review.name }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+</sc-if>
+
+<!-- ===== MENU VIEW ===== -->
+<sc-if value="{{ isMenu }}" hint-placeholder-val="{{ false }}">
+
+  <!-- DARK HERO HEADER -->
+  <section style="background: #1C1917; padding: 70px 60px 56px; text-align: center; position: relative; overflow: hidden; min-height: 38vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    
+    <h1 style="font-family: 'Bangers', cursive; font-size: clamp(50px, 9vw, 112px); color: #FFC72C; letter-spacing: 5px; text-transform: uppercase; line-height: 0.95; text-shadow: 5px 5px 0 #E31837; margin: 0;">ISS MIT LEIDENSCHAFT</h1>
+    <p style="font-family: 'Nunito', sans-serif; font-weight: 800; color: #aaa; font-size: 14px; margin: 18px 0 0; letter-spacing: 3px; text-transform: uppercase;">Wetzlars Bestes Crispy Chicken · 100% Halal</p>
+  </section>
+
+  <!-- WAVE dark → cream -->
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px; background: #F3E9DC;">
+    <path fill="#1C1917" d="M0,0 C360,80 720,10 1080,55 C1260,78 1380,28 1440,40 L1440,0 L0,0 Z"/>
+  </svg>
+
+  <!-- MENU GRID -->
+  <section style="background: #F3E9DC; padding: 16px 48px 96px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <sc-for list="{{ menuCategories }}" as="cat" hint-placeholder-count="5">
+        <div style="margin-bottom: 64px;">
+          <h2 style="font-family: 'Bangers', cursive; font-size: 40px; color: #1C1917; letter-spacing: 3px; text-transform: uppercase; border-left: 7px solid #E31837; padding-left: 18px; margin: 0 0 28px; line-height: 1;">{{ cat.label }}</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 20px;">
+            <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
+              <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 3px 14px rgba(0,0,0,0.08); transition: transform 0.18s; cursor: default;">
+                <!-- Image area -->
+                <div style="height: 130px; background: linear-gradient(140deg, #fdf0e4 0%, #f5e6d3 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+                  <span style="font-size: 52px; line-height: 1;">{{ cat.emoji }}</span>
+                  <!-- Checkerboard stripe -->
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 20px; background-image: repeating-conic-gradient(#E31837 0% 25%, white 0% 50%); background-size: 20px 20px;"></div>
+                  <!-- Yellow + button -->
+                  <button style="position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border-radius: 50%; background: #FFC72C; border: none; font-size: 22px; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1C1917; box-shadow: 2px 2px 0 rgba(0,0,0,0.2); line-height: 1; padding: 0;">+</button>
+                </div>
+                <!-- Info -->
+                <div style="padding: 14px 16px 18px;">
+                  <h3 style="font-family: 'Bangers', cursive; font-size: 22px; color: #E31837; letter-spacing: 1px; margin: 0 0 4px; line-height: 1.1;">{{ item.name }}</h3>
+                  <p style="font-family: 'Nunito', sans-serif; font-size: 12px; color: #999; font-weight: 700; line-height: 1.4; margin: 0 0 10px; min-height: 34px;">{{ item.desc }}</p>
+                  <div style="font-family: 'Bangers', cursive; font-size: 24px; color: #1C1917; letter-spacing: 1px;">{{ item.price }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+</sc-if>
+
+<!-- ===== CONTACT VIEW ===== -->
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+
+  <!-- RED CONTACT FORM -->
+  <section style="background: #E31837; padding: 80px 60px 100px; position: relative; overflow: hidden; min-height: 72vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <!-- Floating stickers -->
+    
+    
+
+    <div style="text-align: center; max-width: 540px; position: relative; z-index: 2; width: 100%;">
+      <div style="display: inline-block; background: #FFC72C; color: #1C1917; font-family: 'Bangers', cursive; font-size: 20px; letter-spacing: 3px; padding: 7px 22px; border-radius: 9999px; margin-bottom: 22px; box-shadow: 3px 3px 0 rgba(0,0,0,0.18);">SAG HALLO</div>
+      <h1 style="font-family: 'Bangers', cursive; font-size: clamp(44px, 8.5vw, 96px); color: white; letter-spacing: 3px; text-transform: uppercase; line-height: 1; margin: 0 0 52px; text-shadow: 3px 3px 0 rgba(0,0,0,0.12);">HAST DU APPETIT?<br/>LASS UNS REDEN.</h1>
+      <form style="width: 100%;" onSubmit="{{ handleSubmit }}">
+        <div style="margin-bottom: 24px; text-align: left;">
+          <input type="email" placeholder="DEINE E-MAIL" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.55); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; padding: 14px 0; caret-color: white;" />
+        </div>
+        <div style="margin-bottom: 40px; text-align: left;">
+          <textarea placeholder="TEIL UNS DEINEN APPETIT MIT..." rows="4" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.55); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; padding: 14px 0; resize: none; caret-color: white;"></textarea>
+        </div>
+        <button type="submit" style="background: #FFC72C; color: #1C1917; border: none; padding: 18px 68px; border-radius: 9999px; font-family: 'Bangers', cursive; font-size: 26px; letter-spacing: 4px; cursor: pointer; box-shadow: 4px 4px 0 rgba(0,0,0,0.22); transition: transform 0.15s;">NACHRICHT SENDEN</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- WAVE red → cream -->
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px; background: #F3E9DC;">
+    <path fill="#E31837" d="M0,0 C360,80 720,20 1080,55 C1260,75 1380,28 1440,42 L1440,0 L0,0 Z"/>
+  </svg>
+
+  <!-- INFO SECTION -->
+  <section style="background: #F3E9DC; padding: 52px 60px 96px;">
+    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+      <div>
+        <div style="display: inline-block; font-family: 'Bangers', cursive; font-size: 18px; color: #E31837; letter-spacing: 3px; border: 2.5px solid #E31837; padding: 4px 14px; border-radius: 6px; margin-bottom: 16px;">BESUCHE UNS</div>
+        <h2 style="font-family: 'Bangers', cursive; font-size: 56px; color: #1C1917; letter-spacing: 2px; text-transform: uppercase; line-height: 0.92; margin: 0 0 36px;">WO WIR SIND</h2>
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: #E31837; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 2px 2px 0 rgba(0,0,0,0.12);"></div>
+            <div><div style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; color: #E31837; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">Adresse</div><div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 16px; color: #333; line-height: 1.55;">Garbenheimer Str. 20A<br/>35582 Wetzlar</div></div>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: #E31837; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 2px 2px 0 rgba(0,0,0,0.12);"></div>
+            <div><div style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; color: #E31837; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">Telefon</div><div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 16px; color: #333;">0641 46093909</div></div>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: #FFC72C; color: #1C1917; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 2px 2px 0 rgba(0,0,0,0.12);"></div>
+            <div><div style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; color: #E31837; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">WhatsApp · 10% Rabatt</div><div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 16px; color: #333;">0176 4212513</div></div>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: #E31837; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 2px 2px 0 rgba(0,0,0,0.12);"></div>
+            <div><div style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; color: #E31837; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">Öffnungszeiten</div><div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 16px; color: #333;">Täglich geöffnet<br/>Schließt um 22:00 Uhr</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 4px 4px 0 rgba(0,0,0,0.07);">
+          <div style="font-family: 'Bangers', cursive; font-size: 30px; color: #E31837; letter-spacing: 2px; margin-bottom: 20px; line-height: 1;">BESTELLMÖGLICHKEITEN</div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 14px; font-family: 'Nunito', sans-serif; font-weight: 800; color: #1C1917; font-size: 15px;"><span style="background: #F3E9DC; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"></span>Vor Ort essen</div>
+            <div style="display: flex; align-items: center; gap: 14px; font-family: 'Nunito', sans-serif; font-weight: 800; color: #1C1917; font-size: 15px;"><span style="background: #F3E9DC; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"></span>Drive-In Abholung</div>
+            <div style="display: flex; align-items: center; gap: 14px; font-family: 'Nunito', sans-serif; font-weight: 800; color: #1C1917; font-size: 15px;"><span style="background: #FFC72C; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"></span>WhatsApp Bestellung</div>
+            <div style="display: flex; align-items: center; gap: 14px; font-family: 'Nunito', sans-serif; font-weight: 800; color: #1C1917; font-size: 15px;"><span style="background: #F3E9DC; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"></span>Lieferung ab 15,00 €</div>
+          </div>
+        </div>
+        <button onClick="{{ goMenu }}" style="background: #E31837; color: white; border: none; padding: 18px 0; border-radius: 9999px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; box-shadow: 4px 4px 0 #1C1917; width: 100%;">SPEISEKARTE ANSEHEN</button>
+      </div>
+    </div>
+  </section>
+
+</sc-if>
+
+<!-- ===== FOOTER (always) ===== -->
+<footer style="background: #F3E9DC; padding: 48px 48px 0; overflow: hidden; position: relative; border-top: 3px solid rgba(0,0,0,0.06);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+    <div style="display: flex; gap: 28px; flex-wrap: wrap; align-items: center;">
+      <button onClick="{{ goHome }}" style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; background: none; border: none; cursor: pointer; color: #1C1917;">STARTSEITE</button>
+      <button onClick="{{ goMenu }}" style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; background: none; border: none; cursor: pointer; color: #1C1917;">SPEISEKARTE</button>
+      <button onClick="{{ goContact }}" style="font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; background: none; border: none; cursor: pointer; color: #1C1917;">KONTAKT</button>
+    </div>
+    <div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 11px; color: #aaa; letter-spacing: 1px; text-transform: uppercase;">© 2024 CFC — ALL RIGHTS RESERVED</div>
+  </div>
+  <div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 11px; color: #bbb; letter-spacing: 2.5px; text-transform: uppercase; padding: 18px 0 8px;">CRISPY WINGS · GOLDEN CRUNCH · EST. 2024</div>
+  <!-- Giant CFC -->
+  <div style="text-align:center;"><img src="{{ logoSrc }}" alt="CFC Logo" style="height:120px;width:auto;border-radius:50%;border:4px solid #fff;box-shadow:0 0 20px rgba(0,0,0,0.1);"/></div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  state = { view: 'home' };
+
+  menuCategories = [
+    {
+      id: 'deals', label: 'Bestseller Deals', emoji: ' ',
+      items: [
+        { name: 'Hähnchen-Burger Menü', price: '13,00 €', desc: 'Normal o. crispy scharf, Pommes, Getränk' },
+        { name: 'Hähnchen-Wrap Menü', price: '12,00 €', desc: 'Normal Chicken, Pommes, Getränk' },
+        { name: 'Nuggets Menü', price: '10,50 €', desc: '7 Nuggets, Pommes, Getränk' },
+        { name: 'Hähnchen-Menü', price: '10,50 €', desc: '2 Hähnchenteile, Pommes, Krautsalat' },
+        { name: 'Kinder Menü', price: 'Auf Anfrage', desc: '1 Hähnchenteil o. 3 Nuggets, Pommes, Capri Sun' },
+        { name: 'Familie Menü 9 Stück', price: '22,50 €', desc: 'inkl. große Pommes & Krautsalat' },
+        { name: 'Familie Menü 15 Stück', price: '41,50 €', desc: 'inkl. große Pommes & Krautsalat' },
+      ]
+    },
+    {
+      id: 'gefluegel', label: 'Geflügel-Spezialitäten', emoji: ' ',
+      items: [
+        { name: 'Hähnchenteile', price: 'ab 2,80 €', desc: '1 (2,80€) · 3 (8,50€) · 5 (13,50€) · 9 (23,50€) · 15 (38,00€)' },
+        { name: 'Scharfe Flügel', price: 'ab 7,50 €', desc: '6 Stück (7,50€) · 12 Stück (13,50€)' },
+        { name: 'Nuggets', price: 'ab 6,00 €', desc: '7 Stück (6,00€) · 15 Stück (11,00€)' },
+      ]
+    },
+    {
+      id: 'burger', label: 'Burger & Wraps', emoji: ' ',
+      items: [
+        { name: 'CFC Burger', price: '5,50 €', desc: 'Klassisch & knusprig' },
+        { name: 'BBQ Burger', price: '6,50 €', desc: 'Mit rauchiger BBQ-Sauce' },
+        { name: 'Crispy Hähnchen-Burger', price: '6,50 €', desc: 'Extra crispy, extra lecker' },
+        { name: 'Doppel-Burger', price: '8,90 €', desc: 'Doppelter Genuss' },
+        { name: 'Veggie-Burger', price: '5,50 €', desc: 'Vegetarische Option' },
+        { name: 'Wraps', price: 'je 8,50 €', desc: 'Mozzarella, Jalapeño oder Chicken' },
+      ]
+    },
+    {
+      id: 'beilagen', label: 'Beilagen & Snacks', emoji: ' ',
+      items: [
+        { name: 'Überbackene Pommes', price: 'ab 7,90 €', desc: 'Normal (7,90€) · Crispy Scharf (8,90€)' },
+        { name: 'Scharfe Hähnchen-Pommes', price: 'ab 8,50 €', desc: 'Normal (8,50€) · Crispy Scharf (9,50€)' },
+        { name: 'Knusper-Hähnchen Makkaroni mit Käse', price: 'ab 8,90 €', desc: 'Normal (8,90€) · Crispy Scharf (9,90€)' },
+        { name: 'Hähnchen-Popcorn', price: 'ab 6,00 €', desc: 'Normal (6,00€) · Crispy Scharf (6,50€)' },
+        { name: 'Pommes', price: 'ab 3,00 €', desc: 'Klein (3,00€) · Groß (4,00€) · Curly (4,50€)' },
+        { name: 'Zwiebelringe (6 Stk)', price: '4,50 €', desc: 'Golden & knusprig' },
+        { name: 'Mozzarella Sticks (5 Stk)', price: '5,50 €', desc: 'Mit Marinara-Dip' },
+        { name: 'Jalapeño Peppers (5 Stk)', price: '5,50 €', desc: 'Für Scharf-Liebhaber' },
+      ]
+    },
+    {
+      id: 'extras', label: 'Extras & Getränke', emoji: ' ',
+      items: [
+        { name: 'Krautsalat / Bohnensalat / Kartoffelpüree', price: 'ab 3,00 €', desc: 'Normal (3,00€) · Groß (4,00€)' },
+        { name: 'Maiskolben', price: 'ab 2,00 €', desc: '½ Kolben (2,00€) · 1 ganzer (3,50€)' },
+        { name: 'Tiramisu', price: '4,00 €', desc: 'Hausgemacht & cremig' },
+        { name: 'CFC Spezial-Soße', price: 'ab 1,00 €', desc: 'Klein (1,00€) · Groß (2,00€)' },
+      ]
+    },
+  ];
+
+  reviews = [
+    { name: 'Taha Zafar', text: 'Sehr leckeres Essen und nette Bedienung. Kann ich nur empfehlen.' },
+    { name: 'Haris Basit', text: 'Alles war sehr lecker aber am besten waren die Hähnchenteile.' },
+    { name: 'Анастасия Залесская', text: 'Es ist köstlich und natürlich, und die Chicken Wings sind sogar besser als die von KFC.' },
+  ];
+
+  renderVals() {
+    const v = this.state.view;
+    const navBtn = (view) => ({
+      fontFamily: "'Nunito', sans-serif",
+      fontWeight: 900,
+      fontSize: '13px',
+      letterSpacing: '2px',
+      textTransform: 'uppercase',
+      background: 'none',
+      border: 'none',
+      borderBottom: `2px solid ${v === view ? '#E31837' : 'transparent'}`,
+      cursor: 'pointer',
+      color: v === view ? '#E31837' : '#1C1917',
+      paddingBottom: '3px',
+      transition: 'color 0.2s',
+    });
+    return {
+      isHome: v === 'home',
+      isMenu: v === 'menu',
+      isContact: v === 'contact',
+      goHome: () => { this.setState({ view: 'home' }); window.scrollTo(0, 0); },
+      goMenu: () => { this.setState({ view: 'menu' }); window.scrollTo(0, 0); },
+      goContact: () => { this.setState({ view: 'contact' }); window.scrollTo(0, 0); },
+      handleSubmit: (e) => { e.preventDefault(); alert('Danke! Wir melden uns bald. '); },
+      navBtnHome: navBtn('home'),
+      navBtnMenu: navBtn('menu'),
+      navBtnContact: navBtn('contact'),
+      menuCategories: this.menuCategories,
+      reviews: this.reviews,
+      logoSrc: 'uploads/Gemini_Generated_Image_xcfxgjxcfxgjxcfx.jpeg',
+      footerTextStyle: {
+        fontFamily: "'Bangers', cursive",
+        fontSize: 'clamp(100px, 22vw, 290px)',
+        color: '#E31837',
+        WebkitTextStroke: '8px white',
+        lineHeight: 0.82,
+        textAlign: 'center',
+        letterSpacing: '0.06em',
+        userSelect: 'none',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        display: 'block',
+        margin: '0 -48px',
+        paddingBottom: '0',
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

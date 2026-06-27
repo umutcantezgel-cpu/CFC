@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#f3efe9;}
+  *{box-sizing:border-box;}
+  .dl-frame{width:100%;height:calc(100vh - 132px);border:0;display:block;background:#fff;}
+  @media(max-width:640px){.dl-frame{height:calc(100vh - 168px);}}
+</style>
+</helmet>
+<div style="min-height:100vh;font-family:'Inter',system-ui,sans-serif;color:#1c1814;">
+
+  <header style="padding:22px clamp(18px,4vw,44px) 0;">
+    <div style="display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;">
+        <div style="font:600 11px 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#a07d52;">Master-Bibliothek · Single Source of Truth</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(28px,4vw,42px);margin:6px 0 0;line-height:1.04;">Design-Bibliothek</h1>
+        <p style="font-size:14.5px;line-height:1.6;color:#5b5048;max-width:62ch;margin:10px 0 0;">Vier Marken-Systeme — vollständig zerlegt, live anschaubar und wiederverwendbar. Jedes Element rendert mit seinen echten Tokens, Schriften und Komponenten. Maschinenlesbar exportiert in <a href="library.json" download style="color:#147a7a;font-weight:600;text-decoration:none;">library.json</a>.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <div style="text-align:center;padding:12px 16px;background:#fff;border:1px solid #e6ddd0;border-radius:12px;min-width:74px;"><div style="font:700 22px 'Space Grotesk';color:#1c1814;">4</div><div style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.06em;">Marken</div></div>
+        <div style="text-align:center;padding:12px 16px;background:#fff;border:1px solid #e6ddd0;border-radius:12px;min-width:74px;"><div style="font:700 22px 'Space Grotesk';color:#1c1814;">162</div><div style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.06em;">Einträge</div></div>
+        <div style="text-align:center;padding:12px 16px;background:#fff;border:1px solid #e6ddd0;border-radius:12px;min-width:74px;"><div style="font:700 22px 'Space Grotesk';color:#1c1814;">12</div><div style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.06em;">Sprachen</div></div>
+      </div>
+    </div>
+
+    <nav style="display:flex;gap:6px;margin-top:20px;flex-wrap:wrap;border-bottom:1px solid #e6ddd0;">
+      <button onClick="{{ goOverview }}" style="{{ tabOverview }}">Übersicht</button>
+      <button onClick="{{ goApex }}" style="{{ tabApex }}">Apex Motors</button>
+      <button onClick="{{ goHeyfede }}" style="{{ tabHeyfede }}">Hey Fede!</button>
+      <button onClick="{{ goKaqua }}" style="{{ tabKaqua }}">K-Aqua</button>
+      <button onClick="{{ goCoday }}" style="{{ tabCoday }}">Coday</button>
+      <button onClick="{{ goLab }}" style="{{ tabLab }}">⚡ Component-Lab</button>
+    </nav>
+  </header>
+
+  <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+  <main style="max-width:1180px;margin:0 auto;padding:32px clamp(18px,4vw,44px) 100px;">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+
+      <!-- APEX -->
+      <article style="background:#fff;border:1px solid #e6ddd0;border-radius:18px;overflow:hidden;">
+        <div style="height:8px;background:linear-gradient(90deg,hsl(0 72% 42%),hsl(38 55% 42%));"></div>
+        <div style="padding:22px 22px 24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:20px;margin:0;letter-spacing:-.02em;">Apex Motors</h2>
+            <span style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.08em;">Autohaus</span>
+          </div>
+          <p style="font-size:13px;line-height:1.55;color:#5b5048;margin:8px 0 14px;">Premium-Rot, Light-only. Space Grotesk + Inter + JetBrains Mono. Datenviz-lastig: Markt-Meter, Histogramm, Editorial-Galerie.</p>
+          <div style="display:flex;gap:6px;margin-bottom:16px;">
+            <span style="width:24px;height:24px;border-radius:6px;background:hsl(0 72% 42%);"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:hsl(12 60% 38%);"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:hsl(38 55% 42%);"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:hsl(0 0% 10%);"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:hsl(30 25% 97%);box-shadow:inset 0 0 0 1px #e6ddd0;"></span>
+          </div>
+          <div style="font:600 11px 'JetBrains Mono';color:#8a7d70;line-height:2;">8 Segmente · Datenviz · + Motion: Mega-Menu · Shimmer-CTA · Counter · Reveal</div>
+          <button onClick="{{ goApex }}" style="margin-top:16px;width:100%;height:42px;border:0;border-radius:10px;background:hsl(0 72% 42%);color:#fff;font:600 14px 'Inter';cursor:pointer;">Live öffnen →</button>
+        </div>
+      </article>
+
+      <!-- HEY FEDE -->
+      <article style="background:#fff;border:1px solid #e6ddd0;border-radius:18px;overflow:hidden;">
+        <div style="height:8px;background:linear-gradient(90deg,#CC624C,#E4C0A8);"></div>
+        <div style="padding:22px 22px 24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:20px;margin:0;letter-spacing:-.02em;">Hey Fede!</h2>
+            <span style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.08em;">Gastro</span>
+          </div>
+          <p style="font-size:13px;line-height:1.55;color:#5b5048;margin:8px 0 14px;">Terracotta/Cream, verspielt. Calistoga + Nunito. Signatur-„Bissspur", Lava-Wellen-Trenner, 31 Elemente aus der echten Snippet-DB.</p>
+          <div style="display:flex;gap:6px;margin-bottom:16px;">
+            <span style="width:24px;height:24px;border-radius:6px;background:#f5efe8;box-shadow:inset 0 0 0 1px #e6ddd0;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#E4C0A8;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#CC624C;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#2d1f19;"></span>
+          </div>
+          <div style="font:600 11px 'JetBrains Mono';color:#8a7d70;line-height:2;">31 Elemente · + Signature: Juicy · Holo-Tilt · Syrup-Cursor · Scratch · Liquid</div>
+          <button onClick="{{ goHeyfede }}" style="margin-top:16px;width:100%;height:42px;border:0;border-radius:10px;background:#CC624C;color:#fff;font:600 14px 'Inter';cursor:pointer;">Live öffnen →</button>
+        </div>
+      </article>
+
+      <!-- KAQUA -->
+      <article style="background:#fff;border:1px solid #e6ddd0;border-radius:18px;overflow:hidden;">
+        <div style="height:8px;background:linear-gradient(90deg,#5B2D8C,#3aa6c0);"></div>
+        <div style="padding:22px 22px 24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:20px;margin:0;letter-spacing:-.02em;">K-Aqua</h2>
+            <span style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.08em;">Rohrsysteme</span>
+          </div>
+          <p style="font-size:13px;line-height:1.55;color:#5b5048;margin:8px 0 14px;">Lila #5B2D8C in oklch. Dual-Theme (Light + OLED-Dark), Outfit + Inter. 12 Sprachen mit RTL, Glove-Mode für Baustellen.</p>
+          <div style="display:flex;gap:6px;margin-bottom:16px;">
+            <span style="width:24px;height:24px;border-radius:6px;background:#5B2D8C;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#9a6fc4;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#3aa6c0;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#0A0A0F;"></span>
+          </div>
+          <div style="font:600 11px 'JetBrains Mono';color:#8a7d70;line-height:2;">8 Segmente · + Live-Globus · Page-Wipe · Mega-Menu · 12 Sprachen</div>
+          <button onClick="{{ goKaqua }}" style="margin-top:16px;width:100%;height:42px;border:0;border-radius:10px;background:#5B2D8C;color:#fff;font:600 14px 'Inter';cursor:pointer;">Live öffnen →</button>
+        </div>
+      </article>
+
+      <!-- CODAY -->
+      <article style="background:#fff;border:1px solid #e6ddd0;border-radius:18px;overflow:hidden;">
+        <div style="height:8px;background:linear-gradient(90deg,#147a7a,#f59e0b);"></div>
+        <div style="padding:22px 22px 24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:20px;margin:0;letter-spacing:-.02em;">Coday</h2>
+            <span style="font:600 10px 'JetBrains Mono';color:#8a7d70;text-transform:uppercase;letter-spacing:.08em;">Webagentur</span>
+          </div>
+          <p style="font-size:13px;line-height:1.55;color:#5b5048;margin:8px 0 14px;">Signatur-Teal #147a7a, Slate-Ink, sparsames Amber. Outfit + Inter, φ-Skala. Echte agency-domination Tokens — Buttons, Cards, Stats, Vergleich, Dark-Footer, Phosphor-Icons.</p>
+          <div style="display:flex;gap:6px;margin-bottom:16px;">
+            <span style="width:24px;height:24px;border-radius:6px;background:#147a7a;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#0d9488;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#f59e0b;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#0f172a;"></span>
+            <span style="width:24px;height:24px;border-radius:6px;background:#fafafa;box-shadow:inset 0 0 0 1px #e6ddd0;"></span>
+          </div>
+          <div style="font:600 11px 'JetBrains Mono';color:#8a7d70;line-height:2;">8 Segmente · DACH-Business · + Motion: Shimmer-CTA · Float · fade-in-up · Marquee</div>
+          <button onClick="{{ goCoday }}" style="margin-top:16px;width:100%;height:42px;border:0;border-radius:10px;background:#147a7a;color:#fff;font:600 14px 'Inter';cursor:pointer;">Live öffnen →</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- COMPONENT-LAB BANNER -->
+    <div onClick="{{ goLab }}" style="margin-top:24px;cursor:pointer;background:#1c1814;border-radius:18px;overflow:hidden;display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:24px 26px;">
+      <div style="flex:1;min-width:280px;">
+        <div style="font:700 11px 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#e0a96d;">⚡ Ausgeführte Prompts · Live</div>
+        <h3 style="font-family:'Space Grotesk';font-weight:700;font-size:21px;letter-spacing:-.02em;margin:8px 0 6px;color:#fff;">Component-Lab</h3>
+        <p style="font-size:13.5px;line-height:1.55;color:#c9bfb4;margin:0;max-width:64ch;">39 markenadaptierte Komponenten, real ausgeführt. Marken-Switcher re-themt jede Demo live (inkl. K-Aqua OLED-Dark). „★ Empfohlen" markiert die besten Bausteine pro Marke — direkt sicht- und auswählbar.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font:700 14px 'Inter';color:#1c1814;background:#fff;padding:12px 20px;border-radius:10px;white-space:nowrap;">Lab öffnen →</div>
+    </div>
+
+    <!-- MATRIX -->
+    <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:18px;letter-spacing:-.01em;margin:44px 0 14px;">Kategorie-Matrix</h3>
+    <div style="background:#fff;border:1px solid #e6ddd0;border-radius:14px;overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;">
+        <thead>
+          <tr style="background:#faf6f0;">
+            <th style="text-align:left;padding:12px 16px;font:600 12px 'JetBrains Mono';text-transform:uppercase;letter-spacing:.06em;color:#8a7d70;">Kategorie</th>
+            <th style="text-align:center;padding:12px 16px;font:600 12px 'JetBrains Mono';color:hsl(0 72% 42%);">Apex</th>
+            <th style="text-align:center;padding:12px 16px;font:600 12px 'JetBrains Mono';color:#CC624C;">Hey Fede</th>
+            <th style="text-align:center;padding:12px 16px;font:600 12px 'JetBrains Mono';color:#5B2D8C;">K-Aqua</th>
+            <th style="text-align:center;padding:12px 16px;font:600 12px 'JetBrains Mono';color:#147a7a;">Coday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top:1px solid #efe7da;"><td style="padding:11px 16px;font-weight:600;">Tokens</td><td style="text-align:center;color:#5b5048;">4</td><td style="text-align:center;color:#5b5048;">8</td><td style="text-align:center;color:#5b5048;">5</td><td style="text-align:center;color:#5b5048;">4</td></tr>
+          <tr style="border-top:1px solid #efe7da;"><td style="padding:11px 16px;font-weight:600;">Components</td><td style="text-align:center;color:#5b5048;">14</td><td style="text-align:center;color:#5b5048;">28</td><td style="text-align:center;color:#5b5048;">11</td><td style="text-align:center;color:#5b5048;">7</td></tr>
+          <tr style="border-top:1px solid #efe7da;"><td style="padding:11px 16px;font-weight:600;">Animations</td><td style="text-align:center;color:#5b5048;">8</td><td style="text-align:center;color:#5b5048;">7</td><td style="text-align:center;color:#5b5048;">5</td><td style="text-align:center;color:#5b5048;">1</td></tr>
+          <tr style="border-top:1px solid #efe7da;"><td style="padding:11px 16px;font-weight:600;">Accessibility</td><td style="text-align:center;color:#5b5048;">1</td><td style="text-align:center;color:#c9bfb0;">—</td><td style="text-align:center;color:#5b5048;">1</td><td style="text-align:center;color:#5b5048;">1</td></tr>
+          <tr style="border-top:1px solid #efe7da;"><td style="padding:11px 16px;font-weight:600;">Translations</td><td style="text-align:center;color:#5b5048;">1&nbsp;<span style='color:#8a7d70'>DE</span></td><td style="text-align:center;color:#5b5048;">1&nbsp;<span style='color:#8a7d70'>DE</span></td><td style="text-align:center;color:#5b5048;">2&nbsp;<span style='color:#8a7d70'>12&nbsp;Spr.</span></td><td style="text-align:center;color:#5b5048;">1&nbsp;<span style='color:#8a7d70'>DE/EN</span></td></tr>
+          <tr style="border-top:1px solid #efe7da;"><td style="padding:11px 16px;font-weight:600;">Free/Assets</td><td style="text-align:center;color:#c9bfb0;">—</td><td style="text-align:center;color:#5b5048;">10</td><td style="text-align:center;color:#c9bfb0;">—</td><td style="text-align:center;color:#5b5048;">3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PRINZIPIEN -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px;">
+      <div style="background:#fff;border:1px solid #e6ddd0;border-radius:14px;padding:20px;">
+        <div style="font:600 11px 'JetBrains Mono';color:#a07d52;text-transform:uppercase;letter-spacing:.08em;">Motion</div>
+        <p style="font-size:13px;line-height:1.6;color:#5b5048;margin:8px 0 0;">Alle drei respektieren <code style="font-family:'JetBrains Mono';font-size:11.5px;background:#f3ece2;padding:1px 5px;border-radius:4px;">prefers-reduced-motion</code>. Jeder animierte Eintrag trägt einen statischen Fallback (<code style="font-family:'JetBrains Mono';font-size:11.5px;background:#f3ece2;padding:1px 5px;border-radius:4px;">animation_free_fallback</code>) in der JSON.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #e6ddd0;border-radius:14px;padding:20px;">
+        <div style="font:600 11px 'JetBrains Mono';color:#a07d52;text-transform:uppercase;letter-spacing:.08em;">Wiederverwendung</div>
+        <p style="font-size:13px;line-height:1.6;color:#5b5048;margin:8px 0 0;">Echte Quell-Stylesheets &amp; Fonts liegen unter <code style="font-family:'JetBrains Mono';font-size:11.5px;background:#f3ece2;padding:1px 5px;border-radius:4px;">assets/&lt;marke&gt;/</code> — direkt in neue Projekte kopierbar, kollisionsfrei isoliert.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #e6ddd0;border-radius:14px;padding:20px;">
+        <div style="font:600 11px 'JetBrains Mono';color:#a07d52;text-transform:uppercase;letter-spacing:.08em;">Wachstum</div>
+        <p style="font-size:13px;line-height:1.6;color:#5b5048;margin:8px 0 0;">Neue Uploads werden nahtlos in <code style="font-family:'JetBrains Mono';font-size:11.5px;background:#f3ece2;padding:1px 5px;border-radius:4px;">library.json</code> integriert — nie überschrieben. ID-Schema <code style="font-family:'JetBrains Mono';font-size:11.5px;background:#f3ece2;padding:1px 5px;border-radius:4px;">marke-kategorie-slug</code>.</p>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ showFrame }}" hint-placeholder-val="{{ false }}">
+    <iframe class="dl-frame" src="{{ frameSrc }}" title="Marken-Sheet"></iframe>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: 'overview' };
+
+  renderVals() {
+    const tab = this.state.tab;
+    const set = (t) => () => this.setState({ tab: t });
+    const srcMap = {
+      apex: 'assets/apex/apex.html',
+      heyfede: 'assets/heyfede/heyfede.html',
+      kaqua: 'assets/kaqua/kaqua.html',
+      coday: 'assets/coday/coday.html',
+      lab: 'assets/lab/component-lab.html',
+    };
+    const base = 'font:600 13.5px Inter,sans-serif;border:0;background:none;cursor:pointer;padding:11px 16px 13px;border-bottom:2.5px solid transparent;color:#8a7d70;margin-bottom:-1px;';
+    const on = 'font:600 13.5px Inter,sans-serif;border:0;background:none;cursor:pointer;padding:11px 16px 13px;border-bottom:2.5px solid #1c1814;margin-bottom:-1px;color:#1c1814;';
+    return {
+      isOverview: tab === 'overview',
+      showFrame: tab !== 'overview',
+      frameSrc: srcMap[tab] || '',
+      goOverview: set('overview'),
+      goApex: set('apex'),
+      goHeyfede: set('heyfede'),
+      goKaqua: set('kaqua'),
+      goCoday: set('coday'),
+      goLab: set('lab'),
+      tabOverview: tab === 'overview' ? on : base,
+      tabApex: tab === 'apex' ? on : base,
+      tabHeyfede: tab === 'heyfede' ? on : base,
+      tabKaqua: tab === 'kaqua' ? on : base,
+      tabCoday: tab === 'coday' ? on : base,
+      tabLab: tab === 'lab'
+        ? 'font:700 13.5px Inter,sans-serif;border:0;background:#1c1814;color:#fff;cursor:pointer;padding:9px 16px;border-radius:10px;margin:0 0 4px 6px;'
+        : 'font:700 13.5px Inter,sans-serif;border:0;background:#1c1814;color:#fff;cursor:pointer;padding:9px 16px;border-radius:10px;margin:0 0 4px 6px;opacity:0.78;',
+    };
+  }
+}
+</script>
+</body>
+</html>
