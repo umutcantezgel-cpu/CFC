@@ -39,7 +39,7 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {locationsData.map((loc) => (
-              <StickerCard key={loc.id} className="p-6 bg-cream-bg h-full">
+              <StickerCard key={loc.id} className="p-6 bg-cream-bg h-full flex flex-col">
                 <div className="flex justify-between items-start mb-4">
                   <h4 
                     className="font-display text-2xl text-brand-red uppercase bg-accent-yellow px-2 py-1 border-2 border-maroon-stroke shadow-[2px_2px_0px_#4C0016]"
@@ -52,7 +52,14 @@ export default function Contact() {
                   </svg>
                 </div>
                 <p className="font-bold text-sm text-charcoal-dark mb-2">{loc.desc}</p>
-                <p className="font-mono text-xs text-maroon-stroke/70">{loc.address}</p>
+                <p className="font-mono text-xs text-maroon-stroke/70 flex-grow">{loc.address}</p>
+                
+                {/* @ts-ignore */}
+                {loc.mapsUrl && (
+                  <a href={(loc as any).mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-4 block text-center bg-charcoal-dark text-white py-3 font-black text-xs uppercase tracking-widest border-2 border-maroon-stroke shadow-[4px_4px_0px_#4C0016] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#4C0016] transition-all">
+                    Route Planen
+                  </a>
+                )}
               </StickerCard>
             ))}
           </div>

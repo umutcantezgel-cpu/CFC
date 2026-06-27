@@ -57,7 +57,7 @@ export const reviewsData = [
 ];
 
 export const locationsData = [
-  { id: 'wz', city: 'WETZLAR', desc: 'Unser Zuhause — frisch aus der Fritteuse.', address: 'Garbenheimer Str. 20A, 35582 Wetzlar', rotation: 7, mapPolygon: "M10,10 L90,10 L80,90 L20,90 Z" },
+  { id: 'wz', city: 'WETZLAR', desc: 'Unser Zuhause — frisch aus der Fritteuse.', address: 'Garbenheimer Str. 20A, 35582 Wetzlar', rotation: 7, mapPolygon: "M10,10 L90,10 L80,90 L20,90 Z", mapsUrl: "https://maps.app.goo.gl/iUmDmDBVQ4PnRgXu9" },
   { id: 'gi', city: 'GIESSEN', desc: 'Lieferung in unter 30 Minuten.', address: 'Gießen Zentrum', rotation: -7, mapPolygon: "M20,10 L80,20 L90,80 L10,90 Z" },
   { id: 'ma', city: 'MARBURG', desc: 'Crispy, heiß und immer halal.', address: 'Marburg Süd', rotation: 12, mapPolygon: "M50,10 L90,50 L50,90 L10,50 Z" },
   { id: 'li', city: 'LIMBURG', desc: 'Drive-In Abholung verfügbar.', address: 'Limburg an der Lahn', rotation: -12, mapPolygon: "M10,20 L90,10 L80,80 L20,90 Z" },
