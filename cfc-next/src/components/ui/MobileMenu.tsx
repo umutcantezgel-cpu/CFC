@@ -1,22 +1,19 @@
 "use client";
 import { useStore } from "@/store";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function MobileMenu() {
-  const { isMobileMenuOpen, setMobileMenuOpen, setView } = useStore();
+  const { isMobileMenuOpen, setMobileMenuOpen } = useStore();
 
-  const handleNav = (view: any) => {
+  const handleNav = () => {
     setMobileMenuOpen(false);
-    setTimeout(() => {
-      setView(view);
-      window.scrollTo(0,0);
-    }, 500);
   };
 
   const navLinks = [
-    { id: "home", label: "STARTSEITE" },
-    { id: "menu", label: "SPEISEKARTE" },
-    { id: "contact", label: "KONTAKT" }
+    { href: "/", label: "STARTSEITE" },
+    { href: "/speisekarte", label: "SPEISEKARTE" },
+    { href: "/kontakt", label: "KONTAKT" }
   ];
 
   return (
@@ -38,16 +35,20 @@ export default function MobileMenu() {
 
           <div className="flex flex-col gap-8 w-full max-w-sm relative z-10">
             {navLinks.map((link, i) => (
-              <motion.button
-                key={link.id}
+              <motion.div
+                key={link.href}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                onClick={() => handleNav(link.id)}
-                className="text-left font-display text-4xl md:text-6xl text-cream-bg uppercase tracking-widest text-stroke-maroon hover:text-accent-yellow transition-colors"
               >
-                {link.label}
-              </motion.button>
+                <Link
+                  href={link.href}
+                  onClick={handleNav}
+                  className="block text-left font-display text-4xl md:text-6xl text-cream-bg uppercase tracking-widest text-stroke-maroon hover:text-accent-yellow transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
           </div>
 
@@ -57,9 +58,9 @@ export default function MobileMenu() {
             transition={{ delay: 0.8 }}
             className="absolute bottom-12 flex gap-6"
           >
-            <button onClick={() => handleNav('impressum')} className="text-cream-bg/70 font-bold uppercase text-xs tracking-widest">Impressum</button>
-            <button onClick={() => handleNav('datenschutz')} className="text-cream-bg/70 font-bold uppercase text-xs tracking-widest">Datenschutz</button>
-            <button onClick={() => handleNav('agb')} className="text-cream-bg/70 font-bold uppercase text-xs tracking-widest">AGB</button>
+            <Link href="/impressum" onClick={handleNav} className="text-cream-bg/70 font-bold uppercase text-xs tracking-widest hover:text-accent-yellow">Impressum</Link>
+            <Link href="/datenschutz" onClick={handleNav} className="text-cream-bg/70 font-bold uppercase text-xs tracking-widest hover:text-accent-yellow">Datenschutz</Link>
+            <Link href="/agb" onClick={handleNav} className="text-cream-bg/70 font-bold uppercase text-xs tracking-widest hover:text-accent-yellow">AGB</Link>
           </motion.div>
         </motion.div>
       )}

@@ -1,11 +1,11 @@
 "use client";
 import StickerCard from "@/components/ui/sticker-card";
+import Link from "next/link";
 
-export default function Hero({ onNavigate }: { onNavigate: (v: string) => void }) {
+export default function Hero() {
   return (
     <>
       <section className="pt-20 pb-20 px-8 relative overflow-hidden flex items-center justify-center min-h-[85vh]">
-        
         
         <div className="max-w-[700px] w-full relative z-20">
           <div className="inline-block bg-accent-yellow text-charcoal-dark font-black text-xs tracking-widest uppercase px-5 py-2 rounded-full mb-6 shadow-[2px_2px_0px_rgba(0,0,0,0.12)]">
@@ -23,12 +23,12 @@ export default function Hero({ onNavigate }: { onNavigate: (v: string) => void }
           </p>
           
           <div className="flex gap-4 flex-wrap items-center">
-            <button onClick={() => onNavigate("menu")} className="bg-brand-red text-white border-none px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer shadow-[4px_4px_0px_#1C1917] hover:translate-y-1 hover:shadow-[1px_1px_0px_#1C1917] transition-all">
+            <Link href="/speisekarte" className="bg-brand-red text-white border-none px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer shadow-[4px_4px_0px_#1C1917] hover:translate-y-1 hover:shadow-[1px_1px_0px_#1C1917] transition-all text-center">
               JETZT BESTELLEN
-            </button>
-            <button onClick={() => onNavigate("menu")} className="bg-transparent text-charcoal-dark border-3 border-charcoal-dark px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer hover:bg-charcoal-dark hover:text-white transition-colors">
+            </Link>
+            <Link href="/speisekarte" className="bg-transparent text-charcoal-dark border-3 border-charcoal-dark px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer hover:bg-charcoal-dark hover:text-white transition-colors text-center">
               SPEISEKARTE
-            </button>
+            </Link>
           </div>
         </div>
       </section>

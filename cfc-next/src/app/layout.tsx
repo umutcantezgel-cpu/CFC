@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Titan_One, Nunito } from "next/font/google";
 import "./globals.css";
+import LayoutWrapper from "./LayoutWrapper";
 
 const titanOne = Titan_One({
   variable: "--font-titan-one",
@@ -43,20 +44,9 @@ export default function RootLayout({
             </span>
           </div>
         </div>
-        {children}
-        <footer className="bg-cream-bg pt-12 px-10 relative overflow-hidden">
-          <div className="max-w-[1200px] mx-auto flex justify-between items-center flex-wrap gap-4 pb-5 border-b border-maroon-stroke/20">
-            <div className="font-black text-[11px] text-maroon-stroke/70 tracking-[1px] uppercase">
-              © 2024 CFC — ALLE RECHTE VORBEHALTEN
-            </div>
-          </div>
-          <div className="max-w-[1200px] mx-auto font-bold text-[11px] text-maroon-stroke/50 tracking-[2px] uppercase py-4">
-            Knusprige Flügel · Goldig Knusprig · Gegr. 2024
-          </div>
-          <div className="text-center pb-8 mt-4">
-            <img src="/uploads/Gemini_Generated_Image_xcfxgjxcfxgjxcfx.jpeg" alt="CFC Logo" className="h-[120px] w-auto rounded-full border-4 border-white shadow-xl mx-auto" />
-          </div>
-        </footer>
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
       </body>
     </html>
   );
