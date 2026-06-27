@@ -17,10 +17,15 @@ export default function Contact() {
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col gap-16">
         <div className="text-center">
           <h2 className="font-display text-[clamp(40px,7vw,80px)] text-cream-bg uppercase leading-none tracking-tight text-stroke-maroon">
-            LOGISTIK & STANDORTE
+            KONTAKT & LIEFERUNG
           </h2>
-          <div className="mt-8 inline-block px-6 py-2 bg-charcoal-dark text-accent-yellow font-black uppercase tracking-widest border-4 border-maroon-stroke shadow-[6px_6px_0px_rgba(255,199,44,0.5)] transform -rotate-2">
-            {isOpen ? '🟢 JETZT GEÖFFNET BIS 22:00 UHR' : '🔴 AKTUELL GESCHLOSSEN (Öffnet um 11:00)'}
+          <div className="mt-8 flex flex-col items-center gap-4">
+            <p className="font-bold text-cream-bg text-lg sm:text-xl uppercase tracking-widest max-w-[600px] mx-auto bg-charcoal-dark/50 p-4 rounded-xl border-2 border-maroon-stroke/30">
+              📍 Wir liefern in einem <span className="text-accent-yellow">Umkreis von bis zu 30 km</span> rund um Wetzlar.
+            </p>
+            <div className="inline-block px-6 py-2 bg-charcoal-dark text-accent-yellow font-black uppercase tracking-widest border-4 border-maroon-stroke shadow-[6px_6px_0px_rgba(255,199,44,0.5)] transform -rotate-2">
+              {isOpen ? '🟢 JETZT GEÖFFNET BIS 22:00 UHR' : '🔴 AKTUELL GESCHLOSSEN (Öffnet um 11:00)'}
+            </div>
           </div>
         </div>
 
