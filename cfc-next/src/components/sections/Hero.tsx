@@ -15,7 +15,7 @@ export default function Hero() {
               100% Halal · Wetzlars Bestes
             </div>
             
-            <h1 className="font-display text-[clamp(40px,8vw,110px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
+            <h1 className="font-display text-[clamp(40px,10vw,70px)] lg:text-[clamp(50px,5vw,90px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
               <span className="block text-stroke-maroon text-brand-red">FÜHLE DIE</span>
               <span className="block text-stroke-maroon text-cream-bg">VERÄNDERUNG.</span>
             </h1>
@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column (Video) */}
-          <div className="flex-1 w-full max-w-[400px] lg:max-w-[500px] relative mt-10 lg:mt-0 perspective-1000">
+          <div className="flex-1 w-full max-w-[400px] lg:max-w-[420px] xl:max-w-[500px] relative mt-10 lg:mt-0 perspective-1000">
             <div className="relative z-10 border-4 border-charcoal-dark shadow-[12px_12px_0px_#4C0016] rounded-2xl overflow-hidden aspect-[9/16] bg-charcoal-dark transform rotate-y-[-5deg] rotate-x-[2deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-transform duration-500">
               <video 
                 src="/videos/cfc-promo.mp4" 
