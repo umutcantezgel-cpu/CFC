@@ -7,29 +7,49 @@ export default function Hero() {
     <>
       <section className="pt-20 pb-20 px-8 relative overflow-hidden flex items-center justify-center min-h-[85vh]">
         
-        <div className="max-w-[700px] w-full relative z-20">
-          <div className="inline-block bg-accent-yellow text-charcoal-dark font-black text-xs tracking-widest uppercase px-5 py-2 rounded-full mb-6 shadow-[2px_2px_0px_rgba(0,0,0,0.12)]">
-            100% Halal · Wetzlars Bestes
+        <div className="max-w-[1200px] w-full relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          
+          {/* Left Column (Text) */}
+          <div className="flex-1 max-w-[700px]">
+            <div className="inline-block bg-accent-yellow text-charcoal-dark font-black text-xs tracking-widest uppercase px-5 py-2 rounded-full mb-6 shadow-[2px_2px_0px_rgba(0,0,0,0.12)]">
+              100% Halal · Wetzlars Bestes
+            </div>
+            
+            <h1 className="font-display text-[clamp(40px,8vw,110px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
+              <span className="block text-stroke-maroon text-brand-red">FÜHLE DIE</span>
+              <span className="block text-stroke-maroon text-cream-bg">VERÄNDERUNG.</span>
+            </h1>
+            
+            <p className="font-bold text-lg text-maroon-stroke/80 max-w-[480px] leading-relaxed mb-8">
+              Knusprig für die Mutigen, gemacht für die Hungrigen. Tauche ein in echtes Fried Chicken — jede knusprige Kante zählt.
+            </p>
+            
+            <div className="flex gap-4 flex-wrap items-center">
+              <Link href="/speisekarte" className="bg-brand-red text-white border-none px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer shadow-[4px_4px_0px_#1C1917] hover:translate-y-1 hover:shadow-[1px_1px_0px_#1C1917] transition-all text-center">
+                JETZT BESTELLEN
+              </Link>
+              <Link href="/speisekarte" className="bg-transparent text-charcoal-dark border-3 border-charcoal-dark px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer hover:bg-charcoal-dark hover:text-white transition-colors text-center">
+                SPEISEKARTE
+              </Link>
+            </div>
           </div>
-          
-          <h1 className="font-display text-[clamp(40px,9vw,140px)] leading-[0.85] text-charcoal-dark uppercase mb-6 tracking-tight">
-            <span className="block text-stroke-maroon text-brand-red">KNUSPRIG.</span>
-            <span className="block text-stroke-maroon text-cream-bg">FRISCH.</span>
-            <span className="block text-stroke-maroon text-accent-yellow">BESSER.</span>
-          </h1>
-          
-          <p className="font-bold text-lg text-maroon-stroke/80 max-w-[480px] leading-relaxed mb-8">
-            Wetzlars bestes knuspriges Hähnchen. 100% Halal. Besuche uns vor Ort, nutze den Drive-in oder bestelle kontaktlos über WhatsApp.
-          </p>
-          
-          <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/speisekarte" className="bg-brand-red text-white border-none px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer shadow-[4px_4px_0px_#1C1917] hover:translate-y-1 hover:shadow-[1px_1px_0px_#1C1917] transition-all text-center">
-              JETZT BESTELLEN
-            </Link>
-            <Link href="/speisekarte" className="bg-transparent text-charcoal-dark border-3 border-charcoal-dark px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase cursor-pointer hover:bg-charcoal-dark hover:text-white transition-colors text-center">
-              SPEISEKARTE
-            </Link>
+
+          {/* Right Column (Video) */}
+          <div className="flex-1 w-full max-w-[400px] lg:max-w-[500px] relative mt-10 lg:mt-0 perspective-1000">
+            <div className="relative z-10 border-4 border-charcoal-dark shadow-[12px_12px_0px_#4C0016] rounded-2xl overflow-hidden aspect-[9/16] bg-charcoal-dark transform rotate-y-[-5deg] rotate-x-[2deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-transform duration-500">
+              <video 
+                src="/videos/cfc-promo.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover scale-[1.02]" 
+              />
+              {/* Optional overlay gradient for brutalist vibe */}
+              <div className="absolute inset-0 bg-brand-red/10 mix-blend-color-burn pointer-events-none" />
+            </div>
           </div>
+
         </div>
       </section>
 
