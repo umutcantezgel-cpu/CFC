@@ -1,0 +1,4183 @@
+[
+  {
+    "id": "lib-meta-00",
+    "category": "Meta",
+    "name": "Master-Bibliothek — Metadaten",
+    "project": "_global",
+    "description": "Single Source of Truth. Drei zerlegte Projekte: apex (Apex Motors / Autohaus), heyfede (Hey Fede! Gastro-Kit), kaqua (K-Aqua Rohrsysteme). Bei neuen Uploads: nahtlos integrieren, niemals überschreiben.",
+    "properties": {
+      "version": "1.0",
+      "createdAt": "2026-06-19",
+      "projects": [
+        "apex",
+        "heyfede",
+        "kaqua",
+        "coday"
+      ],
+      "idScheme": "<project>-<category>-<slug>",
+      "totalEntries": 162,
+      "lastUpdated": "2026-06-20",
+      "languages": [
+        "de",
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "it",
+        "pt",
+        "nl",
+        "pl",
+        "tr",
+        "ru",
+        "zh"
+      ],
+      "note": "39 React-Bits/KokonutUI/mapcn Komponenten brand-adaptiert hinzugefügt"
+    }
+  },
+  {
+    "id": "apex-token-colors",
+    "category": "Tokens",
+    "project": "apex",
+    "name": "Apex — Farb-Tokens (Light-only, Premium-Rot)",
+    "description": "HSL-Channel-Tokens (als 'H S% L%' notiert, via hsl(var(--x)) konsumiert). Warmes Cream + tiefes Premium-Rot, gebrannte Sienna, antikes Gold. Kein Dark-Mode.",
+    "properties": {
+      "model": "hsl-channels",
+      "background": "30 25% 97%",
+      "foreground": "0 0% 10%",
+      "card": "0 0% 100%",
+      "card-elevated": "30 18% 94%",
+      "muted": "30 14% 92%",
+      "muted-foreground": "20 8% 38%",
+      "border": "20 8% 86%",
+      "border-strong": "20 8% 74%",
+      "primary": "0 72% 42%",
+      "primary-foreground": "0 0% 100%",
+      "accent": "12 60% 38%",
+      "premium": "38 55% 42%",
+      "success": "142 60% 36%",
+      "warning": "32 90% 44%",
+      "destructive": "0 72% 42%",
+      "info": "217 80% 48%",
+      "ring": "0 72% 42%"
+    },
+    "translations": {}
+  },
+  {
+    "id": "apex-token-type",
+    "category": "Tokens",
+    "project": "apex",
+    "name": "Apex — Typografie",
+    "description": "Display = Space Grotesk, Body = Inter, Mono = JetBrains Mono. Headings tracking -0.02em, line-height 1.1. ALLE Zahlen in font-mono mit tabular-nums (tnum).",
+    "properties": {
+      "font-display": "'Space Grotesk', system-ui, sans-serif",
+      "font-body": "'Inter', system-ui, sans-serif",
+      "font-mono": "'JetBrains Mono', 'SF Mono', monospace",
+      "scale": {
+        "display": "clamp(3.5rem,8vw,6rem)/0.95, w700, ls -0.04em",
+        "h1": "clamp(2.5rem,5vw,4rem)/1.05, w600, ls -0.03em",
+        "h2": "clamp(2rem,3.5vw,3rem)/1.1, w600, ls -0.02em",
+        "h3": "1.5rem/1.2, w600",
+        "h4": "1.25rem/1.3, w600",
+        "body-lg": "1.125rem/1.6",
+        "body": "1rem/1.65",
+        "sm": "0.875rem, w500",
+        "xs": "0.75rem, w600, uppercase, ls 0.08em",
+        "eyebrow": "mono 0.75rem, uppercase, ls 0.16em, color primary"
+      }
+    }
+  },
+  {
+    "id": "apex-token-radius-shadow",
+    "category": "Tokens",
+    "project": "apex",
+    "name": "Apex — Radien & Schatten",
+    "description": "Radius-Hierarchie: Buttons radius, Cards radius-lg, Heros/Modals radius-xl, Pills 9999px. Branded Glow-Schatten für Primär/Premium.",
+    "properties": {
+      "radius": "0.625rem",
+      "radius-sm": "0.375rem",
+      "radius-lg": "1rem",
+      "radius-xl": "1.5rem",
+      "shadow-card": "0 1px 2px rgba(40,20,20,0.06), 0 1px 1px rgba(40,20,20,0.04)",
+      "shadow-card-hover": "0 18px 40px -10px rgba(40,20,20,0.16), 0 6px 16px rgba(40,20,20,0.08)",
+      "shadow-glow-primary": "0 0 0 1px hsl(var(--primary)/0.18), 0 12px 28px hsl(var(--primary)/0.22)",
+      "shadow-glow-premium": "0 0 0 1px hsl(var(--premium)/0.25), 0 12px 28px hsl(var(--premium)/0.18)",
+      "shadow-modal": "0 24px 48px -12px rgba(40,20,20,0.24), 0 0 0 1px rgba(0,0,0,0.04)"
+    }
+  },
+  {
+    "id": "apex-token-layout",
+    "category": "Tokens",
+    "project": "apex",
+    "name": "Apex — Layout & Spacing",
+    "description": "Container max 80rem (1280px), responsive Padding, große Section-Rhythmen.",
+    "properties": {
+      "container": "max-width:80rem; padding 0 1rem → 1.5rem → 2rem",
+      "section-y": "6rem → 8rem → 10rem",
+      "card-padding": "1.5rem (p-6), Hero 2–3rem",
+      "body-line-height": "1.65",
+      "font-feature-settings": "'cv11','ss01'"
+    }
+  },
+  {
+    "id": "apex-comp-button",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Button (.btn)",
+    "description": "Höhe 2.75rem, radius var(--radius). Varianten primary/ghost/outline + Größen sm/lg/xl/icon. Press = scale(0.97).",
+    "properties": {
+      "base": "inline-flex; gap:0.5rem; height:2.75rem; padding:0 1.25rem; border-radius:var(--radius); font-body w500 0.9375rem; border:1px solid transparent",
+      "primary": "bg:hsl(var(--primary)); color:primary-foreground",
+      "ghost": "transparent; border:border-strong",
+      "outline": "transparent; border:border",
+      "sizes": {
+        "sm": "2.25rem",
+        "lg": "3rem",
+        "xl": "3.5rem",
+        "icon": "2.5rem"
+      }
+    },
+    "animation": {
+      "transition": "transform 100ms ease-in, background 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms"
+    },
+    "states": {
+      "hover-primary": "background:hsl(var(--primary)/0.9); box-shadow:var(--shadow-glow-primary)",
+      "active": "transform:scale(0.97)",
+      "focus-visible": "box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring))"
+    },
+    "animation_free_fallback": "Keine transform/box-shadow-Übergänge; Hover nur als Farbwechsel."
+  },
+  {
+    "id": "apex-comp-card",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Card (.card)",
+    "description": "Weiße Fläche, Haarlinien-Border, sehr weicher Schatten (Apple-Stil). Hoverable hebt um 1px an. Premium-Variante mit Gold-Glow.",
+    "properties": {
+      "base": "bg:hsl(var(--card)); border:1px solid hsl(var(--border)); border-radius:var(--radius-lg); box-shadow:var(--shadow-card)",
+      "hover": "box-shadow:var(--shadow-card-hover); transform:translateY(-1px)",
+      "premium": "box-shadow:var(--shadow-glow-premium)",
+      "top-listing": "border:premium/0.45; mehrlagiger Gold-Glow-Shadow + Gradient-Overlay"
+    },
+    "animation": {
+      "transition": "box-shadow 350ms cubic-bezier(0.16,1,0.3,1), transform 350ms cubic-bezier(0.16,1,0.3,1)"
+    },
+    "animation_free_fallback": "Statische Border + shadow-card, kein Translate beim Hover."
+  },
+  {
+    "id": "apex-comp-input",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Input / Select / Textarea",
+    "description": "Muted-Fläche, Border, Focus-Ring 3px primary/0.18 und Wechsel auf weiße Card-Fläche.",
+    "properties": {
+      "base": "width:100%; height:2.75rem; padding:0 0.875rem; bg:hsl(var(--muted)); border:1px solid hsl(var(--border)); border-radius:var(--radius); 0.9375rem",
+      "focus": "border-color:hsl(var(--ring)); box-shadow:0 0 0 3px hsl(var(--ring)/0.18); background:hsl(var(--card))",
+      "textarea": "min-height:8rem; resize:vertical"
+    }
+  },
+  {
+    "id": "apex-comp-badge",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Badge (.badge) + Trust-Chip + Price-Rating",
+    "description": "Pillen-Labels (radius 9999px), uppercase, ls 0.08em. Trust-Chips Haarlinie; Price-Rating monochrome mit farbigem Dot. Top-Listing = Gold-Gradient.",
+    "properties": {
+      "badge": "padding:0.25rem 0.625rem; radius:9999px; 0.6875rem w600 uppercase ls0.08em; bg muted",
+      "variants": "primary/premium/success/warning/destructive/accent/outline (je farbiger bg/.15 + Text + Border)",
+      "trust-chip": "padding:3px 9px; radius:9999px; 11px w500; bg background; border 1px",
+      "price-rating": "radius:9999px; ::before farbiger Dot (success/foreground/primary) statt Icon",
+      "badge-top-listing": "Gold-Gradient hsl(40 70% 78%)→hsl(38 48% 54%), inset Glanz-Shadows"
+    }
+  },
+  {
+    "id": "apex-comp-glass-header",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Glass & Sticky-Header",
+    "description": "Glassmorphism (blur 20px saturate 140%). Header transparent → bei .scrolled blur 24px + bg/0.78 + Border.",
+    "properties": {
+      "glass": "bg:hsl(var(--card)/0.55); backdrop-filter:blur(20px) saturate(140%); border:1px solid hsl(var(--border)/0.7)",
+      "header-scrolled": "bg:hsl(var(--background)/0.78); backdrop-filter:blur(24px) saturate(180%); border-bottom:border"
+    },
+    "animation": {
+      "transition": "background 250ms ease-out, border-color 250ms, backdrop-filter 250ms"
+    }
+  },
+  {
+    "id": "apex-comp-market-meter",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Markt-Preis-Meter & Preis-Histogramm",
+    "description": "Datenviz für Fahrzeugpreis vs. Markt: 3-Zonen-Track (good/fair/high) mit Thumb-Flag; Histogramm mit eigenem 'unser Preis'-Pin.",
+    "properties": {
+      "meter-zones": "z-good 38% (grün), z-fair 30% (grün→amber), z-high 32% (amber→rot)",
+      "meter-thumb": "18px Dot, foreground, 3px bg-Border; Flag mono 12px",
+      "histogram-bars": "ph-bar-good grün / -fair amber / -high rot / -our primary +Ring",
+      "ph-pin": "Flag (foreground bg, background text) + Linie + Dot"
+    },
+    "animation": {
+      "bar-transition": "all 300ms cubic-bezier(0.16,1,0.3,1)"
+    }
+  },
+  {
+    "id": "apex-comp-mag-gallery",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Magazine-Gallery (Editorial-Mosaik)",
+    "description": "3-Spalten-Mosaik 16:9, ein großes Hero-Tile + 4 kleine. Glass-Toggle-Steuerung, Lightbox mit Prev/Next.",
+    "properties": {
+      "grid": "grid-template-columns:1.4fr 1fr 1fr; rows 1fr 1fr; gap 8px; aspect 16/9",
+      "tile-hover": "veh-img scale(1.03), transition 600ms cubic-bezier(0.16,1,0.3,1)",
+      "lightbox": "fixed; bg hsl(0 0% 4%/0.92); blur 8px; stage min(1200px,80vw) 16:10"
+    },
+    "animation": {
+      "lightbox-in": "lbIn 240ms ease-out (opacity 0→1)"
+    }
+  },
+  {
+    "id": "apex-comp-timeline",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Vertikale Fahrzeug-Timeline",
+    "description": "Historien-Timeline mit Summary-Grid (4 Spalten) + vertikaler Linie, Dots mit Puls-Ring.",
+    "properties": {
+      "summary": "grid 4 Spalten, border-left Trenner",
+      "timeline-line": "1px hsl(var(--border)), padding-left 28px",
+      "dot": "12px, dot-inner radius 50% +4px card box-shadow; dot-pulse 1px Border"
+    }
+  },
+  {
+    "id": "apex-comp-feature-grid",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Feature-Grid & Dealer-Signals",
+    "description": "Ausstattungs-Gruppen mit Fortschrittsbalken (primary→accent Gradient); Händler-Signal-Karte mit verifiziertem Avatar.",
+    "properties": {
+      "feature-group": "padding 24px; border; radius-lg; Icon 36px bg primary/0.1",
+      "feature-bar-fill": "gradient primary→accent; transition width 600ms ease-out",
+      "dealer-avatar": "48px; gradient primary→accent; verified-Badge 18px success"
+    }
+  },
+  {
+    "id": "apex-anim-keyframes",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Keyframes & Motion-Spec",
+    "description": "megaIn (Mega-Menu), lbIn (Lightbox). Framer-Motion-Spezifikation aus dem Migrations-Prompt: nur transform/opacity animieren, max 3 gleichzeitig.",
+    "properties": {
+      "megaIn": "from{opacity:0;translateY(-6px)} to{opacity:1;translateY(0)}",
+      "lbIn": "opacity 0→1, 240ms ease-out",
+      "hero-headline": "Wort-für-Wort stagger, y:30→0, delay 0.08s",
+      "card-grid": "whileInView stagger 0.06s, y:20→0",
+      "counter": "1.5s ease-out useMotionValue",
+      "modal": "scale 0.95→1 + fade, 300ms spring (stiffness 250, damping 25)"
+    },
+    "animation": {
+      "durations": "fast hover, 300ms standard, page-transition 400ms ease-in-out"
+    },
+    "animation_free_fallback": "useReducedMotion → alle Durations 0.01s; niemals layout-props animieren."
+  },
+  {
+    "id": "apex-a11y",
+    "category": "Accessibility",
+    "project": "apex",
+    "name": "Apex — Barrierefreiheit (WCAG 2.1 AA)",
+    "description": "Skip-Link, Focus-Ring, Status-Pills immer Icon+Text, Touch ≥44px, prefers-reduced-motion.",
+    "properties": {
+      "skip-link": "position:absolute; top:-100px → :focus top:8px; bg primary",
+      "focus-visible": "ring-2 ring-ring ring-offset-2",
+      "touch-target": "≥44×44px",
+      "rules": "Heading-Hierarchie strikt; aria-label auf Icon-Buttons; <label> statt placeholder-only; role=alert für Fehler"
+    },
+    "animation_free_fallback": "Status nie nur über Farbe — immer zusätzliches Icon + Textlabel."
+  },
+  {
+    "id": "apex-copy-de",
+    "category": "Translations",
+    "project": "apex",
+    "name": "Apex — Wording & Copy (DE, formell Sie)",
+    "description": "Single-Language Deutsch, formell. Verbindliche Begriffe + erlaubte/verbotene Phrasen.",
+    "properties": {
+      "terms": "Fahrzeuge (nicht Autos), Probefahrt, Inzahlungnahme, Werkstatt, Erstzulassung MM/YYYY, '190 kW (258 PS)', '29.500 €'",
+      "allowed": [
+        "Kuratierte Auswahl",
+        "Premium-Selektion",
+        "Sorgfältig geprüft",
+        "Aus erster Hand",
+        "Scheckheftgepflegt"
+      ],
+      "forbidden": [
+        "Schnäppchen",
+        "Mega-Deal",
+        "Bestpreis-Garantie",
+        "übertriebene Superlative"
+      ]
+    },
+    "translations": {
+      "de": "Probefahrt vereinbaren",
+      "en": "Schedule test drive"
+    }
+  },
+  {
+    "id": "heyfede-token-colors",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Farbpalette (Terracotta / Cream)",
+    "description": "Warme Gastro-Palette. Terracotta = Primär/CTA, Cream = Standard-Hintergrund. Keine Sättigung über diese Töne hinaus.",
+    "properties": {
+      "model": "hex",
+      "cream": "#f5efe8",
+      "soft-beige": "#eedfcc",
+      "waffle-peach": "#E4C0A8",
+      "terracotta": "#CC624C",
+      "terracotta-dark": "#b5523d",
+      "dark": "#2d1f19",
+      "dark-mid": "#5c3d35",
+      "dark-soft": "#9a7060",
+      "white": "#fefefe"
+    }
+  },
+  {
+    "id": "heyfede-token-type",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Typografie",
+    "description": "Calistoga (Display/Headlines), Nunito (Body/UI). Headings line-height 1.1, Body 1.7. Niemals andere Schriften mischen. Google Fonts.",
+    "properties": {
+      "font-display": "'Calistoga', serif",
+      "font-body": "'Nunito', sans-serif",
+      "import": "fonts.googleapis.com Calistoga + Nunito(400..900)",
+      "h1": "400 clamp(2.2rem,6vw,4rem)/1.1 Calistoga",
+      "h2": "400 clamp(1.7rem,4vw,2.8rem)/1.1 Calistoga",
+      "body": "400 1rem/1.7 Nunito, max-width 46ch",
+      "strong": "800 1rem Nunito",
+      "meta": "500 11px ui-monospace"
+    }
+  },
+  {
+    "id": "heyfede-token-radius-shadow",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Radien, Schatten & Easing",
+    "description": "Pill (100px) für Buttons/Tags, lg (32px) für große Karten. shadow-terra = farbiger Hover-Schatten. Spring-Easing für verspieltes Gefühl.",
+    "properties": {
+      "radius-sm": "12px",
+      "radius-md": "20px",
+      "radius-lg": "32px",
+      "radius-pill": "100px",
+      "shadow-sm": "0 2px 12px rgba(45,31,25,0.06)",
+      "shadow-md": "0 6px 28px rgba(45,31,25,0.10)",
+      "shadow-lg": "0 12px 48px rgba(45,31,25,0.14)",
+      "shadow-terra": "0 8px 32px rgba(204,98,76,0.22)",
+      "ease-spring": "cubic-bezier(0.34,1.56,0.64,1)",
+      "ease-smooth": "cubic-bezier(0.25,0.1,0.25,1)"
+    }
+  },
+  {
+    "id": "heyfede-comp-btn-primary",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Primary-Button (mit Bissspur)",
+    "description": "Marken-Signatur: Terracotta-Pille mit federndem Hover (scale + farbiger Schatten) und einbeißender 'Bissspur' unten links. --bite muss = Sektions-Hintergrundfarbe sein. Reines CSS.",
+    "properties": {
+      "btn": "bg #CC624C; color #fefefe; 800 .9rem Nunito; padding 13px 30px; radius 100px; shadow 0 3px 12px rgba(204,98,76,.18)",
+      "bite-notch": "::after Kreis 18px in var(--bite,#f5efe8), unten links 14px, scale 0→1 bei hover"
+    },
+    "animation": {
+      "transition": "all .28s var(--ease-spring)",
+      "hover": "bg #b5523d; transform scale(1.05) translateY(-1px); shadow 0 8px 28px rgba(204,98,76,.34); Bissspur scale(1)",
+      "active": "scale(.95)"
+    },
+    "animation_free_fallback": "Statische Terracotta-Pille; Bissspur dauerhaft sichtbar oder weggelassen, kein scale."
+  },
+  {
+    "id": "heyfede-comp-btn-secondary",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Secondary-Button",
+    "description": "Umrandete Terracotta-Pille, füllt sich bei Hover. Für 'Mehr erfahren', 'Speisekarte ansehen'.",
+    "properties": {
+      "base": "transparent; color #CC624C; border 2px solid #CC624C; padding 11px 28px; radius 100px",
+      "hover": "bg #CC624C; color #fefefe",
+      "active": "scale(.95)"
+    }
+  },
+  {
+    "id": "heyfede-comp-tag",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Tag-Badges",
+    "description": "Kleine Pillen-Labels für Produkt-Status. terra=gefüllt (Bestseller), outline=dezent (Kategorie), dark=neutral.",
+    "properties": {
+      "base": "800 .72rem Nunito; padding 5px 13px; radius 100px",
+      "terra": "bg #CC624C; color #fefefe",
+      "outline": "transparent; inset 0 0 0 1.5px #CC624C; color #CC624C",
+      "dark": "bg #2d1f19; color #fefefe"
+    }
+  },
+  {
+    "id": "heyfede-comp-rating-ticket-quickinfo",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Rating-Sterne, Ticket-Karte, Quick-Info",
+    "description": "Sterne Terracotta (leer = Waffle-Peach). Ticket-Karte mit gestricheltem Rand + Perforations-Löchern (--ticket-bg = Sektions-BG). Quick-Info Soft-Beige.",
+    "properties": {
+      "stars": "color #CC624C; halbe Sterne #E4C0A8; Wert b 800 #2d1f19",
+      "ticket": "border 2px dashed #CC624C; radius 20px; Löcher 26px Kreis links/rechts",
+      "quickinfo": "bg #eedfcc; radius 16px; padding 16px 20px"
+    }
+  },
+  {
+    "id": "heyfede-comp-header-footer",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Header & Footer",
+    "description": "Header: Glas-BG (blur 16px), Logo links/Nav mittig/CTA rechts, aktiver Link .is-active. Footer: 4 Spalten Soft-Beige (auto-fit minmax).",
+    "properties": {
+      "header": "bg rgba(245,239,232,.96); blur 16px; height 68px; max 1200px",
+      "nav-link": "600 .87rem Nunito; padding 8px 18px; radius 50px; hover bg rgba(238,223,204,.6)",
+      "nav-active": "bg #eedfcc; color #CC624C; 800",
+      "footer": "bg #eedfcc; grid auto-fit minmax(180px,1fr); h Calistoga #CC624C",
+      "note": "Scroll-Blur ab 28px + Mobil-Hamburger benötigen JS (global-v2.jsx)"
+    }
+  },
+  {
+    "id": "heyfede-asset-logo-motifs",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Marken-Motive (Blob, Wave, Stempel, Bissspur, Platzhalter)",
+    "description": "Wiedererkennbare visuelle Signaturen. Logo = organischer Blob in Waffle-Peach; Wave-Divider als Sektions-Übergang; Stempel-Badge mit Text auf Kreisbahn; Bissspur abgeleitet vom Logo-Ausrufezeichen; Food-Platzhalter (in Produktion durch <img> ersetzen).",
+    "properties": {
+      "blob-radius": "42% 58% 63% 37% / 41% 44% 56% 59%",
+      "wave-divider": "3 Varianten (Sinus / asymm. Teig / einzelner Bogen); fill = ausgehende Sektion; scaleY(-1) zum Spiegeln",
+      "stamp": "runder Stempel, gestrichelter Rand, textPath auf Kreisbahn, leicht rotiert",
+      "food-placeholder": "bg #E4C0A8; Icon + Monospace-Label 9px #CC624C",
+      "dot-bg": "radial-gradient(circle, rgba(204,98,76,0.13) 1.5px, transparent 1.5px) size 24px"
+    }
+  },
+  {
+    "id": "heyfede-anim-blob-lava",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Blob-Float & Lava-Wellen-Trenner",
+    "description": "Das 'Wow'-Highlight. blobFloat: langsames Schweben. lava-line / lava-band: zwei gegenläufige Wellen-Ebenen (vorne --lava, hinten --lava2), endlos fließend, full-bleed zwischen Sektionen. Reines CSS+SVG.",
+    "properties": {
+      "blobFloat": "9s ease-in-out infinite (translate/scale)",
+      "wave-l": "translateX(0 → -50%)",
+      "wave-r": "translateX(-50% → 0)",
+      "lava-line": "height 88px; flow-f 14s / flow-b 21s; stroke 22 round",
+      "lava-band": "height 150px; flow-f 17s / flow-b 26s; gefüllt",
+      "hover-lift": "transform translateY(-4px) + shadow-terra, .3s ease-spring"
+    },
+    "animation": {
+      "easing": "var(--ease-spring) cubic-bezier(0.34,1.56,0.64,1)"
+    },
+    "animation_free_fallback": "@media (prefers-reduced-motion: reduce){ .hf-lava-* .flow { animation-play-state: paused; } } — Welle friert in Ruheposition ein."
+  },
+  {
+    "id": "heyfede-copy-de",
+    "category": "Translations",
+    "project": "heyfede",
+    "name": "Hey Fede — Voice & Copy (DE)",
+    "description": "Verspielter, warmer Gastro-Ton (Du-Form). Google-Rating-Muster '4.8 · 84 Bewertungen'. Beispiel-CTAs.",
+    "properties": {
+      "tone": "verspielt, lebendig, 'wow'; Du-Form",
+      "rating-pattern": "4.8 · 84 Bewertungen",
+      "tag-labels": [
+        "Bestseller",
+        "Beliebt",
+        "Neu"
+      ]
+    },
+    "translations": {
+      "de": "Speisekarte ansehen",
+      "en": "View menu"
+    }
+  },
+  {
+    "id": "kaqua-token-brand-ramp",
+    "category": "Tokens",
+    "project": "kaqua",
+    "name": "K-Aqua — Brand- & Aqua-Ramp (oklch)",
+    "description": "Lila Marke #5B2D8C ≈ brand-600, plus Aqua-Akzent. Primitive in oklch für gleichmäßige Wahrnehmung. Hue 302–305.",
+    "properties": {
+      "model": "oklch",
+      "brand-50": "oklch(0.97 0.02 305)",
+      "brand-100": "oklch(0.93 0.045 305)",
+      "brand-200": "oklch(0.86 0.08 305)",
+      "brand-300": "oklch(0.76 0.12 305)",
+      "brand-400": "oklch(0.62 0.16 303)",
+      "brand-500": "oklch(0.51 0.18 302)",
+      "brand-600": "oklch(0.44 0.17 302)",
+      "brand-700": "oklch(0.38 0.15 302)",
+      "brand-800": "oklch(0.31 0.12 302)",
+      "brand-900": "oklch(0.25 0.09 302)",
+      "aqua-300": "oklch(0.85 0.09 210)",
+      "aqua-400": "oklch(0.77 0.11 215)",
+      "aqua-500": "oklch(0.68 0.12 220)",
+      "aqua-600": "oklch(0.56 0.11 225)",
+      "hex-ref": "#5B2D8C (Marke)"
+    }
+  },
+  {
+    "id": "kaqua-token-semantic-light",
+    "category": "Tokens",
+    "project": "kaqua",
+    "name": "K-Aqua — Semantische Tokens (Light)",
+    "description": "[data-theme=light]. Helle, fast neutrale Flächen mit lila Tint. Glas-Nav, diffuse + lift Schatten, Hero-Wash Radial-Gradienten.",
+    "properties": {
+      "background": "oklch(0.985 0.004 300)",
+      "foreground": "oklch(0.22 0.03 300)",
+      "muted-foreground": "oklch(0.48 0.025 300)",
+      "card": "#ffffff",
+      "card-border": "oklch(0.91 0.012 302)",
+      "primary": "var(--brand-600)",
+      "primary-hover": "var(--brand-700)",
+      "accent": "var(--aqua-500)",
+      "nav-glass": "oklch(0.985 0.004 300 / 0.72)",
+      "shadow-diffuse": "0 1px 2px .../ 0 8px 24px -8px ...",
+      "shadow-lift": "0 2px 4px .../ 0 16px 40px -12px ...",
+      "hero-wash": "radial 1100x520 @78%-10% brand + radial 900x480 @12%110% aqua"
+    }
+  },
+  {
+    "id": "kaqua-token-semantic-dark",
+    "category": "Tokens",
+    "project": "kaqua",
+    "name": "K-Aqua — Semantische Tokens (Dark / OLED)",
+    "description": "[data-theme=dark]. Echtes OLED-Schwarz #0A0A0F. Primary wechselt auf hellere brand-400, Akzent aqua-400.",
+    "properties": {
+      "background": "#0A0A0F",
+      "background-subtle": "oklch(0.17 0.015 300)",
+      "foreground": "oklch(0.94 0.008 300)",
+      "card": "oklch(0.185 0.02 300)",
+      "card-border": "oklch(0.3 0.025 300 / 0.7)",
+      "primary": "var(--brand-400)",
+      "primary-hover": "var(--brand-300)",
+      "accent": "var(--aqua-400)",
+      "nav-glass": "oklch(0.12 0.015 300 / 0.66)"
+    }
+  },
+  {
+    "id": "kaqua-token-type-space-motion",
+    "category": "Tokens",
+    "project": "kaqua",
+    "name": "K-Aqua — Typografie, Spacing, Radius & Motion",
+    "description": "Outfit (Heading) + Inter (Body). 4/8pt-Spacing. Radius 16/24/full. Motion 150/250ms mit Standard- und Out-Easing.",
+    "properties": {
+      "font-heading": "'Outfit', sans-serif",
+      "font-body": "'Inter', sans-serif",
+      "spacing": "sp-1..sp-24 = 4,8,12,16,24,32,48,64,96px",
+      "radius": "16px",
+      "radius-lg": "24px",
+      "radius-full": "9999px",
+      "dur-fast": "150ms",
+      "dur": "250ms",
+      "ease": "cubic-bezier(0.4,0,0.2,1)",
+      "ease-out": "cubic-bezier(0.16,1,0.3,1)",
+      "container": "1200px"
+    }
+  },
+  {
+    "id": "kaqua-comp-filter-chip",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Filter-Chip & Range",
+    "description": "Segmentierter Filter-Chip, min-height 44px (Touch). Aktiv = primary-Fläche. Range mit accent-color primary.",
+    "properties": {
+      "chip": "min-height 44px; padding 0 sp-4; radius full; border card-border; Outfit 600 15px",
+      "hover": "border+color primary",
+      "active": "scale(0.97)",
+      "is-on": "bg primary; color primary-foreground",
+      "range": "accent-color primary; min-height 44px"
+    }
+  },
+  {
+    "id": "kaqua-comp-mega-marquee",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Mega-Menu & Marquee",
+    "description": "Vollflächiges Glas-Mega-Menu (blur 28px). Items mit großer Outfit-Headline, hover translateX(4px). Marquee-Band aus Outfit 700.",
+    "properties": {
+      "mega": "fixed inset0; bg nav-glass; backdrop-blur 28px saturate 1.5; padding 96px",
+      "mega-item": "radius var(--radius); hover bg primary-soft + translateX(4px); .t clamp(22px,2.6vw,30px) 800",
+      "marquee-track": "Outfit 700 20px; .dot accent-strong; gap sp-12"
+    },
+    "animation": {
+      "kmarquee": "translateX(0 → -100%) 28s linear infinite (nur html.anim-ok)"
+    }
+  },
+  {
+    "id": "kaqua-comp-tools",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Interaktive Tools (Quiz, VS-Table, Onion, Steps, Type-Card)",
+    "description": "Werkzeug-Bausteine: Quiz-Optionen mit correct/wrong-States, Vergleichsspalten (bad gestrichelt / good inverse), KESSEL-Zwiebelmodell, RFQ-Stepper, Typ-Karten, großes Ergebnis-Number.",
+    "properties": {
+      "quiz-opt": "min-height 56px; border 1.5px; is-correct grün / is-wrong rot Tint",
+      "vs-col": "radius-lg; .bad gestrichelt muted / .good inverse-surface + shadow-lift",
+      "onion-ring": "radius 50%; is-on border+bg primary-soft; Label-Pille",
+      "steps": "Pille min-44px; is-now border primary / is-done primary-soft",
+      "type-card": "min-height 120px; border 1.5px; is-on border+bg primary-soft",
+      "result-num": "Outfit 800 clamp(44px,5vw,68px); tabular-nums; color primary"
+    }
+  },
+  {
+    "id": "kaqua-comp-geo-orbit",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Geo-Items, Tooltip & Orbit-Cards (Scrollytelling-Globus)",
+    "description": "Markt-Listeneinträge (hover translateX + Pfeil einblenden), Globus-Tooltip, schwebende Orbit-Karten im sticky Scrolly-Stage (380vh).",
+    "properties": {
+      "geo-item": "min-height 56px; .city Outfit 700 17px; hover bg primary-soft + translateX(4px) + svg opacity 1",
+      "geo-tooltip": "card; shadow-lift; pointer-events none",
+      "orbit-card": "nav-glass; blur 14px; radius-lg; is-in opacity1 transform none (von translateY28 scale0.92)",
+      "scrolly": "height 380vh; stage sticky 100vh; globe canvas grab-cursor"
+    },
+    "animation": {
+      "orbit-in": "opacity+transform 500ms var(--ease-out)"
+    }
+  },
+  {
+    "id": "kaqua-comp-lang-input",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Sprach-Picker, Input & Doc-Check",
+    "description": "Dropdown-Sprachmenü (12 Locales, inset-inline-end für RTL), Formular-Input min-48px, Dokumenten-Checkbox.",
+    "properties": {
+      "lang-menu": "absolute; min-width 200px; card; shadow-lift; items min-44px",
+      "input": "min-height 48px; border card-border; focus outline 2px ring; hover border primary",
+      "doc-check": "min-height 52px; input 20px accent-color primary; is-on border+bg primary-soft"
+    }
+  },
+  {
+    "id": "kaqua-anim-motion",
+    "category": "Animations",
+    "project": "kaqua",
+    "name": "K-Aqua — Motion-System (Reveal, Wipe, Marquee, Hint)",
+    "description": "Reveal-Pattern via html.anim-ok-Gate (in Capture-Iframes ohne rAF rendert finaler Zustand). Page-Wipe als Tropfen, Scroll-Hint-Pfeil.",
+    "properties": {
+      "reveal": "opacity 0→1 + translateY(22→0), 600ms var(--ease-out), pre-class reveal-pre",
+      "anim-ok-gate": "Klasse erst nach erster rAF; Capture-Iframes überspringen → sofort sichtbar",
+      "kwipe": "translateY 100%→0→-100% mit border-radius-Morph, 820ms cubic-bezier(0.76,0,0.24,1)",
+      "kwipedrop": "scale 0.6→1→1.25, opacity Puls",
+      "kshint": "Pfeil rotate(90) translateX 4px, 1.6s infinite"
+    },
+    "animation_free_fallback": "@media (prefers-reduced-motion: reduce) → animation/transition-duration 0.01ms !important global; anim-ok-Klasse fehlt → Inhalte im Endzustand."
+  },
+  {
+    "id": "kaqua-a11y-glove-rtl",
+    "category": "Accessibility",
+    "project": "kaqua",
+    "name": "K-Aqua — Glove-Mode (Baustelle), RTL & Focus",
+    "description": "Baustellen-Modus html[data-glove=on]: alles vergrößert (Body 19px, Buttons 64px, Quiz 72px), höherer Kontrast. Voll RTL-fähig (dir=rtl spiegelt Hover/Icons). focus-visible 2px ring.",
+    "properties": {
+      "glove-on": "body 19px; k-btn min 64px; nav-link 56px; icon-btn 56px; chip 64px; quiz 72px; höherer Kontrast (light)",
+      "rtl": "[dir=rtl] hover translateX(-4px); svg scaleX(-1); geo-item Pfeil links",
+      "focus-visible": "outline 2px solid var(--ring); offset 2px; radius 4px",
+      "selection": "::selection bg primary, color primary-foreground"
+    }
+  },
+  {
+    "id": "kaqua-i18n-core",
+    "category": "Translations",
+    "project": "kaqua",
+    "name": "K-Aqua — i18n Kern (12 Locales, RTL-aware)",
+    "description": "12 Sprachen: de,en,ar(rtl),fr,es,it,pt,nl,pl,tr,ru,zh. Marken-Claim 'Leading in Water Supply' bleibt EN. Hier: nav-, home- und footer-Schlüssel in DE/EN/AR.",
+    "properties": {
+      "langs": [
+        "de",
+        "en",
+        "ar(rtl)",
+        "fr",
+        "es",
+        "it",
+        "pt",
+        "nl",
+        "pl",
+        "tr",
+        "ru",
+        "zh"
+      ],
+      "keep-en": "Brand-Claim 'Leading in Water Supply'",
+      "interpolation": "{n} Märkte, {c} Länder, {city}"
+    },
+    "translations": {
+      "nav.products": {
+        "de": "Produkte",
+        "en": "Products",
+        "ar": "المنتجات"
+      },
+      "nav.finder": {
+        "de": "Produktfinder",
+        "en": "Product Finder",
+        "ar": "باحث المنتجات"
+      },
+      "nav.co2": {
+        "de": "CO₂-Rechner",
+        "en": "CO₂ Calculator",
+        "ar": "حاسبة CO₂"
+      },
+      "nav.markets": {
+        "de": "Märkte",
+        "en": "Markets",
+        "ar": "الأسواق"
+      },
+      "nav.contact": {
+        "de": "Kontakt",
+        "en": "Contact",
+        "ar": "اتصل بنا"
+      },
+      "nav.quote": {
+        "de": "Angebot anfragen",
+        "en": "Request a quote",
+        "ar": "اطلب عرضًا"
+      },
+      "home.h1": {
+        "de": "Führend in der Wasserversorgung.",
+        "en": "Leading in Water Supply.",
+        "ar": "—"
+      },
+      "home.ctaProducts": {
+        "de": "Produktsystem entdecken",
+        "en": "Explore the product system"
+      },
+      "home.ctaContact": {
+        "de": "Kontakt aufnehmen",
+        "en": "Get in touch"
+      },
+      "footer.tagline": {
+        "de": "K-Aqua — führend in der Wasserversorgung. PP-R/PP-RCT-Rohrsysteme für Trinkwasser, gefertigt von der KWT GmbH in Waldsolms.",
+        "en": "K-Aqua — Leading in Water Supply. PP-R/PP-RCT piping systems for drinking water, made by KWT GmbH in Waldsolms, Germany."
+      },
+      "footer.imprint": {
+        "de": "Impressum",
+        "en": "Imprint"
+      },
+      "footer.privacy": {
+        "de": "Datenschutz",
+        "en": "Privacy"
+      }
+    }
+  },
+  {
+    "id": "apex-anim-megaIn",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — megaIn (Mega-Menu Reveal)",
+    "description": "Dropdown-Reveal des 3-Spalten-Mega-Menus.",
+    "properties": {
+      "keyframe": "from{opacity:0;translateY(-6px)} to{opacity:1;translateY(0)}",
+      "duration": "180ms",
+      "easing": "ease-out",
+      "trigger": "Hover (Desktop) / Click (Touch)"
+    },
+    "animation_free_fallback": "Panel erscheint ohne Translate, nur display:grid."
+  },
+  {
+    "id": "apex-anim-shimmer",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Shimmer-CTA",
+    "description": "Glanz-Sweep über Primär-Buttons bei Hover.",
+    "properties": {
+      "overlay": "linear-gradient(100deg,transparent,white/.38,transparent) 45% Breite",
+      "keyframe": "translateX(-130% → 240%)",
+      "duration": "900ms ease",
+      "trigger": "hover"
+    },
+    "animation_free_fallback": "Kein Sweep; statischer Button."
+  },
+  {
+    "id": "apex-anim-counter",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Number-Counter",
+    "description": "Trust-Zahlen zählen weich hoch (useInView + Spring/Tween).",
+    "properties": {
+      "duration": "1500ms",
+      "easing": "ease-out cubic (1-(1-p)^3)",
+      "format": "de-DE tabular-nums, k-Suffix für Tausender"
+    },
+    "animation_free_fallback": "Endwert sofort anzeigen."
+  },
+  {
+    "id": "apex-anim-fadeup",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Stagger fadeUp Reveal",
+    "description": "Zeilen/Karten erscheinen versetzt beim In-View.",
+    "properties": {
+      "keyframe": "opacity 0→1, translateY(20→0)",
+      "duration": "600ms",
+      "easing": "cubic-bezier(0.16,1,0.3,1)",
+      "stagger": "0.06–0.12s je Element"
+    },
+    "animation_free_fallback": "opacity:1, kein Translate/Delay."
+  },
+  {
+    "id": "apex-anim-card-press",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Card/Button Press & Hover",
+    "description": "Taktile Mikrointeraktionen.",
+    "properties": {
+      "button-active": "scale(0.97)",
+      "button-hover-primary": "bg/.9 + shadow-glow-primary",
+      "card-hover": "translateY(-1px) + shadow-card-hover",
+      "card-transition": "350ms cubic-bezier(0.16,1,0.3,1)",
+      "image-hover": "scale(1.05) 500ms (internes Element, nicht Card)"
+    },
+    "animation_free_fallback": "Nur Farb-/Schattenwechsel ohne Transform."
+  },
+  {
+    "id": "apex-anim-lightbox",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Lightbox-Galerie",
+    "description": "Vollbild-Bildbetrachter mit Prev/Next.",
+    "properties": {
+      "in": "lbIn 240ms ease-out (opacity 0→1)",
+      "backdrop": "hsl(0 0% 4%/0.92) + blur 8px",
+      "nav": "56px Kreise links/rechts, close 44px",
+      "stage": "min(1200px,80vw) 16:10"
+    },
+    "animation_free_fallback": "Sofort sichtbar ohne Fade."
+  },
+  {
+    "id": "apex-anim-page",
+    "category": "Animations",
+    "project": "apex",
+    "name": "Apex — Page-Transition (Spec)",
+    "description": "Seitenwechsel-Übergang (Next.js template.tsx).",
+    "properties": {
+      "effect": "fade + slight y-shift",
+      "duration": "400ms ease-in-out",
+      "modal": "scale 0.95→1 + fade, spring stiffness 250 damping 25",
+      "rules": "nur transform/opacity animieren, max 3 gleichzeitig"
+    },
+    "animation_free_fallback": "Harter Cut bei reduced-motion (0.01s)."
+  },
+  {
+    "id": "apex-comp-mega-menu",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Mega-Menu (3-Spalten)",
+    "description": "Header-Navigation mit Hover-Open-Dropdown.",
+    "properties": {
+      "groups": "Fahrzeuge (Bestand+Kategorien) · Service · Unternehmen",
+      "trigger": ".nav-trigger",
+      "panel": "bg card, border, radius-lg, shadow-modal, megaIn",
+      "behavior": "Hover Desktop / Click Touch / Esc schließt / onMouseLeave header schließt"
+    }
+  },
+  {
+    "id": "apex-comp-hero",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Hero (bright/airy)",
+    "description": "Heller Hero ohne warme Gradients.",
+    "properties": {
+      "shell": "min-height 100dvh, overflow hidden",
+      "bg": "radial 70% @80%20% hsl(354 70% 96%) + radial 60% @20%90% hsl(240 10% 95%) + background",
+      "overlay": "linear top→bottom fade zu background",
+      "vehicle": "fake car radial shadow + gradient body"
+    }
+  },
+  {
+    "id": "apex-comp-vehimg",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Vehicle-Image-Placeholder",
+    "description": "Gestreifter SVG-/CSS-Platzhalter statt echter Bilder (Markenrecht).",
+    "properties": {
+      "base": "aspect 16/10, radial gradient bg",
+      "variants": "alt-1..alt-7 verschiedene Lichtpositionen",
+      "overlays": ".veh-img-grid (mask radial), .veh-img-shape (Auto-Silhouette), .veh-img-tag (mono caption '/// PRODUCT SHOT')"
+    }
+  },
+  {
+    "id": "apex-comp-spec-row",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Spec-Icon-Row & Kbd",
+    "description": "Eckdaten-Zeile + Tastatur-Chip.",
+    "properties": {
+      "spec-icon-row": "grid 4 Spalten, .spec-cell label + .val (mono tabular)",
+      "kbd": "mono 0.75rem, muted bg, border, radius 0.25rem",
+      "brand-row": "horizontaler scroll-snap der Marken-Logos"
+    }
+  },
+  {
+    "id": "apex-comp-compare",
+    "category": "Components",
+    "project": "apex",
+    "name": "Apex — Vergleichs-Highlight",
+    "description": "Beste Werte in Vergleichstabelle hervorheben.",
+    "properties": {
+      "compare-best": "bg primary/0.08 + inset ring primary/0.4",
+      "rule": "Trophy-Icon + Glow auf bestem Wert pro Zeile",
+      "compare-bar": "sticky bottom, erscheint bei ≥2 Auswahlen"
+    }
+  },
+  {
+    "id": "heyfede-rules-shadows",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Schatten- & Geometrie-Regeln",
+    "description": "Brand-Bibel: niemals graue/schwarze Schatten; keine harten 90°-Kanten.",
+    "properties": {
+      "shadows": "immer Colored Shadows (Terracotta/Bark-Tönung), max 30% Alpha",
+      "warm": "0 8px 28px rgba(204,98,76,0.30)",
+      "neutralWarm": "0 4px 18px rgba(45,31,25,0.10)",
+      "geometry": "Container ≥ radius 14px, Buttons = Pills 50–100px, keine geraden Sektions-Übergänge (Wave/Blob)"
+    }
+  },
+  {
+    "id": "heyfede-rules-motion",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Bewegungs-Grundsätze",
+    "description": "Verbindliche Motion-Bibel für alle Effekte.",
+    "properties": {
+      "springs": "bouncy (stiffness 400–600, damping 12–20) für UI",
+      "eases": "cubic-bezier(0.34,1.56,0.64,1) für CSS",
+      "forbidden": "linear, ruckartig",
+      "perf": "Mouse→useMotionValue/Ref nie setState; Scroll→useScroll/useTransform; Heavy nur auf (pointer:fine)"
+    },
+    "animation_free_fallback": "prefers-reduced-motion → statische States."
+  },
+  {
+    "id": "heyfede-sig-sloshing",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Sloshing Wave Dividers",
+    "description": "Scroll-Velocity-getriebene Wellen-Übergänge zwischen Sektionen.",
+    "properties": {
+      "base": "zwei gegenläufige Wellen (lava-line/band)",
+      "enhance": "useVelocity moduliert Amplitude beim Scrollen",
+      "color": "--lava terracotta / --lava2 peach",
+      "fullbleed": "randlos, kein Margin"
+    },
+    "animation_free_fallback": "Welle eingefroren (animation-play-state:paused)."
+  },
+  {
+    "id": "heyfede-sig-juicy",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Juicy Squish Button + Particle Burst",
+    "description": "CTA mit volumenerhaltendem Quetschen und Konfetti-Burst beim Klick.",
+    "properties": {
+      "squish": "whileTap scale 0.92 scaleX 1.06 scaleY 0.84",
+      "hover": "scale 1.05",
+      "spring": "stiffness 600 damping 15 mass 1",
+      "burst": "14 Partikel, angle random, distance 40–100, colors #CC624C/#E4C0A8/#eedfcc/#fefefe, mix dot/sparkle/star, cleanup 800ms",
+      "bite": "signature Bissspur bleibt"
+    },
+    "animation_free_fallback": "scale 0.97, KEINE Partikel."
+  },
+  {
+    "id": "heyfede-sig-holo",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Holographic 3D-Tilt Card",
+    "description": "Bestseller-Karten kippen in 3D, Glanz folgt der Maus, Icon parallaxt.",
+    "properties": {
+      "perspective": "1200px am Wrapper",
+      "tilt": "rotateX/Y ±12° via useSpring(400,30)",
+      "glare": "radial-gradient @mouse, mix-blend overlay",
+      "parallax": "translateZ 60 (Icon) / 30 (Text)",
+      "touch": "coarse/reduced → statisch"
+    },
+    "animation_free_fallback": "Kein Tilt; Glare statisch."
+  },
+  {
+    "id": "heyfede-sig-syrup",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Magnetic Syrup Cursor",
+    "description": "Custom-Cursor: Terracotta-Tropfen mit gooey Sirup-Spur, magnetischer Snap über Buttons.",
+    "properties": {
+      "goo": "SVG feGaussianBlur stdDev 6 + feColorMatrix '..20 -9'",
+      "trails": "5 Springs absteigend (800/400/250/150/90 stiffness)",
+      "magnet": "Head morpht zum Element-Container +16px, transparent",
+      "scope": "nur (pointer:fine); cursor:none via media-query"
+    },
+    "animation_free_fallback": "Trail-Stiffness 1500 (1:1), OS-Cursor auf Touch."
+  },
+  {
+    "id": "heyfede-sig-scratch",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Scratch-to-Reveal Ticket",
+    "description": "Rubbellos: Glasur abkratzen, bei 50% Reveal + Konfetti + Shake.",
+    "properties": {
+      "canvas": "globalCompositeOperation destination-out, lineWidth 45, DPR-sicher",
+      "threshold": "getImageData stride 32, >50% cleared, throttle 150ms",
+      "reward": "confetti 150 (Markenfarben), navigator.vibrate, shake+glow",
+      "frosting": "#eedfcc + Wellen-Textur + 'Rubbel mich frei! ✨'"
+    },
+    "animation_free_fallback": "Kein Shake/Glow; Konfetti dezent bleibt."
+  },
+  {
+    "id": "heyfede-sig-achievement",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Achievement Easter-Egg",
+    "description": "Versteckter Reward-Banner (z.B. Logo 5× klicken).",
+    "properties": {
+      "banner": "bark bg, federnd von unten (translateY 150%→0)",
+      "easing": "cubic-bezier(0.34,1.56,0.64,1) 550ms",
+      "haptic": "navigator.vibrate([60,30,60])",
+      "autohide": "~3.2s"
+    },
+    "animation_free_fallback": "Einfaches Einblenden ohne Bounce."
+  },
+  {
+    "id": "heyfede-sig-liquid",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Liquid Page Transition (Dough-Wipe)",
+    "description": "Soft-beige Waffelteig-Welle schwappt über den Screen beim Seitenwechsel.",
+    "properties": {
+      "paths": "flatBottom→waveEnter→covered→waveExit→flatTop (gleiche Knotenzahl, morphbar)",
+      "timing": "enter 420ms, cover 280ms, exit 400ms, top 280ms, ease [0.76,0,0.24,1]",
+      "color": "#eedfcc, warm drop-shadow",
+      "scroll": "onCovered → scrollTo(0,'instant')",
+      "lock": "busy-ref gegen Spam-Click"
+    },
+    "animation_free_fallback": "Simple Cross-Fade 300ms statt Welle."
+  },
+  {
+    "id": "heyfede-sig-waffle",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Build-a-Waffle Minigame",
+    "description": "Menu-Page Hero-Feature: interaktiver Waffel-Konfigurator.",
+    "properties": {
+      "interaction": "Topping/Soße per Drag/Klick stapeln",
+      "feedback": "Spring-Pop pro Zutat, Live-Preisanzeige",
+      "brand": "Bissspur + warme Schatten",
+      "note": "Heavy → nur Pointer-fine"
+    }
+  },
+  {
+    "id": "heyfede-sig-levelmap",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Gamified Level-Map (About)",
+    "description": "Scroll-Tiefe als spielerischer Level-Pfad.",
+    "properties": {
+      "path": "gewundener SVG-Pfad mit Stationen",
+      "scroll": "useScroll markiert erreichte Nodes",
+      "reveal": "Stationen poppen beim In-View",
+      "motion": "smooth ease, reduced-motion statisch"
+    }
+  },
+  {
+    "id": "heyfede-sig-physics",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Physics Playground Hero",
+    "description": "Hero mit Matter.js-Physik: fallende/kollidierende Marken-Objekte (Waffeln, Pancakes).",
+    "properties": {
+      "engine": "matter.js (CDN), runner mit cleanup",
+      "interaction": "Maus stößt Objekte an, Gravitation weich",
+      "brand": "nur Marken-Formen/Farben",
+      "gate": "nur (pointer:fine); reduced-motion → statisches Stillleben"
+    },
+    "animation_free_fallback": "Statisches arrangiertes Stillleben ohne Physik."
+  },
+  {
+    "id": "kaqua-comp-globe",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Interaktiver Vektor-Globus",
+    "description": "Auto-rotierender Canvas-Globus mit echten Länder-Outlines (world-atlas 110m TopoJSON), Marker-Hit-Tests, Drag-to-rotate + Trägheit, flyTo-API. Reines Vanilla-JS, keine Library.",
+    "properties": {
+      "api": "KAquaLoader.createGlobe(canvas,{size,radius,color,whirl,speed,markers,interactive})",
+      "projection": "orthographic, TILT -0.32",
+      "color": "#5B2D8C auf #FAF9F7",
+      "whirl": "3 Kometen-Trails orbitieren",
+      "interaction": "pointer drag (0.45 sens) + Inertia (×0.94), Marker-Label-Tooltip",
+      "methods": "flyTo(lon,lat) · setActive(title) · clearTarget · stop",
+      "fallback": "Graticule bis TopoJSON geladen; 1 statischer Frame in non-painting iframes"
+    }
+  },
+  {
+    "id": "kaqua-comp-scrolly",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Hero-Scrollytelling",
+    "description": "Globus wandert beim Scrollen auf Kreisbogen zur Mitte, wächst, Schwerpunkt-Karten poppen auf.",
+    "properties": {
+      "stage": "height 380vh, sticky 100vh",
+      "choreo": "rAF-throttled direct DOM writes, ease 1-(1-x)^3",
+      "phases": "0–12% Copy fades up/out · bis 42% Globus arc rechts→Mitte + scale 0.92→1.42 · ab 45% Karten sequenziell (is-in)",
+      "static": "reduced-motion / ≤900px → zweispaltiges statisches Layout",
+      "glow": "radial primary-soft opacity 0.25→1"
+    },
+    "animation_free_fallback": "Statischer zweispaltiger Hero + Orbit-Karten-Grid."
+  },
+  {
+    "id": "kaqua-anim-wipe",
+    "category": "Animations",
+    "project": "kaqua",
+    "name": "K-Aqua — Page-Wipe (Tropfen-Morph)",
+    "description": "Inverse Fläche wischt mit Border-Radius-Morph über den Screen, Tropfen pulsiert.",
+    "properties": {
+      "kwipe": "translateY 100%→0→-100% mit radius 40%→0→40% Morph, 820ms cubic-bezier(0.76,0,0.24,1)",
+      "kwipedrop": "scale 0.6→1→1.25 + opacity-Puls",
+      "gate": "html.anim-ok"
+    },
+    "animation_free_fallback": "Übersprungen (kein anim-ok / reduced-motion)."
+  },
+  {
+    "id": "kaqua-anim-progress",
+    "category": "Animations",
+    "project": "kaqua",
+    "name": "K-Aqua — Scroll-Progress-Bar",
+    "description": "Fixe Gradient-Leiste am oberen Rand, füllt mit Scroll.",
+    "properties": {
+      "k-progress": "fixed top, height 3px, z 60, gradient primary→accent-strong",
+      "logic": "scrollTop / (scrollHeight - clientHeight) * 100%"
+    }
+  },
+  {
+    "id": "kaqua-anim-marquee",
+    "category": "Animations",
+    "project": "kaqua",
+    "name": "K-Aqua — Marquee-Band",
+    "description": "Endlos laufendes Trust-Band.",
+    "properties": {
+      "kmarquee": "translateX 0→-100%, 28s linear infinite",
+      "gate": "html.anim-ok",
+      "content": "Outfit 700, .dot in accent-strong"
+    },
+    "animation_free_fallback": "Statisches Band (pausiert)."
+  },
+  {
+    "id": "kaqua-anim-reveal",
+    "category": "Animations",
+    "project": "kaqua",
+    "name": "K-Aqua — Reveal-Gate & Float",
+    "description": "In-View-Reveal + Schweben, beide gated auf html.anim-ok.",
+    "properties": {
+      "reveal": "opacity 0→1 + translateY(22→0), 600ms ease-out, reveal-delay var",
+      "anim-ok": "Klasse erst nach erster rAF → Capture-Iframes rendern Endzustand",
+      "kfloat": "translateY 0→-14→0, 7s ease-in-out",
+      "kshint": "Pfeil rotate(90) translateX 4px, 1.6s"
+    },
+    "animation_free_fallback": "prefers-reduced-motion → alle Durations 0.01ms; Inhalte sofort sichtbar."
+  },
+  {
+    "id": "kaqua-comp-mega",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Mega-Menu (Vollbild-Glas)",
+    "description": "Vollflächiges Glas-Overlay mit großen Items.",
+    "properties": {
+      "overlay": "fixed inset0, bg nav-glass, backdrop blur 28px saturate 1.5, padding 96px",
+      "grid": "auto-fit minmax(240px,1fr)",
+      "item": "Outfit 800 clamp(22–30px), hover bg primary-soft + translateX(4px)",
+      "head": "uppercase ls 0.12em primary",
+      "close": "Esc / Backdrop"
+    }
+  },
+  {
+    "id": "kaqua-comp-hero-wash",
+    "category": "Tokens",
+    "project": "kaqua",
+    "name": "K-Aqua — Hero-Wash & Gradient-Text",
+    "description": "Atmosphärische Hintergründe + Gradient-Headline.",
+    "properties": {
+      "hero-wash-light": "radial 1100×520 @78%-10% brand-tint + radial 900×480 @12%110% aqua-tint",
+      "hero-wash-dark": "gedämpfte oklch-Varianten",
+      "k-grad-text": "linear 100deg primary 10% → accent-strong 90%, background-clip:text"
+    }
+  },
+  {
+    "id": "kaqua-comp-bento",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Bento-Grid & Section",
+    "description": "6-Spalten-Bento-Layout + Sektions-Rhythmus.",
+    "properties": {
+      "bento": "grid 6 Spalten, gap sp-4, mobile→2 Spalten span 2",
+      "section": "padding-block clamp(64–120px)",
+      "section--subtle": "bg background-subtle",
+      "container": "max 1200px, padding-inline clamp(20–48px)"
+    }
+  },
+  {
+    "id": "kaqua-comp-onion",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — KESSEL-Zwiebelmodell",
+    "description": "Konzentrische klickbare Ringe (Partnerschafts-Tiefen).",
+    "properties": {
+      "ring": "radius 50%, border 1.5px, is-on → primary-soft + primary-Border",
+      "label": "Pille mit border, place-items:start center",
+      "aspect": "1:1 max 420px"
+    }
+  },
+  {
+    "id": "kaqua-comp-table-cta",
+    "category": "Components",
+    "project": "kaqua",
+    "name": "K-Aqua — Tabelle & dunkles CTA-Band",
+    "description": "Daten-Tabelle + inverse CTA-Fläche mit Glow-Orb.",
+    "properties": {
+      "table": "th border-bottom 2px primary, tr:hover bg primary-soft",
+      "cta-band": "inverse-surface, radius-lg, ::after radial Glow-Orb 640px",
+      "footer": "inverse-surface, ::before Glow-Orb 900px, links oklch(from … /0.7)"
+    }
+  },
+  {
+    "id": "global-transitions-index",
+    "category": "Animations",
+    "project": "_global",
+    "name": "Transitions-Index (alle Marken)",
+    "description": "Übersicht aller Page-/Section-Transitions im Bündel für schnelle Wiederverwendung.",
+    "properties": {
+      "apex": "fade+y page-transition 400ms, modal spring, megaIn",
+      "heyfede": "Liquid Dough-Wipe (SVG-Path-Morph), Sloshing Waves zwischen Sektionen",
+      "kaqua": "Page-Wipe (Tropfen-Morph 820ms), Scrollytelling-Globus-Choreo, Reveal-Gate",
+      "shared": "alle respektieren prefers-reduced-motion"
+    }
+  },
+  {
+    "id": "global-interactions-index",
+    "category": "Components",
+    "project": "_global",
+    "name": "Interaktions-Index (Premium-Bausteine)",
+    "description": "Kuratierte Liste der wiederverwendbaren Premium-Interaktionen für neue Projekte.",
+    "properties": {
+      "cursors": "Syrup-Cursor (gooey, magnetisch)",
+      "buttons": "Juicy Squish + Particle Burst, Shimmer-CTA",
+      "cards": "Holo 3D-Tilt, Hover-Lift, Bento",
+      "games": "Scratch-Ticket, Build-a-Waffle, Level-Map, Physics-Hero",
+      "data": "Globus, Markt-Meter, Preis-Histogramm, CO₂-Balken, animierte Counter",
+      "overlays": "Mega-Menu (2 Stile), Lightbox, Achievement-Toast"
+    }
+  },
+  {
+    "id": "heyfede-el-css-variables",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — CSS-Variablen (:root)",
+    "description": "Die komplette Token-Basis. Einmal global einbinden (z.B. in der globalen Stylesheet-Datei) — alle anderen Snippets greifen darauf zu. Schriften via Google Fonts: Calistoga + Nunito.",
+    "properties": {
+      "segment": "01 Design-Tokens",
+      "html": "<div class=\"hf-token-doc\">\n  <code>@import url('https://fonts.googleapis.com/css2?family=Calistoga&amp;family=Nunito:wght@400;500;600;700;800;900&amp;display=swap');</code>\n</div>",
+      "css": ":root {\n  /* Farben */\n  --cream: #f5efe8;          /* Standard-Seitenhintergrund */\n  --soft-beige: #eedfcc;     /* Sekundärfläche / Footer */\n  --waffle-peach: #E4C0A8;   /* Akzentfläche / Platzhalter */\n  --terracotta: #CC624C;     /* Primärfarbe / CTA */\n  --terracotta-dark: #b5523d;/* Hover-Zustand */\n  --dark: #2d1f19;           /* Überschriften */\n  --dark-mid: #5c3d35;       /* Fließtext */\n  --dark-soft: #9a7060;      /* Sekundärtext */\n  --white: #fefefe;\n  /* Typografie */\n  --font-display: 'Calistoga', serif;\n  --font-body: 'Nunito', sans-serif;\n  /* Radien */\n  --radius-sm: 12px;  --radius-md: 20px;\n  --radius-lg: 32px;  --radius-pill: 100px;\n  /* Schatten */\n  --shadow-sm: 0 2px 12px rgba(45,31,25,0.06);\n  --shadow-md: 0 6px 28px rgba(45,31,25,0.10);\n  --shadow-lg: 0 12px 48px rgba(45,31,25,0.14);\n  --shadow-terra: 0 8px 32px rgba(204,98,76,0.22);\n  /* Easing */\n  --ease-sp …",
+      "previewBg": "dark"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: css-variables -->"
+  },
+  {
+    "id": "heyfede-el-color-palette",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Farbpalette",
+    "description": "Alle Marken-Farben mit Variablen-Namen und Hex-Wert. Terracotta ist die Primär-/CTA-Farbe, Cream der Standard-Hintergrund. Keine Sättigung über die hier gezeigten Töne hinaus verwenden.",
+    "properties": {
+      "segment": "01 Design-Tokens",
+      "html": "<div class=\"hf-swatches\">\n  <div class=\"hf-sw\"><span style=\"background:#f5efe8\"></span><b>--cream</b><i>#f5efe8</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#eedfcc\"></span><b>--soft-beige</b><i>#eedfcc</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#E4C0A8\"></span><b>--waffle-peach</b><i>#E4C0A8</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#CC624C\"></span><b>--terracotta</b><i>#CC624C</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#b5523d\"></span><b>--terracotta-dark</b><i>#b5523d</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#2d1f19\"></span><b>--dark</b><i>#2d1f19</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#5c3d35\"></span><b>--dark-mid</b><i>#5c3d35</i></div>\n  <div class=\"hf-sw\"><span style=\"background:#9a7060\"></span><b>--dark-soft</b><i>#9a7060</i></div>\n</div>",
+      "css": ".hf-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 14px; }\n.hf-sw { display: flex; flex-direction: column; gap: 6px; }\n.hf-sw span { height: 64px; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(45,31,25,0.08); }\n.hf-sw b { font: 700 12px var(--font-body); color: var(--dark); }\n.hf-sw i { font: 500 11px ui-monospace, monospace; color: var(--dark-soft); font-style: normal; }"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: color-palette -->"
+  },
+  {
+    "id": "heyfede-el-typography",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Typografie-Skala",
+    "description": "Calistoga für Display/Überschriften (h1–h4), Nunito für Fließtext und UI. Überschriften haben line-height 1.1, Text 1.7. Niemals andere Schriften mischen.",
+    "properties": {
+      "segment": "01 Design-Tokens",
+      "html": "<div class=\"hf-type\">\n  <p class=\"hf-type-h1\">Frisch &amp; Selbstgemacht</p>\n  <span class=\"hf-type-meta\">Calistoga · h1 · clamp(2.2rem, 6vw, 4rem)</span>\n  <p class=\"hf-type-h2\">Unsere Bestseller</p>\n  <span class=\"hf-type-meta\">Calistoga · h2 · clamp(1.7rem, 4vw, 2.8rem)</span>\n  <p class=\"hf-type-body\">Knusprig, luftig, unwiderstehlich — mit Soßen &amp; Toppings frei kreierbar. Jede Leckerei wird frisch für dich zubereitet.</p>\n  <span class=\"hf-type-meta\">Nunito 400 · Body · 1rem / 1.7</span>\n  <p class=\"hf-type-strong\">Mo – So · 11:30 – 20:00 Uhr</p>\n  <span class=\"hf-type-meta\">Nunito 800 · Betonung / UI</span>\n</div>",
+      "css": ".hf-type { display: flex; flex-direction: column; }\n.hf-type-h1 { font: 400 clamp(2.2rem,6vw,4rem)/1.1 var(--font-display); color: var(--dark); }\n.hf-type-h2 { font: 400 clamp(1.7rem,4vw,2.8rem)/1.1 var(--font-display); color: var(--dark); margin-top: 18px; }\n.hf-type-body { font: 400 1rem/1.7 var(--font-body); color: var(--dark-mid); max-width: 46ch; margin-top: 18px; }\n.hf-type-strong { font: 800 1rem var(--font-body); color: var(--dark); margin-top: 18px; }\n.hf-type-meta { font: 500 11px ui-monospace, monospace; color: var(--dark-soft); margin-top: 4px; }"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: typography -->"
+  },
+  {
+    "id": "heyfede-el-radii-shadows",
+    "category": "Tokens",
+    "project": "heyfede",
+    "name": "Hey Fede — Radien & Schatten",
+    "description": "Vier Eckenradien (sm/md/lg/pill) und vier Schatten-Stufen. Pill (100px) für Buttons & Tags, lg (32px) für große Karten. shadow-terra ist der farbige Hover-Schatten der Primärfarbe.",
+    "properties": {
+      "segment": "01 Design-Tokens",
+      "html": "<div class=\"hf-rs\">\n  <div><div class=\"hf-rs-box\" style=\"border-radius:12px\"></div><i>--radius-sm · 12px</i></div>\n  <div><div class=\"hf-rs-box\" style=\"border-radius:20px\"></div><i>--radius-md · 20px</i></div>\n  <div><div class=\"hf-rs-box\" style=\"border-radius:32px\"></div><i>--radius-lg · 32px</i></div>\n  <div><div class=\"hf-rs-box\" style=\"border-radius:100px\"></div><i>--radius-pill · 100px</i></div>\n  <div><div class=\"hf-rs-box\" style=\"box-shadow:var(--shadow-sm);border-radius:16px\"></div><i>--shadow-sm</i></div>\n  <div><div class=\"hf-rs-box\" style=\"box-shadow:var(--shadow-md);border-radius:16px\"></div><i>--shadow-md</i></div>\n  <div><div class=\"hf-rs-box\" style=\"box-shadow:var(--shadow-lg);border-radius:16px\"></div><i>--shadow-lg</i></div>\n  <div><div class=\"hf-rs-box\" style=\"box-shadow:var(--shadow-terra);border-radius:16px\"></div><i>--shadow-terra</i></div>\n</div>",
+      "css": ".hf-rs { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); gap: 18px; }\n.hf-rs div { display: flex; flex-direction: column; gap: 8px; align-items: center; }\n.hf-rs-box { width: 100%; height: 72px; background: var(--white); border: 1px solid #eedfcc; }\n.hf-rs i { font: 500 11px ui-monospace, monospace; color: var(--dark-soft); font-style: normal; }"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: radii-shadows -->"
+  },
+  {
+    "id": "heyfede-el-logo-blob",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Logo (organischer Blob)",
+    "description": "Das Marken-Logo: weicher organischer Blob in Waffle-Peach mit zentriertem „Hey Fede!“. Skaliert über width/height. Für Header size≈50, Footer≈60.",
+    "properties": {
+      "segment": "02 Iconography & Marken-Motive",
+      "html": "<svg width=\"84\" height=\"84\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M30,2 C38,2 45,5 49,11 C54,16 57,22 57,29 C57,37 53,44 48,48 C43,53 36,58 29,57 C22,57 15,53 10,48 C4,43 2,36 2,29 C2,21 6,14 12,9 C17,3 23,2 30,2 Z\" fill=\"#E4C0A8\"/>\n  <text x=\"50%\" y=\"44%\" text-anchor=\"middle\" dominant-baseline=\"middle\" style=\"font-family:'Calistoga',serif;font-size:10.5px;fill:#fefefe\">\n    <tspan x=\"50%\" dy=\"-4.5\">Hey</tspan>\n    <tspan x=\"50%\" dy=\"13\">Fede!</tspan>\n  </text>\n</svg>"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: logo-blob -->"
+  },
+  {
+    "id": "heyfede-el-wave-divider",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Wave-Divider (3 Varianten)",
+    "description": "Organischer Übergang zwischen zwei Sektionen. fill = Farbe der ausgehenden Sektion, der umgebende Hintergrund = Farbe der eingehenden Sektion. Variante 1 = sanfte Sinuswelle, 2 = asymmetrischer Teig, 3 = einzelner Bogen. Mit transform:scaleY(-1) spiegeln.",
+    "properties": {
+      "segment": "02 Iconography & Marken-Motive",
+      "html": "<div class=\"hf-wave\" style=\"background:#f5efe8\">\n  <svg viewBox=\"0 0 1440 60\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M0,30 C240,56 480,4 720,30 C960,56 1200,4 1440,30 L1440,60 L0,60 Z\" fill=\"#eedfcc\"/>\n  </svg>\n</div>\n<div class=\"hf-wave\" style=\"background:#f5efe8\">\n  <svg viewBox=\"0 0 1440 60\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M0,22 C180,52 360,2 540,26 C720,50 900,8 1080,34 C1260,56 1380,24 1440,30 L1440,60 L0,60 Z\" fill=\"#E4C0A8\"/>\n  </svg>\n</div>\n<div class=\"hf-wave\" style=\"background:#f5efe8\">\n  <svg viewBox=\"0 0 1440 60\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M0,38 Q360,8 720,38 Q1080,68 1440,38 L1440,60 L0,60 Z\" fill=\"#CC624C\"/>\n  </svg>\n</div>",
+      "css": ".hf-wave { line-height: 0; overflow: hidden; }\n.hf-wave svg { display: block; width: 100%; height: 44px; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: wave-divider -->"
+  },
+  {
+    "id": "heyfede-el-stamp-badge",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Stempel-Badge",
+    "description": "Runder Stempel mit gestricheltem Rand und Text auf Kreisbahn — für „Frisch gemacht“, „Seit 2023“ o.Ä. Leicht rotiert für handgemachten Look. textPath-href muss zur path-id passen.",
+    "properties": {
+      "segment": "02 Iconography & Marken-Motive",
+      "html": "<div style=\"transform:rotate(-12deg)\">\n  <svg width=\"96\" height=\"96\" viewBox=\"0 0 96 96\" xmlns=\"http://www.w3.org/2000/svg\">\n    <defs><path id=\"hf-stamp1\" d=\"M48,48 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0\"/></defs>\n    <circle cx=\"48\" cy=\"48\" r=\"45\" fill=\"none\" stroke=\"#CC624C\" stroke-width=\"1.5\" stroke-dasharray=\"3.5 2.5\"/>\n    <text font-size=\"9\" font-family=\"Nunito,sans-serif\" font-weight=\"800\" fill=\"#CC624C\" letter-spacing=\"2\">\n      <textPath href=\"#hf-stamp1\" startOffset=\"50%\" text-anchor=\"middle\">FRISCH · SELBSTGEMACHT · MIT LIEBE ·</textPath>\n    </text>\n  </svg>\n</div>"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: stamp-badge -->"
+  },
+  {
+    "id": "heyfede-el-food-placeholder",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Bild-Platzhalter (Food)",
+    "description": "Ästhetischer Platzhalter für Produktfotos: Waffle-Peach-Fläche mit Icon + Monospace-Label. In Produktion durch <img> ersetzen. Höhe/Form über die Util-Klassen oder inline anpassen.",
+    "properties": {
+      "segment": "02 Iconography & Marken-Motive",
+      "html": "<div class=\"hf-foodph\" style=\"height:180px;border-radius:20px\">\n  <svg width=\"44\" height=\"44\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#CC624C\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"opacity:.65\">\n    <rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"3\"/><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><path d=\"M8 5l1.2-2h5.6L16 5\"/>\n  </svg>\n  <span class=\"hf-foodph-label\">PRODUKTFOTO · 4:3</span>\n</div>",
+      "css": ".hf-foodph { width: 100%; background: #E4C0A8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: hidden; }\n.hf-foodph-label { font: 600 9px ui-monospace, monospace; color: #CC624C; opacity: .8; letter-spacing: 1px; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: food-placeholder -->"
+  },
+  {
+    "id": "heyfede-el-bite-mark",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Bissspur-Motiv",
+    "description": "Die Marken-Signatur: ein kreisförmiger „Biss“ in Hintergrundfarbe, der vom Logo-Ausrufezeichen abgeleitet ist. Wird als Hover-Detail an Buttons genutzt (siehe button-primary). Hier statisch zur Veranschaulichung — der Kreis ist in der SEKTIONS-Hintergrundfarbe gefüllt, damit er wie ein Ausbiss wirkt.",
+    "properties": {
+      "segment": "02 Iconography & Marken-Motive",
+      "html": "<div class=\"hf-bite-demo\">\n  <div class=\"hf-bite-pill\">Ein Stück</div>\n  <span class=\"hf-bite-notch\"></span>\n</div>",
+      "css": ".hf-bite-demo { position: relative; display: inline-block; }\n.hf-bite-pill { background: #CC624C; color: #fefefe; font: 800 .9rem var(--font-body); padding: 12px 26px; border-radius: 100px; }\n.hf-bite-notch { position: absolute; bottom: -1px; left: 16px; width: 18px; height: 18px; border-radius: 50%; background: #f5efe8; /* = Sektions-BG */ }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: bite-mark -->"
+  },
+  {
+    "id": "heyfede-el-button-primary",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Primary-Button (mit Bissspur)",
+    "description": "Haupt-CTA: Terracotta-Pille mit federndem Hover (scale + farbiger Schatten) und einbeißender Bissspur unten links. Die Bissspur-Farbe (--bite) muss = Hintergrundfarbe der Sektion sein. Reine CSS-Lösung, kein JS nötig.",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<span class=\"hf-btn-wrap\" style=\"--bite:#f5efe8\">\n  <button class=\"hf-btn-primary\">Jetzt bestellen</button>\n</span>",
+      "css": ".hf-btn-wrap { position: relative; display: inline-flex; }\n.hf-btn-primary { position: relative; z-index: 1; background: #CC624C; color: #fefefe; font: 800 .9rem var(--font-body); letter-spacing: -.01em; border: none; padding: 13px 30px; border-radius: 100px; cursor: pointer; white-space: nowrap; box-shadow: 0 3px 12px rgba(204,98,76,.18); transition: all .28s var(--ease-spring); }\n.hf-btn-wrap:hover .hf-btn-primary { background: #b5523d; transform: scale(1.05) translateY(-1px); box-shadow: 0 8px 28px rgba(204,98,76,.34); }\n.hf-btn-primary:active { transform: scale(.95); }\n.hf-btn-wrap::after { content: ''; position: absolute; z-index: 2; bottom: -1px; left: 14px; width: 18px; height: 18px; border-radius: 50%; background: var(--bite, #f5efe8); transform: scale(0); transform-origin: center bottom; transition: transform .25s var(--ease-spring); pointer-events: none; }\n.hf-btn-wrap:hover::a …",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: button-primary -->"
+  },
+  {
+    "id": "heyfede-el-button-secondary",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Secondary-Button",
+    "description": "Sekundäre Aktion: umrandete Terracotta-Pille, füllt sich bei Hover. Für „Mehr erfahren“, „Speisekarte ansehen“ usw.",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<button class=\"hf-btn-secondary\">Speisekarte ansehen</button>",
+      "css": ".hf-btn-secondary { background: transparent; color: #CC624C; font: 800 .9rem var(--font-body); border: 2px solid #CC624C; padding: 11px 28px; border-radius: 100px; cursor: pointer; white-space: nowrap; transition: all .2s ease; }\n.hf-btn-secondary:hover { background: #CC624C; color: #fefefe; }\n.hf-btn-secondary:active { transform: scale(.95); }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: button-secondary -->"
+  },
+  {
+    "id": "heyfede-el-tag-badge",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Tag-Badges",
+    "description": "Kleine Pillen-Labels für Produkt-Status. terra = gefüllt (Bestseller/Beliebt), outline = dezent (Kategorie), dark = neutral. Auf Karten meist oben links über dem Bild platziert.",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<div style=\"display:flex;gap:10px;flex-wrap:wrap;align-items:center\">\n  <span class=\"hf-tag hf-tag--terra\">Bestseller</span>\n  <span class=\"hf-tag hf-tag--terra\">Beliebt</span>\n  <span class=\"hf-tag hf-tag--outline\">Neu</span>\n  <span class=\"hf-tag hf-tag--dark\">Vegan</span>\n</div>",
+      "css": ".hf-tag { display: inline-flex; align-items: center; font: 800 .72rem var(--font-body); letter-spacing: .02em; padding: 5px 13px; border-radius: 100px; white-space: nowrap; }\n.hf-tag--terra { background: #CC624C; color: #fefefe; }\n.hf-tag--outline { background: transparent; color: #CC624C; box-shadow: inset 0 0 0 1.5px #CC624C; }\n.hf-tag--dark { background: #2d1f19; color: #fefefe; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: tag-badge -->"
+  },
+  {
+    "id": "heyfede-el-rating-stars",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Bewertungs-Sterne",
+    "description": "Sternbewertung mit Wert + Anzahl. Terracotta-Sterne, leere Sterne in Waffle-Peach. Für Reviews und das Google-Rating (4.8 · 84 Bewertungen).",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<div class=\"hf-rating\">\n  <span class=\"hf-stars\">★★★★<span class=\"hf-star-half\">★</span></span>\n  <b>4,8</b><i>· 84 Bewertungen</i>\n</div>",
+      "css": ".hf-rating { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); }\n.hf-stars { color: #CC624C; font-size: 1.05rem; letter-spacing: 1px; position: relative; }\n.hf-star-half { color: #E4C0A8; }\n.hf-rating b { font-weight: 800; color: #2d1f19; }\n.hf-rating i { font-style: normal; font-weight: 600; font-size: .82rem; color: #9a7060; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: rating-stars -->"
+  },
+  {
+    "id": "heyfede-el-section-title",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Section-Titel",
+    "description": "Standard-Kopf für jeden Abschnitt: Calistoga-Überschrift + optionaler Untertitel, zentriert. light=true (Klasse --light) für dunkle Hintergründe.",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<div class=\"hf-sectitle\">\n  <h2>Unsere Bestseller</h2>\n  <p>Die Lieblinge unserer Gäste — frisch zubereitet und mit Liebe serviert.</p>\n</div>",
+      "css": ".hf-sectitle { text-align: center; }\n.hf-sectitle h2 { font: 400 clamp(1.7rem,4vw,2.8rem)/1.1 var(--font-display); color: #2d1f19; margin-bottom: 8px; }\n.hf-sectitle p { font: 400 .92rem/1.65 var(--font-body); color: #9a7060; max-width: 440px; margin: 0 auto; }\n.hf-sectitle--light h2 { color: #f5efe8; }\n.hf-sectitle--light p { color: rgba(245,239,232,.75); }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: section-title -->"
+  },
+  {
+    "id": "heyfede-el-ticket-card",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Ticket-Karte (Perforation)",
+    "description": "Gestrichelte Karte mit Perforations-Löchern an beiden Seiten — der Signatur-Container für Fede-Boxen & Promos. Die Löcher müssen in der Sektions-Hintergrundfarbe gefüllt sein (--ticket-bg).",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<div class=\"hf-ticket\" style=\"--ticket-bg:#f5efe8\">\n  <div class=\"hf-ticket-hole hf-ticket-hole--l\"></div>\n  <div class=\"hf-ticket-hole hf-ticket-hole--r\"></div>\n  <div class=\"hf-ticket-body\">\n    <span class=\"hf-tag hf-tag--terra\" style=\"margin-bottom:10px\">Sharing Box</span>\n    <h3 style=\"font:400 1.4rem var(--font-display);color:#2d1f19\">Fede &amp; Friends</h3>\n    <p style=\"font:400 .85rem/1.6 var(--font-body);color:#5c3d35;margin-top:6px\">12 Pancakes · Bubble Waffle · 3 Fruchtsorten · 4 Soßen</p>\n    <div style=\"display:flex;justify-content:space-between;align-items:center;margin-top:16px\">\n      <b style=\"font:400 1.5rem var(--font-display);color:#CC624C\">25,00 €</b>\n      <span class=\"hf-btn-secondary\" style=\"padding:8px 18px;font-size:.8rem\">Bestellen</span>\n    </div>\n  </div>\n</div>",
+      "css": ".hf-ticket { position: relative; border: 2px dashed #CC624C; border-radius: 20px; background: #fff; overflow: visible; margin: 0 14px; max-width: 380px; }\n.hf-ticket-body { padding: 24px 28px; }\n.hf-ticket-hole { position: absolute; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--ticket-bg, #f5efe8); border: 2px dashed #E4C0A8; }\n.hf-ticket-hole--l { left: -14px; }\n.hf-ticket-hole--r { right: -14px; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: ticket-card -->"
+  },
+  {
+    "id": "heyfede-el-quick-info",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Quick-Info-Box",
+    "description": "Kompakter Info-Block für Öffnungszeiten & Adresse — z.B. im Mobile-Menü oder als Sidebar. Soft-Beige-Fläche.",
+    "properties": {
+      "segment": "03 UI-Komponenten",
+      "html": "<div class=\"hf-quickinfo\">\n  <p class=\"hf-qi-strong\">Mo – So · 11:30 – 20:00 Uhr</p>\n  <p class=\"hf-qi-soft\">Langgasse 68 · 35576 Wetzlar</p>\n</div>",
+      "css": ".hf-quickinfo { background: #eedfcc; border-radius: 16px; padding: 16px 20px; max-width: 320px; }\n.hf-qi-strong { font: 700 .85rem var(--font-body); color: #5c3d35; }\n.hf-qi-soft { font: 400 .8rem var(--font-body); color: #9a7060; margin-top: 3px; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: quick-info -->"
+  },
+  {
+    "id": "heyfede-el-dot-bg",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Dot-Hintergrund",
+    "description": "Dezente Punktraster-Textur in transparentem Terracotta. Als Hintergrund von Sektionen oder hinter Hero-Inhalten. Klasse .hf-dot-bg auf den Container legen.",
+    "properties": {
+      "segment": "04 Dekor-Elemente",
+      "html": "<div class=\"hf-dot-bg\" style=\"height:160px\"></div>",
+      "css": ".hf-dot-bg { background-image: radial-gradient(circle, rgba(204,98,76,0.13) 1.5px, transparent 1.5px); background-size: 24px 24px; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: dot-bg -->"
+  },
+  {
+    "id": "heyfede-el-organic-blob",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Organischer Blob (schwebend)",
+    "description": "Weiche Hintergrund-Form mit langsamer Schwebe-Animation — als dekorativer Akzent hinter Inhalten (position:absolute, niedriger z-index, opacity reduzieren). Farbe frei wählbar.",
+    "properties": {
+      "segment": "04 Dekor-Elemente",
+      "html": "<div class=\"hf-blob\" style=\"width:120px;height:120px;background:#E4C0A8\"></div>",
+      "css": ".hf-blob { border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; animation: hf-blobFloat 9s ease-in-out infinite; }\n@keyframes hf-blobFloat {\n  0%,100% { transform: translate(0,0) scale(1); }\n  33%     { transform: translate(6px,-10px) scale(1.02); }\n  66%     { transform: translate(-5px,7px) scale(0.98); }\n}",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: organic-blob -->"
+  },
+  {
+    "id": "heyfede-el-divider-line",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Trennlinie",
+    "description": "Schlichte horizontale Trennlinie in Waffle-Peach. Für Listen, Footer-Spalten, Karteninhalte.",
+    "properties": {
+      "segment": "04 Dekor-Elemente",
+      "html": "<div style=\"max-width:320px\">\n  <p style=\"font:700 .9rem var(--font-body);color:#2d1f19\">Öffnungszeiten</p>\n  <div class=\"hf-divider\"></div>\n  <p style=\"font:400 .85rem var(--font-body);color:#5c3d35\">Mo – So · 11:30 – 20:00</p>\n</div>",
+      "css": ".hf-divider { height: 1px; background: #E4C0A8; margin: 12px 0; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: divider-line -->"
+  },
+  {
+    "id": "heyfede-el-hover-lift",
+    "category": "FreeDesign",
+    "project": "heyfede",
+    "name": "Hey Fede — Hover-Lift (Karten)",
+    "description": "Utility-Klasse: hebt Karten bei Hover sanft an und zeigt den farbigen Terracotta-Schatten. Auf jede klickbare Karte legen.",
+    "properties": {
+      "segment": "04 Dekor-Elemente",
+      "html": "<div class=\"hf-hover-lift\" style=\"background:#fff;border-radius:20px;padding:24px 28px;max-width:280px;box-shadow:var(--shadow-sm)\">\n  <p style=\"font:400 1.2rem var(--font-display);color:#2d1f19\">Bubble Waffle</p>\n  <p style=\"font:400 .85rem var(--font-body);color:#9a7060;margin-top:4px\">Fahr mit der Maus über mich</p>\n</div>",
+      "css": ".hf-hover-lift { transition: transform .3s var(--ease-spring), box-shadow .3s ease; cursor: pointer; }\n.hf-hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-terra); }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: hover-lift -->"
+  },
+  {
+    "id": "heyfede-el-hero",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Hero-Sektion",
+    "description": "Startseiten-Hero: zweispaltig, links Text + CTAs (Primary + Secondary), rechts Bild-Platzhalter, darüber Dot-Background. Auf Mobil einspaltig (Klasse .hf-grid-2 bricht um).",
+    "properties": {
+      "segment": "05 Section-Blöcke",
+      "html": "<section class=\"hf-dot-bg\" style=\"border-radius:24px;overflow:hidden\">\n  <div class=\"hf-grid-2\" style=\"padding:40px;gap:36px\">\n    <div>\n      <span class=\"hf-tag hf-tag--outline\" style=\"margin-bottom:16px\">Dessertbar &amp; Café · Wetzlar</span>\n      <h1 style=\"font:400 clamp(2rem,5vw,3.2rem)/1.1 var(--font-display);color:#2d1f19\">Frisch.<br>Selbstgemacht.<br>Mit Liebe.</h1>\n      <p style=\"font:400 1rem/1.7 var(--font-body);color:#5c3d35;margin:16px 0 26px;max-width:42ch\">Bubble Waffles, Pancake-Boxen, Special Shakes &amp; mehr — täglich frisch für dich zubereitet.</p>\n      <div style=\"display:flex;gap:14px;flex-wrap:wrap\">\n        <span class=\"hf-btn-wrap\" style=\"--bite:#f5efe8\"><button class=\"hf-btn-primary\">Jetzt bestellen</button></span>\n        <button class=\"hf-btn-secondary\">Speisekarte</button>\n      </div>\n    </div>\n    <div class=\"hf-foodph\" style=\"height:280px;border-radius:24px\">\n      <span class=\"hf-foodph-label\">HERO-FOTO · 4:5</span>\n    </div>\n  </div>\n</section>",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: hero -->"
+  },
+  {
+    "id": "heyfede-el-product-card",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Produkt-/Bestseller-Karte",
+    "description": "Standard-Produktkarte: Bild-Platzhalter mit Tag-Overlay, Name, Beschreibung, Preis + Bestell-Button. In .hf-grid-3 / .hf-grid-4 anordnen. Inklusive hover-lift.",
+    "properties": {
+      "segment": "05 Section-Blöcke",
+      "html": "<div class=\"hf-hover-lift\" style=\"background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);max-width:280px\">\n  <div style=\"position:relative\">\n    <div class=\"hf-foodph\" style=\"height:160px;border-radius:0\">\n      <span class=\"hf-foodph-label\">PRODUKTFOTO</span>\n    </div>\n    <span class=\"hf-tag hf-tag--terra\" style=\"position:absolute;top:12px;left:12px\">Bestseller</span>\n  </div>\n  <div style=\"padding:18px 20px\">\n    <h3 style=\"font:400 1.25rem var(--font-display);color:#2d1f19\">Fede &amp; Friends Box</h3>\n    <p style=\"font:400 .82rem/1.5 var(--font-body);color:#9a7060;margin:4px 0 14px\">Das ultimative Sharing-Erlebnis für Gruppen</p>\n    <div style=\"display:flex;justify-content:space-between;align-items:center\">\n      <b style=\"font:400 1.35rem var(--font-display);color:#CC624C\">25,00 €</b>\n      <span class=\"hf-btn-wrap\" style=\"--bite:#fff\"><button class=\"hf-btn-primary\" style=\"padding:9px 18px;font-size:.8rem\">Bestellen</button></span>\n    </div>\n  </div>\n</div>",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: product-card -->"
+  },
+  {
+    "id": "heyfede-el-review-card",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Review-Karte",
+    "description": "Gäste-Bewertung: Sterne, Zitat, Name. Weiß auf Cream, weiche Karte. In Grid oder Slider nutzen.",
+    "properties": {
+      "segment": "05 Section-Blöcke",
+      "html": "<div style=\"background:#fff;border-radius:20px;padding:26px;box-shadow:var(--shadow-sm);max-width:340px\">\n  <span class=\"hf-stars\" style=\"font-size:1.1rem;letter-spacing:1px\">★★★★★</span>\n  <p style=\"font:400 .92rem/1.7 var(--font-body);color:#5c3d35;margin:12px 0 18px\">„Die Bubble Waffeln sind absolute Weltklasse! So frisch und knusprig. Das Personal ist super nett.“</p>\n  <div style=\"display:flex;align-items:center;gap:10px\">\n    <span style=\"width:38px;height:38px;border-radius:50%;background:#E4C0A8;display:flex;align-items:center;justify-content:center;font:800 .9rem var(--font-body);color:#CC624C\">S</span>\n    <b style=\"font:800 .88rem var(--font-body);color:#2d1f19\">Sarah M.</b>\n  </div>\n</div>",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: review-card -->"
+  },
+  {
+    "id": "heyfede-el-menu-row",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Speisekarten-Zeile",
+    "description": "Kompakte Menü-Zeile für Listen-Ansicht einer Kategorie: Name + Beschreibung links, Preis (+ optionaler Tag) rechts, mit Trennlinie. Mehrere stapeln für eine ganze Kategorie.",
+    "properties": {
+      "segment": "05 Section-Blöcke",
+      "html": "<div style=\"background:#fff;border-radius:16px;padding:6px 22px;max-width:440px\">\n  <div class=\"hf-menurow\">\n    <div><p style=\"font:800 .98rem var(--font-body);color:#2d1f19\">Bubble Waffle Deluxe <span class=\"hf-tag hf-tag--terra\" style=\"font-size:.62rem;padding:2px 8px;vertical-align:middle\">Beliebt</span></p><p style=\"font:400 .8rem var(--font-body);color:#9a7060;margin-top:2px\">Eis + Sahne + 3 Toppings + Soße</p></div>\n    <b style=\"font:800 .98rem var(--font-body);color:#CC624C;white-space:nowrap\">8,80 €</b>\n  </div>\n  <div class=\"hf-divider\"></div>\n  <div class=\"hf-menurow\">\n    <div><p style=\"font:800 .98rem var(--font-body);color:#2d1f19\">Oreo Special Shake</p><p style=\"font:400 .8rem var(--font-body);color:#9a7060;margin-top:2px\">0,4l · frisch gemixt mit Sahne</p></div>\n    <b style=\"font:800 .98rem var(--font-body);color:#CC624C;white-space:nowrap\">6,50 €</b>\n  </div>\n</div>",
+      "css": ".hf-menurow { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: menu-row -->"
+  },
+  {
+    "id": "heyfede-el-cta-banner",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — CTA-Banner",
+    "description": "Auffälliges Terracotta-Band mit Dot-Textur, zentriertem Aufruf + Button. Vor dem Footer oder zwischen Sektionen. Bissspur-Farbe = Terracotta-Hintergrund (--bite).",
+    "properties": {
+      "segment": "05 Section-Blöcke",
+      "html": "<section style=\"background:#CC624C;border-radius:24px;padding:48px 32px;text-align:center;position:relative;overflow:hidden\">\n  <div class=\"hf-dot-bg\" style=\"position:absolute;inset:0;opacity:.4;background-image:radial-gradient(circle,rgba(255,255,255,.18) 1.5px,transparent 1.5px)\"></div>\n  <div style=\"position:relative\">\n    <h2 style=\"font:400 clamp(1.6rem,4vw,2.4rem)/1.1 var(--font-display);color:#fefefe\">Hunger auf was Süßes?</h2>\n    <p style=\"font:400 .95rem var(--font-body);color:rgba(255,255,255,.85);margin:10px 0 24px\">Bestelle jetzt bei Lieferando — keine Liefergebühr.</p>\n    <span class=\"hf-btn-wrap\" style=\"--bite:#CC624C\">\n      <button class=\"hf-btn-primary\" style=\"background:#fefefe;color:#CC624C;box-shadow:0 3px 12px rgba(0,0,0,.12)\">Jetzt bestellen →</button>\n    </span>\n  </div>\n</section>",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: cta-banner -->"
+  },
+  {
+    "id": "heyfede-el-hours-block",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Öffnungszeiten-Block",
+    "description": "Kontakt-/Öffnungszeiten-Karte mit Adresse, Zeiten und Liefer-Hinweis. Für Visit-Seite oder Footer-Bereich.",
+    "properties": {
+      "segment": "05 Section-Blöcke",
+      "html": "<div style=\"background:#eedfcc;border-radius:20px;padding:28px;max-width:340px\">\n  <h4 style=\"font:400 1.15rem var(--font-display);color:#CC624C;margin-bottom:16px\">Öffnungszeiten</h4>\n  <div class=\"hf-menurow\" style=\"padding:0\"><span style=\"font:800 .9rem var(--font-body);color:#2d1f19\">Mo – So</span><span style=\"font:400 .9rem var(--font-body);color:#5c3d35\">11:30 – 20:00</span></div>\n  <div class=\"hf-divider\"></div>\n  <p style=\"font:600 .82rem var(--font-body);color:#5c3d35\">Langgasse 68 · 35576 Wetzlar</p>\n  <p style=\"font:800 .78rem var(--font-body);color:#CC624C;margin-top:10px\">✓ Keine Liefergebühr bei Lieferando</p>\n</div>",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: hours-block -->"
+  },
+  {
+    "id": "heyfede-el-header",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Header (Desktop)",
+    "description": "Fixe Top-Navigation: Logo links, Nav mittig, CTA rechts. Aktiver Link bekommt Klasse .is-active. Scroll-Verhalten (Blur/Schatten ab 28px) und das Mobil-Hamburger-Menü benötigen etwas JS — siehe global-v2.jsx im Projekt als Referenz.",
+    "properties": {
+      "segment": "06 Layout · Header · Footer",
+      "html": "<header class=\"hf-header\">\n  <div class=\"hf-header-inner\">\n    <svg width=\"44\" height=\"44\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"M30,2 C38,2 45,5 49,11 C54,16 57,22 57,29 C57,37 53,44 48,48 C43,53 36,58 29,57 C22,57 15,53 10,48 C4,43 2,36 2,29 C2,21 6,14 12,9 C17,3 23,2 30,2 Z\" fill=\"#E4C0A8\"/>\n      <text x=\"50%\" y=\"44%\" text-anchor=\"middle\" dominant-baseline=\"middle\" style=\"font-family:'Calistoga',serif;font-size:10.5px;fill:#fefefe\"><tspan x=\"50%\" dy=\"-4.5\">Hey</tspan><tspan x=\"50%\" dy=\"13\">Fede!</tspan></text>\n    </svg>\n    <nav class=\"hf-nav\">\n      <a class=\"is-active\">Speisekarte</a>\n      <a>Über Uns</a>\n      <a>Besuchen &amp; Liefern</a>\n    </nav>\n    <button class=\"hf-btn-primary\" style=\"padding:10px 22px;font-size:.84rem\">Jetzt bestellen</button>\n  </div>\n</header>",
+      "css": ".hf-header { background: rgba(245,239,232,.96); backdrop-filter: blur(16px); border-bottom: 1px solid #eedfcc; }\n.hf-header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }\n.hf-nav { display: flex; align-items: center; gap: 4px; }\n.hf-nav a { font: 600 .87rem var(--font-body); color: #5c3d35; padding: 8px 18px; border-radius: 50px; cursor: pointer; white-space: nowrap; transition: all .2s ease; }\n.hf-nav a:hover { background: rgba(238,223,204,.6); }\n.hf-nav a.is-active { background: #eedfcc; color: #CC624C; font-weight: 800; }\n@media (max-width: 768px) { .hf-nav { display: none; } }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: header -->"
+  },
+  {
+    "id": "heyfede-el-footer",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Footer",
+    "description": "Vierspaltiger Footer (Marke · Navigation · Kontakt · Öffnungszeiten) auf Soft-Beige, plus Bottom-Bar mit Copyright und Rechts-Links. Spalten brechen responsiv um (auto-fit minmax).",
+    "properties": {
+      "segment": "06 Layout · Header · Footer",
+      "html": "<footer class=\"hf-footer\">\n  <div class=\"hf-footer-grid\">\n    <div>\n      <svg width=\"52\" height=\"52\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M30,2 C38,2 45,5 49,11 C54,16 57,22 57,29 C57,37 53,44 48,48 C43,53 36,58 29,57 C22,57 15,53 10,48 C4,43 2,36 2,29 C2,21 6,14 12,9 C17,3 23,2 30,2 Z\" fill=\"#E4C0A8\"/><text x=\"50%\" y=\"44%\" text-anchor=\"middle\" dominant-baseline=\"middle\" style=\"font-family:'Calistoga',serif;font-size:10.5px;fill:#fefefe\"><tspan x=\"50%\" dy=\"-4.5\">Hey</tspan><tspan x=\"50%\" dy=\"13\">Fede!</tspan></text></svg>\n      <p style=\"font:700 .85rem var(--font-body);color:#5c3d35;margin-top:14px\">Dessertbar &amp; Café</p>\n      <p style=\"font:400 .78rem var(--font-body);color:#9a7060;margin-top:3px\">Frisch. Selbstgemacht. Mit Liebe.</p>\n    </div>\n    <div>\n      <h4 class=\"hf-footer-h\">Navigation</h4>\n      <a class=\"hf-footer-link\">Startseite</a><a class=\"hf-footer-link\">Speisekarte</a><a class=\"hf-footer-link\">Über Uns</a><a class=\"hf-footer-link\">Besuchen</a>\n    </div>\n    <div>\n      <h4 class=\"hf-footer-h\">Kontakt</h4>\n      <p class=\"hf-footer-c\">Langgasse 68, 35576 Wetzlar</p><p class=\"hf-footer-c\">06441 7890426</p><p class=\"hf-footer-c\">017625026991 (WhatsApp)</p>\n    </div>\n    <div>\n      <h4 class=\"hf-footer-h\">Öffnungszeiten</h4>\n      <div class=\"hf-menurow\" style=\"padding:0\"><span style=\"font:800 .86rem var(--font-body);color:#2d1f19\">Mo – So</span><span style=\"font:400 .86rem var(--font-body);color:#5c3d35\">11:30 – 20:00</span></div>\n      <div class=\"hf-divider\"></div>\n      <p style=\"font:800 .78rem var(--font-body);color:#CC624C\">✓ Keine Liefergebühr</p>\n    </div>\n  </div>\n  <div class=\"hf-footer-bottom\">\n    <p style=\"font:400 .76rem var(--font-body);color:#9a7060\">© 2024 Hey Fede! Dessertbar &amp; Café</p>\n    <div style=\"display:flex;gap:18px\"><a class=\"hf-footer-legal\">Impressum</a><a class=\"hf-footer-legal\">Datenschutz</a><a class=\"hf-footer-legal\">AGB</a></div>\n  </div>\n</footer>",
+      "css": ".hf-footer { background: #eedfcc; padding: 48px 32px 36px; }\n.hf-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 36px; margin-bottom: 36px; }\n.hf-footer-h { font: 400 1.05rem var(--font-display); color: #CC624C; margin-bottom: 14px; }\n.hf-footer-link { display: block; font: 600 .87rem var(--font-body); color: #5c3d35; margin-bottom: 9px; cursor: pointer; }\n.hf-footer-link:hover { color: #CC624C; }\n.hf-footer-c { font: 600 .84rem var(--font-body); color: #5c3d35; margin-bottom: 8px; }\n.hf-footer-bottom { border-top: 1px solid #E4C0A8; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }\n.hf-footer-legal { font: 400 .76rem var(--font-body); color: #9a7060; cursor: pointer; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: footer -->"
+  },
+  {
+    "id": "heyfede-el-grid-helpers",
+    "category": "Components",
+    "project": "heyfede",
+    "name": "Hey Fede — Raster-Helfer & Container",
+    "description": "Wiederverwendbare Layout-Klassen: .hf-container (max 1200px, zentriert), .hf-section-pad (vertikaler Rhythmus) und responsive Grids (2/3/4 Spalten, brechen automatisch um).",
+    "properties": {
+      "segment": "06 Layout · Header · Footer",
+      "html": "<div style=\"display:flex;flex-direction:column;gap:10px\">\n  <div class=\"hf-grid-3\" style=\"gap:10px\">\n    <div class=\"hf-gh-cell\">1</div><div class=\"hf-gh-cell\">2</div><div class=\"hf-gh-cell\">3</div>\n  </div>\n  <div class=\"hf-grid-4\" style=\"gap:10px\">\n    <div class=\"hf-gh-cell\">1</div><div class=\"hf-gh-cell\">2</div><div class=\"hf-gh-cell\">3</div><div class=\"hf-gh-cell\">4</div>\n  </div>\n</div>",
+      "css": ".hf-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }\n.hf-section-pad { padding: 80px 0; }\n.hf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }\n.hf-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }\n.hf-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }\n@media (max-width: 900px) { .hf-grid-2 { grid-template-columns: 1fr; } .hf-grid-3 { grid-template-columns: 1fr 1fr; } }\n@media (max-width: 560px) { .hf-grid-3, .hf-grid-4 { grid-template-columns: 1fr; } }\n/* Demo-Hilfsklasse (nicht übernehmen): */\n.hf-gh-cell { background: #E4C0A8; color: #CC624C; font: 800 .9rem var(--font-body); height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: grid-helpers -->"
+  },
+  {
+    "id": "heyfede-el-lava-line",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Wellen-Linie (fließender Trenner)",
+    "description": "Durchgehend gewellte, runde Trennlinie zwischen zwei Inhaltsblöcken — fließt ununterbrochen wie Wasser, kein gerader Strich. Zwei übereinanderlaufende Wellen-Ebenen (vorne --lava, hinten --lava2) bewegen sich gegenläufig für ein lebendiges Lava-Feeling. Zwischen <section>-Blöcke setzen (full-bleed, kein Margin), volle Breite auf allen Geräten. Reine CSS+SVG-Animation, kein JS; stoppt sanft bei prefers-reduced-motion.",
+    "properties": {
+      "segment": "07 Animierte Trenner",
+      "html": "<div class=\"hf-lava-line\" style=\"--lava:#CC624C;--lava2:#E4C0A8\">\n  <div class=\"flow flow-b\"><svg viewBox=\"0 0 2880 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M-180,50 Q-90,28 0,50 T180,50 T360,50 T540,50 T720,50 T900,50 T1080,50 T1260,50 T1440,50 T1620,50 T1800,50 T1980,50 T2160,50 T2340,50 T2520,50 T2700,50 T2880,50 T3060,50\"/></svg></div>\n  <div class=\"flow flow-f\"><svg viewBox=\"0 0 2880 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M-180,50 Q-90,28 0,50 T180,50 T360,50 T540,50 T720,50 T900,50 T1080,50 T1260,50 T1440,50 T1620,50 T1800,50 T1980,50 T2160,50 T2340,50 T2520,50 T2700,50 T2880,50 T3060,50\"/></svg></div>\n</div>",
+      "css": ".hf-lava-line { position: relative; width: 100%; height: 88px; overflow: hidden; }\n.hf-lava-line .flow { position: absolute; top: 0; left: 0; width: 200%; height: 100%; }\n.hf-lava-line .flow svg { display: block; width: 100%; height: 100%; }\n.hf-lava-line .flow path { fill: none; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }\n.hf-lava-line .flow-b { animation: hf-wave-r 21s linear infinite; opacity: .5; }\n.hf-lava-line .flow-b path { stroke: var(--lava2, #E4C0A8); }\n.hf-lava-line .flow-f { animation: hf-wave-l 14s linear infinite; }\n.hf-lava-line .flow-f path { stroke: var(--lava, #CC624C); }\n@keyframes hf-wave-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }\n@keyframes hf-wave-r { from { transform: translateX(-50%); } to { transform: translateX(0); } }\n@media (prefers-reduced-motion: reduce) { .hf-lava-li …",
+      "previewBg": "cream"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: lava-line -->",
+    "animation_free_fallback": "@media (prefers-reduced-motion: reduce) → animation-play-state: paused (Welle eingefroren)."
+  },
+  {
+    "id": "heyfede-el-lava-band",
+    "category": "Animations",
+    "project": "heyfede",
+    "name": "Hey Fede — Wellen-Band (Lampen-Effekt)",
+    "description": "Höheres, ruhig wallendes Wellen-Band — als atmosphärischer Übergang vor einem Section-Header oder zwischen großen Blöcken. Zwei gefüllte, gegenläufige Wellen schieben sich umeinander und lassen die runde Oberkante endlos fließen — kein gerader Rand. Standard Peach (--lava) + helleres Peach dahinter (--lava2) auf Beige; Farben frei wählbar. Full-bleed über die volle Breite.",
+    "properties": {
+      "segment": "07 Animierte Trenner",
+      "html": "<div class=\"hf-lava-band\" style=\"--lava:#E4C0A8;--lava2:#EAD2BE\">\n  <div class=\"flow flow-b\"><svg viewBox=\"0 0 2880 160\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M-180,94 Q-90,60 0,94 T180,94 T360,94 T540,94 T720,94 T900,94 T1080,94 T1260,94 T1440,94 T1620,94 T1800,94 T1980,94 T2160,94 T2340,94 T2520,94 T2700,94 T2880,94 T3060,94 L3060,160 L-180,160 Z\"/></svg></div>\n  <div class=\"flow flow-f\"><svg viewBox=\"0 0 2880 160\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M-180,70 Q-90,40 0,70 T180,70 T360,70 T540,70 T720,70 T900,70 T1080,70 T1260,70 T1440,70 T1620,70 T1800,70 T1980,70 T2160,70 T2340,70 T2520,70 T2700,70 T2880,70 T3060,70 L3060,160 L-180,160 Z\"/></svg></div>\n</div>",
+      "css": ".hf-lava-band { position: relative; width: 100%; height: 150px; overflow: hidden; }\n.hf-lava-band .flow { position: absolute; top: 0; left: 0; width: 200%; height: 100%; }\n.hf-lava-band .flow svg { display: block; width: 100%; height: 100%; }\n.hf-lava-band .flow-b { animation: hf-wave-r 26s linear infinite; }\n.hf-lava-band .flow-b path { fill: var(--lava2, #EAD2BE); }\n.hf-lava-band .flow-f { animation: hf-wave-l 17s linear infinite; }\n.hf-lava-band .flow-f path { fill: var(--lava, #E4C0A8); }\n@keyframes hf-wave-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }\n@keyframes hf-wave-r { from { transform: translateX(-50%); } to { transform: translateX(0); } }\n@media (prefers-reduced-motion: reduce) { .hf-lava-band .flow { animation-play-state: paused; } }",
+      "previewBg": "beige"
+    },
+    "source": "assets/heyfede/snippets.js · marker <!-- SNIPPET: lava-band -->",
+    "animation_free_fallback": "@media (prefers-reduced-motion: reduce) → animation-play-state: paused (Welle eingefroren)."
+  },
+  {
+    "id": "kaqua-i18n-12langs",
+    "category": "Translations",
+    "project": "kaqua",
+    "name": "K-Aqua — Vollständige i18n (12 Sprachen)",
+    "description": "Kern-UI-Strings (Nav, Home-CTAs, Tools-Headline, Footer) in allen 12 Locales. Reihenfolge: de, en, ar(rtl), fr, es, it, pt, nl, pl, tr, ru, zh. Marken-Claim 'Leading in Water Supply' bleibt überall EN.",
+    "properties": {
+      "locales": [
+        "de",
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "it",
+        "pt",
+        "nl",
+        "pl",
+        "tr",
+        "ru",
+        "zh"
+      ],
+      "rtl": [
+        "ar"
+      ],
+      "picker": ".k-lang-item — zeigt nur Sprachen mit vollständigem Wörterbuch (garantiert keine Sprachmischung)",
+      "interpolation": "{n} Märkte · {c} Länder · {city} (gradient-gewrappt via kCityTitle)"
+    },
+    "translations": {
+      "nav.products": {
+        "de": "Produkte",
+        "en": "Products",
+        "ar": "المنتجات",
+        "fr": "Produits",
+        "es": "Productos",
+        "it": "Prodotti",
+        "pt": "Produtos",
+        "nl": "Producten",
+        "pl": "Produkty",
+        "tr": "Ürünler",
+        "ru": "Продукция",
+        "zh": "产品"
+      },
+      "nav.finder": {
+        "de": "Produktfinder",
+        "en": "Product Finder",
+        "ar": "باحث المنتجات",
+        "fr": "Recherche produit",
+        "es": "Buscador",
+        "it": "Trova prodotti",
+        "pt": "Localizador",
+        "nl": "Productzoeker",
+        "pl": "Wyszukiwarka",
+        "tr": "Ürün bulucu",
+        "ru": "Подбор",
+        "zh": "产品查找"
+      },
+      "nav.co2": {
+        "de": "CO₂-Rechner",
+        "en": "CO₂ Calculator",
+        "ar": "حاسبة CO₂",
+        "fr": "Calculateur CO₂",
+        "es": "Calculadora CO₂",
+        "it": "Calcolatore CO₂",
+        "pt": "Calculadora CO₂",
+        "nl": "CO₂-calculator",
+        "pl": "Kalkulator CO₂",
+        "tr": "CO₂ hesaplayıcı",
+        "ru": "CO₂-калькулятор",
+        "zh": "CO₂计算器"
+      },
+      "nav.markets": {
+        "de": "Märkte",
+        "en": "Markets",
+        "ar": "الأسواق",
+        "fr": "Marchés",
+        "es": "Mercados",
+        "it": "Mercati",
+        "pt": "Mercados",
+        "nl": "Markten",
+        "pl": "Rynki",
+        "tr": "Pazarlar",
+        "ru": "Рынки",
+        "zh": "市场"
+      },
+      "nav.contact": {
+        "de": "Kontakt",
+        "en": "Contact",
+        "ar": "اتصل بنا",
+        "fr": "Contact",
+        "es": "Contacto",
+        "it": "Contatti",
+        "pt": "Contacto",
+        "nl": "Contact",
+        "pl": "Kontakt",
+        "tr": "İletişim",
+        "ru": "Контакты",
+        "zh": "联系我们"
+      },
+      "home.ctaProducts": {
+        "de": "Produktsystem entdecken",
+        "en": "Explore the product system",
+        "ar": "اكتشف نظام المنتجات",
+        "fr": "Découvrir le système",
+        "es": "Descubrir el sistema",
+        "it": "Scopri il sistema",
+        "pt": "Descobrir o sistema",
+        "nl": "Ontdek het systeem",
+        "pl": "Poznaj system",
+        "tr": "Sistemi keşfedin",
+        "ru": "Изучить систему",
+        "zh": "探索产品系统"
+      },
+      "home.ctaContact": {
+        "de": "Kontakt aufnehmen",
+        "en": "Get in touch",
+        "ar": "تواصل معنا",
+        "fr": "Nous contacter",
+        "es": "Contactar",
+        "it": "Contattaci",
+        "pt": "Entrar em contacto",
+        "nl": "Neem contact op",
+        "pl": "Skontaktuj się",
+        "tr": "İletişime geçin",
+        "ru": "Связаться",
+        "zh": "联系我们"
+      },
+      "home.toolsTitle": {
+        "de": "Keine Textwüste. Werkzeuge.",
+        "en": "No walls of text. Tools.",
+        "ar": "لا جدران نصوص. أدوات.",
+        "fr": "Pas de murs de texte. Des outils.",
+        "es": "Sin muros de texto. Herramientas.",
+        "it": "Niente muri di testo. Strumenti.",
+        "pt": "Sem paredes de texto. Ferramentas.",
+        "nl": "Geen tekstmuren. Tools.",
+        "pl": "Żadnych ścian tekstu. Narzędzia.",
+        "tr": "Metin duvarları yok. Araçlar.",
+        "ru": "Никаких стен текста. Инструменты.",
+        "zh": "没有文字墙。只有工具。"
+      },
+      "footer.imprint": {
+        "de": "Impressum",
+        "en": "Imprint",
+        "ar": "بيانات الناشر",
+        "fr": "Mentions légales",
+        "es": "Aviso legal",
+        "it": "Note legali",
+        "pt": "Ficha técnica",
+        "nl": "Colofon",
+        "pl": "Impressum",
+        "tr": "Künye",
+        "ru": "Выходные данные",
+        "zh": "版本说明"
+      },
+      "footer.privacy": {
+        "de": "Datenschutz",
+        "en": "Privacy",
+        "ar": "الخصوصية",
+        "fr": "Confidentialité",
+        "es": "Privacidad",
+        "it": "Privacy",
+        "pt": "Privacidade",
+        "nl": "Privacy",
+        "pl": "Prywatność",
+        "tr": "Gizlilik",
+        "ru": "Конфиденциальность",
+        "zh": "隐私"
+      },
+      "footer.rights": {
+        "de": "Alle Rechte vorbehalten.",
+        "en": "All rights reserved.",
+        "ar": "جميع الحقوق محفوظة.",
+        "fr": "Tous droits réservés.",
+        "es": "Todos los derechos reservados.",
+        "it": "Tutti i diritti riservati.",
+        "pt": "Todos os direitos reservados.",
+        "nl": "Alle rechten voorbehouden.",
+        "pl": "Wszelkie prawa zastrzeżone.",
+        "tr": "Tüm hakları saklıdır.",
+        "ru": "Все права защищены.",
+        "zh": "版权所有。"
+      }
+    }
+  },
+  {
+    "id": "rb-shapegrid",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "ShapeGrid — Animated Canvas Grid",
+    "description": "rAF-driven canvas grid (square/hexagon/circle/triangle), scrolling in any direction, hover-fill. No deps.",
+    "properties": {
+      "deps": "none",
+      "shapes": [
+        "square",
+        "hexagon",
+        "circle",
+        "triangle"
+      ],
+      "directions": [
+        "right",
+        "left",
+        "up",
+        "down",
+        "diagonal"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "direction": "diagonal",
+          "speed": 0.4,
+          "squareSize": 44,
+          "borderColor": "hsl(20 8% 80%)",
+          "hoverFillColor": "hsl(0 72% 42%)",
+          "shape": "square",
+          "note": "Cream diagonal grid for hero bg — precision & motion"
+        },
+        "heyfede": {
+          "direction": "diagonal",
+          "speed": 0.35,
+          "squareSize": 38,
+          "borderColor": "rgba(204,98,76,0.18)",
+          "hoverFillColor": "#CC624C",
+          "shape": "circle",
+          "note": "Polka-dot pattern, terracotta hover, playful"
+        },
+        "kaqua": {
+          "direction": "right",
+          "speed": 0.5,
+          "squareSize": 40,
+          "borderColor": "oklch(0.5 0.06 302 / 0.2)",
+          "hoverFillColor": "oklch(0.44 0.17 302)",
+          "shape": "hexagon",
+          "note": "Hexagon grid right-scroll, brand purple hover — industrial tech"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-dotfield",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "DotField — Canvas Dot Field",
+    "description": "Cursor-reactive dot field with bulge/push physics, wave animation, sparkle, glow. No deps.",
+    "properties": {
+      "deps": "none",
+      "key_props": [
+        "dotRadius",
+        "dotSpacing",
+        "bulgeStrength",
+        "glowRadius",
+        "sparkle",
+        "waveAmplitude",
+        "gradientFrom",
+        "gradientTo",
+        "glowColor"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "dotRadius": 1.8,
+          "dotSpacing": 16,
+          "bulgeStrength": 55,
+          "glowRadius": 180,
+          "sparkle": false,
+          "waveAmplitude": 0,
+          "gradientFrom": "rgba(185,28,28,0.28)",
+          "gradientTo": "rgba(180,120,60,0.18)",
+          "glowColor": "#b91c1c",
+          "note": "Red-warm dot field for hero sections"
+        },
+        "heyfede": {
+          "dotRadius": 2.2,
+          "dotSpacing": 18,
+          "bulgeStrength": 72,
+          "glowRadius": 140,
+          "sparkle": true,
+          "waveAmplitude": 3,
+          "gradientFrom": "rgba(204,98,76,0.35)",
+          "gradientTo": "rgba(228,192,168,0.25)",
+          "glowColor": "#2d1f19",
+          "note": "Warm sparkle dots, wavy, playful terracotta"
+        },
+        "kaqua": {
+          "dotRadius": 1.5,
+          "dotSpacing": 14,
+          "bulgeStrength": 67,
+          "glowRadius": 160,
+          "sparkle": false,
+          "waveAmplitude": 0,
+          "gradientFrom": "rgba(91,45,140,0.35)",
+          "gradientTo": "rgba(58,166,192,0.25)",
+          "glowColor": "#0A0A0F",
+          "note": "Purple→aqua gradient, OLED dark compatible"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-dotgrid",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "DotGrid — GSAP Dot Grid + Shockwave",
+    "description": "GSAP InertiaPlugin dots with mouse-proximity color, speed inertia, click shockwave. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "dotSize",
+        "gap",
+        "baseColor",
+        "activeColor",
+        "proximity",
+        "shockRadius",
+        "shockStrength",
+        "resistance",
+        "returnDuration"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "dotSize": 10,
+          "gap": 16,
+          "baseColor": "hsl(20 8% 86%)",
+          "activeColor": "hsl(0 72% 42%)",
+          "proximity": 120,
+          "shockRadius": 260,
+          "shockStrength": 5,
+          "resistance": 700,
+          "returnDuration": 1.5,
+          "note": "Cream base → red active, premium physicality"
+        },
+        "heyfede": {
+          "dotSize": 12,
+          "gap": 18,
+          "baseColor": "#E4C0A8",
+          "activeColor": "#CC624C",
+          "proximity": 130,
+          "shockRadius": 240,
+          "shockStrength": 6,
+          "resistance": 600,
+          "returnDuration": 1.2,
+          "note": "Peach → terracotta, bouncy spring-feel"
+        },
+        "kaqua": {
+          "dotSize": 8,
+          "gap": 14,
+          "baseColor": "oklch(0.86 0.08 305)",
+          "activeColor": "oklch(0.44 0.17 302)",
+          "proximity": 150,
+          "shockRadius": 280,
+          "shockStrength": 4,
+          "resistance": 800,
+          "returnDuration": 1.8,
+          "note": "Brand-300 base → brand-600 active, precise tech"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-lightrays",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "LightRays — WebGL Shader Light Rays",
+    "description": "OGL WebGL light rays from configurable origin, mouse-follow, noise, distortion. Dep: ogl.",
+    "properties": {
+      "deps": "ogl",
+      "origins": [
+        "top-center",
+        "top-left",
+        "top-right",
+        "right",
+        "left",
+        "bottom-center",
+        "bottom-right",
+        "bottom-left"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "raysOrigin": "top-center",
+          "raysColor": "#c0282a",
+          "raysSpeed": 0.9,
+          "lightSpread": 0.6,
+          "rayLength": 1.4,
+          "followMouse": true,
+          "mouseInfluence": 0.08,
+          "noiseAmount": 0.05,
+          "pulsating": false,
+          "note": "Premium-red rays from top, subtle mouse follow"
+        },
+        "heyfede": {
+          "raysOrigin": "top-left",
+          "raysColor": "#CC624C",
+          "raysSpeed": 1.2,
+          "lightSpread": 0.9,
+          "rayLength": 1.1,
+          "followMouse": true,
+          "mouseInfluence": 0.12,
+          "noiseAmount": 0.08,
+          "pulsating": true,
+          "note": "Terracotta pulsating rays, warm atmosphere"
+        },
+        "kaqua": {
+          "raysOrigin": "top-right",
+          "raysColor": "#5B2D8C",
+          "raysSpeed": 1.5,
+          "lightSpread": 0.8,
+          "rayLength": 1.2,
+          "followMouse": true,
+          "mouseInfluence": 0.1,
+          "noiseAmount": 0.1,
+          "distortion": 0.05,
+          "note": "Brand-purple rays, tech-clean, distortion hint"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-siderays",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "SideRays — WebGL Corner Light Rays",
+    "description": "OGL WebGL two-color ray fan from a corner, tilted. Dep: ogl.",
+    "properties": {
+      "deps": "ogl",
+      "key_props": [
+        "speed",
+        "rayColor1",
+        "rayColor2",
+        "intensity",
+        "spread",
+        "origin",
+        "tilt",
+        "saturation",
+        "blend",
+        "falloff",
+        "opacity"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "rayColor1": "#c0282a",
+          "rayColor2": "#b8860b",
+          "intensity": 1.8,
+          "spread": 1.8,
+          "origin": "top-right",
+          "tilt": 5,
+          "saturation": 1.4,
+          "blend": 0.6,
+          "falloff": 2,
+          "note": "Red→gold, top-right luxury glow"
+        },
+        "heyfede": {
+          "rayColor1": "#CC624C",
+          "rayColor2": "#E4C0A8",
+          "intensity": 2.2,
+          "spread": 2.2,
+          "origin": "top-left",
+          "tilt": -5,
+          "saturation": 1.6,
+          "blend": 0.7,
+          "falloff": 1.6,
+          "note": "Terra→peach, warm corner atmosphere"
+        },
+        "kaqua": {
+          "rayColor1": "#5B2D8C",
+          "rayColor2": "#3aa6c0",
+          "intensity": 2,
+          "spread": 2,
+          "origin": "top-right",
+          "tilt": 0,
+          "saturation": 1.5,
+          "blend": 0.75,
+          "falloff": 1.6,
+          "note": "Purple→aqua dual-brand rays"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-metaballs",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "MetaBalls — WebGL Organic Blobs",
+    "description": "OGL GLSL metaballs that blend together, cursor-reactive. Dep: ogl.",
+    "properties": {
+      "deps": "ogl",
+      "key_props": [
+        "color",
+        "cursorBallColor",
+        "cursorBallSize",
+        "ballCount",
+        "animationSize",
+        "hoverSmoothness",
+        "clumpFactor",
+        "speed",
+        "enableTransparency"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "color": "#c0282a",
+          "cursorBallColor": "#b8860b",
+          "cursorBallSize": 2.5,
+          "ballCount": 12,
+          "animationSize": 28,
+          "hoverSmoothness": 0.06,
+          "clumpFactor": 0.9,
+          "speed": 0.25,
+          "enableTransparency": true,
+          "note": "Red+gold metaballs, premium organic"
+        },
+        "heyfede": {
+          "color": "#CC624C",
+          "cursorBallColor": "#E4C0A8",
+          "cursorBallSize": 3,
+          "ballCount": 15,
+          "animationSize": 32,
+          "hoverSmoothness": 0.05,
+          "clumpFactor": 1.1,
+          "speed": 0.3,
+          "enableTransparency": true,
+          "note": "Terracotta blobs, playful large cluster"
+        },
+        "kaqua": {
+          "color": "#5B2D8C",
+          "cursorBallColor": "#3aa6c0",
+          "cursorBallSize": 2,
+          "ballCount": 18,
+          "animationSize": 30,
+          "hoverSmoothness": 0.04,
+          "clumpFactor": 0.85,
+          "speed": 0.35,
+          "enableTransparency": true,
+          "note": "Purple+aqua dual-color, tech precision"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-ribbons",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "Ribbons — OGL Mouse-Trail Ribbons",
+    "description": "OGL polyline ribbons following mouse, spring physics, shader fade/wave. Dep: ogl.",
+    "properties": {
+      "deps": "ogl",
+      "key_props": [
+        "colors",
+        "baseSpring",
+        "baseFriction",
+        "baseThickness",
+        "maxAge",
+        "speedMultiplier",
+        "enableFade",
+        "enableShaderEffect",
+        "effectAmplitude"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "colors": [
+            "#c0282a",
+            "#b8860b",
+            "hsl(30 25% 85%)"
+          ],
+          "baseSpring": 0.03,
+          "baseFriction": 0.9,
+          "baseThickness": 28,
+          "maxAge": 500,
+          "speedMultiplier": 0.5,
+          "enableFade": true,
+          "enableShaderEffect": false,
+          "note": "Red-gold-cream triple ribbons, elegant"
+        },
+        "heyfede": {
+          "colors": [
+            "#CC624C",
+            "#E4C0A8",
+            "#eedfcc"
+          ],
+          "baseSpring": 0.04,
+          "baseFriction": 0.88,
+          "baseThickness": 34,
+          "maxAge": 400,
+          "speedMultiplier": 0.6,
+          "enableFade": true,
+          "enableShaderEffect": true,
+          "effectAmplitude": 2,
+          "note": "Terra-peach-beige, wavy organic"
+        },
+        "kaqua": {
+          "colors": [
+            "#5B2D8C",
+            "#3aa6c0"
+          ],
+          "baseSpring": 0.025,
+          "baseFriction": 0.92,
+          "baseThickness": 24,
+          "maxAge": 600,
+          "speedMultiplier": 0.4,
+          "enableFade": false,
+          "enableShaderEffect": true,
+          "effectAmplitude": 1.5,
+          "note": "Purple+aqua clean tech ribbons"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-gooeyNav",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "GooeyNav — Gooey Blob Navigation",
+    "description": "SVG goo-filter nav: active item gets blobby transition + particle burst. No deps.",
+    "properties": {
+      "deps": "none",
+      "key_props": [
+        "animationTime",
+        "particleCount",
+        "particleDistances",
+        "particleR",
+        "timeVariance",
+        "colors",
+        "initialActiveIndex"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "animationTime": 500,
+          "particleCount": 12,
+          "particleDistances": [
+            80,
+            8
+          ],
+          "particleR": 80,
+          "timeVariance": 250,
+          "colors": [
+            1,
+            2,
+            1,
+            2,
+            1
+          ],
+          "note": "Refined particle burst, fewer particles, premium feel. Color CSS vars: var(--primary) scale"
+        },
+        "heyfede": {
+          "animationTime": 600,
+          "particleCount": 18,
+          "particleDistances": [
+            95,
+            12
+          ],
+          "particleR": 110,
+          "timeVariance": 350,
+          "colors": [
+            1,
+            2,
+            3,
+            1,
+            2,
+            3,
+            1,
+            4
+          ],
+          "note": "More particles, longer travel, playful burst"
+        },
+        "kaqua": {
+          "animationTime": 450,
+          "particleCount": 10,
+          "particleDistances": [
+            70,
+            8
+          ],
+          "particleR": 70,
+          "timeVariance": 200,
+          "colors": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "note": "Tight fast burst, minimal, professional"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede"
+    ]
+  },
+  {
+    "id": "rb-flowingMenu",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "FlowingMenu — GSAP Edge-Reveal Menu",
+    "description": "Full-height nav menu; hover slides a marquee overlay up/down from closest edge. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "items",
+        "speed",
+        "textColor",
+        "bgColor",
+        "marqueeBgColor",
+        "marqueeTextColor",
+        "borderColor"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "speed": 18,
+          "textColor": "hsl(0 0% 10%)",
+          "bgColor": "hsl(30 25% 97%)",
+          "marqueeBgColor": "hsl(0 72% 42%)",
+          "marqueeTextColor": "#fff",
+          "borderColor": "hsl(20 8% 86%)",
+          "note": "Cream bg, red marquee reveal, premium"
+        },
+        "heyfede": {
+          "speed": 14,
+          "textColor": "#2d1f19",
+          "bgColor": "#f5efe8",
+          "marqueeBgColor": "#CC624C",
+          "marqueeTextColor": "#fefefe",
+          "borderColor": "#E4C0A8",
+          "note": "Cream bg, terracotta marquee, warm"
+        },
+        "kaqua": {
+          "speed": 20,
+          "textColor": "var(--foreground)",
+          "bgColor": "var(--background)",
+          "marqueeBgColor": "var(--primary)",
+          "marqueeTextColor": "var(--primary-foreground)",
+          "borderColor": "var(--card-border)",
+          "note": "Token-driven, dark-mode compatible"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-staggeredMenu",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "StaggeredMenu — GSAP Fullscreen Nav Panel",
+    "description": "Slide-in fullscreen panel with staggered item entrance + icon animation + socials. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "position",
+        "colors",
+        "menuButtonColor",
+        "openMenuButtonColor",
+        "accentColor",
+        "displayItemNumbering",
+        "displaySocials"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "position": "right",
+          "colors": [
+            "hsl(20 8% 86%)",
+            "hsl(0 72% 42%)"
+          ],
+          "menuButtonColor": "hsl(0 0% 10%)",
+          "openMenuButtonColor": "#fff",
+          "accentColor": "hsl(0 72% 42%)",
+          "displayItemNumbering": true,
+          "note": "Red accent + numbered items, premium"
+        },
+        "heyfede": {
+          "position": "right",
+          "colors": [
+            "#eedfcc",
+            "#CC624C"
+          ],
+          "menuButtonColor": "#2d1f19",
+          "openMenuButtonColor": "#fefefe",
+          "accentColor": "#CC624C",
+          "displayItemNumbering": false,
+          "note": "Beige→terracotta layers, warm reveal"
+        },
+        "kaqua": {
+          "position": "right",
+          "colors": [
+            "oklch(0.3 0.06 302)",
+            "oklch(0.44 0.17 302)"
+          ],
+          "menuButtonColor": "var(--foreground)",
+          "openMenuButtonColor": "var(--primary-foreground)",
+          "accentColor": "oklch(0.44 0.17 302)",
+          "displayItemNumbering": true,
+          "note": "Purple gradient layers, dark-mode fine"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-dock",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "Dock — macOS Spring Dock",
+    "description": "Motion.js spring magnification dock (macOS-style). Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "items",
+        "panelHeight",
+        "baseItemSize",
+        "magnification",
+        "distance",
+        "spring"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "panelHeight": 64,
+          "baseItemSize": 46,
+          "magnification": 68,
+          "distance": 180,
+          "spring": {
+            "mass": 0.1,
+            "stiffness": 160,
+            "damping": 14
+          },
+          "note": "Subtle magnification, premium restraint"
+        },
+        "heyfede": {
+          "panelHeight": 68,
+          "baseItemSize": 50,
+          "magnification": 76,
+          "distance": 200,
+          "spring": {
+            "mass": 0.08,
+            "stiffness": 200,
+            "damping": 12
+          },
+          "note": "Bigger pop, playful spring — menu shortcuts"
+        },
+        "kaqua": {
+          "panelHeight": 56,
+          "baseItemSize": 40,
+          "magnification": 60,
+          "distance": 160,
+          "spring": {
+            "mass": 0.12,
+            "stiffness": 140,
+            "damping": 16
+          },
+          "note": "Contained, professional B2B tool launcher"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede"
+    ]
+  },
+  {
+    "id": "rb-infiniteMenu",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "InfiniteMenu — WebGL 3D Sphere Menu",
+    "description": "WebGL2 sphere of disc-items, arcball drag, texture atlas, snap-to-nearest. Dep: gl-matrix.",
+    "properties": {
+      "deps": "gl-matrix",
+      "key_props": [
+        "items",
+        "scale"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "scale": 1,
+          "itemStyle": "items: [{image, link, title, description}] mit Fahrzeugmodellen oder Services",
+          "note": "Fahrzeug-Galerie-Kugel: jedes Fahrzeug als disc"
+        },
+        "heyfede": {
+          "scale": 0.95,
+          "itemStyle": "Speisekarten-Items: Produktfotos + Name + Preis",
+          "note": "3D Speisekarten-Globe, instagrammable"
+        },
+        "kaqua": {
+          "scale": 1.05,
+          "itemStyle": "Marktregionen: Länderflagge + Stadtname + km",
+          "note": "27-Märkte-Kugel, interaktives Geo-Portal"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-scrollStack",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "ScrollStack — Lenis Stacking Cards",
+    "description": "Lenis smooth scroll + cards that scale and stack on scroll. Dep: lenis.",
+    "properties": {
+      "deps": "lenis",
+      "key_props": [
+        "itemDistance",
+        "itemScale",
+        "stackPosition",
+        "baseScale",
+        "rotationAmount",
+        "blurAmount",
+        "scaleDuration"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "itemDistance": 90,
+          "itemScale": 0.025,
+          "stackPosition": "22%",
+          "baseScale": 0.88,
+          "rotationAmount": 0,
+          "blurAmount": 0,
+          "note": "Clean stacking cards for services/models"
+        },
+        "heyfede": {
+          "itemDistance": 80,
+          "itemScale": 0.03,
+          "stackPosition": "20%",
+          "baseScale": 0.86,
+          "rotationAmount": 1.5,
+          "blurAmount": 0,
+          "note": "Slight rotation, organic stacking"
+        },
+        "kaqua": {
+          "itemDistance": 100,
+          "itemScale": 0.02,
+          "stackPosition": "24%",
+          "baseScale": 0.9,
+          "rotationAmount": 0,
+          "blurAmount": 2,
+          "note": "Progressive blur depth for B2B storytelling"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-gridMotion",
+    "category": "FreeDesign",
+    "project": "react-bits",
+    "name": "GridMotion — GSAP Mouse-Parallax Grid",
+    "description": "4-row rotated grid, rows shift based on mouse X. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "items",
+        "gradientColor"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "gradientColor": "hsl(30 25% 97%)",
+          "items": "Fahrzeug-Platzhalter + Badges + Zahlen (7 pro Zeile)",
+          "note": "Diagonales Fahrzeug-Mosaik für Hero"
+        },
+        "heyfede": {
+          "gradientColor": "#f5efe8",
+          "items": "Produktfotos + Tags + Bewertungen",
+          "note": "Speisekarten-Mosaik mit warmen Tones"
+        },
+        "kaqua": {
+          "gradientColor": "#0A0A0F",
+          "items": "Rohrdimensionen + Markt-Labels + ISO-Badges",
+          "note": "Dark hero product grid für OLED"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede"
+    ]
+  },
+  {
+    "id": "rb-scrollReveal",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "ScrollReveal — GSAP Word-by-Word Reveal",
+    "description": "Words fade+blur in as you scroll, paragraph tilt unwinds. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "enableBlur",
+        "baseOpacity",
+        "baseRotation",
+        "blurStrength",
+        "rotationEnd",
+        "wordAnimationEnd"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "enableBlur": true,
+          "baseOpacity": 0.08,
+          "baseRotation": 2,
+          "blurStrength": 5,
+          "note": "Headlines scrub in with premium blur"
+        },
+        "heyfede": {
+          "enableBlur": true,
+          "baseOpacity": 0.12,
+          "baseRotation": 3,
+          "blurStrength": 4,
+          "note": "Warm body text reveal, softer"
+        },
+        "kaqua": {
+          "enableBlur": false,
+          "baseOpacity": 0.1,
+          "baseRotation": 1.5,
+          "blurStrength": 0,
+          "note": "Clean unblurred reveal, technical feel"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-scrollFloat",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "ScrollFloat — GSAP Char Float Up",
+    "description": "Characters squash/stretch up as you scroll. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "animationDuration",
+        "ease",
+        "scrollStart",
+        "scrollEnd",
+        "stagger"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "animationDuration": 0.9,
+          "ease": "back.inOut(1.8)",
+          "stagger": 0.025,
+          "note": "Tight stagger, premium restrained"
+        },
+        "heyfede": {
+          "animationDuration": 1.1,
+          "ease": "back.inOut(2.4)",
+          "stagger": 0.04,
+          "note": "Bouncier, playful chars"
+        },
+        "kaqua": {
+          "animationDuration": 0.8,
+          "ease": "power3.inOut",
+          "stagger": 0.02,
+          "note": "Fast precise reveal"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede"
+    ]
+  },
+  {
+    "id": "rb-fadeContent",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "FadeContent — GSAP Scroll Fade+Blur",
+    "description": "Fade+blur any content on scroll. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "blur",
+        "duration",
+        "ease",
+        "initialOpacity",
+        "threshold",
+        "disappearAfter"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "blur": false,
+          "duration": 800,
+          "ease": "power2.out",
+          "initialOpacity": 0,
+          "note": "Clean fade, no blur distraction"
+        },
+        "heyfede": {
+          "blur": true,
+          "duration": 1000,
+          "ease": "power2.out",
+          "initialOpacity": 0,
+          "note": "Blur + fade, dreamy atmosphere"
+        },
+        "kaqua": {
+          "blur": false,
+          "duration": 600,
+          "ease": "power3.out",
+          "initialOpacity": 0,
+          "note": "Fast crisp reveal, technical"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-animatedContent",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "AnimatedContent — GSAP Slide+Fade",
+    "description": "Slide from direction + fade in on scroll. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "distance",
+        "direction",
+        "reverse",
+        "duration",
+        "ease",
+        "scale",
+        "animateOpacity"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "distance": 60,
+          "direction": "vertical",
+          "reverse": false,
+          "duration": 0.7,
+          "ease": "power3.out",
+          "scale": 1,
+          "note": "Standard upward reveal"
+        },
+        "heyfede": {
+          "distance": 40,
+          "direction": "vertical",
+          "reverse": false,
+          "duration": 0.9,
+          "ease": "back.out(1.5)",
+          "scale": 1.02,
+          "note": "Slight scale+bounce, playful"
+        },
+        "kaqua": {
+          "distance": 80,
+          "direction": "horizontal",
+          "reverse": false,
+          "duration": 0.6,
+          "ease": "power4.out",
+          "scale": 1,
+          "note": "Horizontal slide for section entries"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-blurText",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "BlurText — Motion Blur+Fade Words",
+    "description": "Words/letters blur+fade in on viewport enter. Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "animateBy",
+        "direction",
+        "delay",
+        "stepDuration",
+        "threshold"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "animateBy": "words",
+          "direction": "top",
+          "delay": 80,
+          "stepDuration": 0.3,
+          "note": "Word-level, from top, measured pace"
+        },
+        "heyfede": {
+          "animateBy": "letters",
+          "direction": "bottom",
+          "delay": 50,
+          "stepDuration": 0.25,
+          "note": "Letter level, from below, playful"
+        },
+        "kaqua": {
+          "animateBy": "words",
+          "direction": "top",
+          "delay": 60,
+          "stepDuration": 0.22,
+          "note": "Fast word reveal, precise"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-splitText",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "SplitText — GSAP Letter/Word Animate",
+    "description": "GSAP SplitText ScrollTrigger animation. Dep: gsap @gsap/react.",
+    "properties": {
+      "deps": "gsap @gsap/react",
+      "key_props": [
+        "splitType",
+        "delay",
+        "duration",
+        "ease",
+        "from",
+        "to",
+        "textAlign"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "splitType": "words",
+          "delay": 40,
+          "duration": 1,
+          "ease": "power3.out",
+          "from": {
+            "opacity": 0,
+            "y": 50
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0
+          },
+          "note": "Word-level, slow premium reveal"
+        },
+        "heyfede": {
+          "splitType": "chars",
+          "delay": 30,
+          "duration": 0.8,
+          "ease": "back.out(2)",
+          "from": {
+            "opacity": 0,
+            "y": 40,
+            "scale": 0.7
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "scale": 1
+          },
+          "note": "Char-level with scale pop, playful"
+        },
+        "kaqua": {
+          "splitType": "words",
+          "delay": 25,
+          "duration": 0.65,
+          "ease": "power4.out",
+          "from": {
+            "opacity": 0,
+            "x": -30
+          },
+          "to": {
+            "opacity": 1,
+            "x": 0
+          },
+          "note": "Horizontal word slide, technical"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede"
+    ]
+  },
+  {
+    "id": "rb-rotatingText",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "RotatingText — Motion Cycling Text",
+    "description": "Rotating text with stagger per char. Dep: motion. (Used by K-Aqua hero already.)",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "texts",
+        "rotationInterval",
+        "staggerDuration",
+        "staggerFrom",
+        "transition",
+        "initial",
+        "animate",
+        "exit"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "texts": [
+            "Kuratierte Auswahl",
+            "Premium-Selektion",
+            "Scheckheftgepflegt",
+            "Aus erster Hand"
+          ],
+          "rotationInterval": 2200,
+          "staggerDuration": 0.028,
+          "staggerFrom": "first",
+          "transition": {
+            "type": "spring",
+            "damping": 28,
+            "stiffness": 320
+          },
+          "note": "German formal, slow deliberate cycle"
+        },
+        "heyfede": {
+          "texts": [
+            "Frisch & Selbstgemacht",
+            "Mit Liebe zubereitet",
+            "Täglich frisch!",
+            "Für dich gemacht"
+          ],
+          "rotationInterval": 1800,
+          "staggerDuration": 0.035,
+          "staggerFrom": "last",
+          "transition": {
+            "type": "spring",
+            "damping": 20,
+            "stiffness": 400
+          },
+          "note": "Playful phrases, bottom stagger, bouncy"
+        },
+        "kaqua": {
+          "texts": [
+            "Führend in der Wasserversorgung.",
+            "Leading in Water Supply.",
+            "PP-R/PP-RCT d20–d630.",
+            "Dreifach ISO-zertifiziert."
+          ],
+          "rotationInterval": 2500,
+          "staggerDuration": 0.02,
+          "staggerFrom": "first",
+          "note": "Multi-lang cycling, measured brand claim"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-scrambledText",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "ScrambledText — GSAP Hover Scramble",
+    "description": "GSAP SplitText + ScrambleTextPlugin on mousemove proximity. Dep: gsap.",
+    "properties": {
+      "deps": "gsap (SplitText + ScrambleTextPlugin)",
+      "key_props": [
+        "radius",
+        "duration",
+        "speed",
+        "scrambleChars"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "radius": 90,
+          "duration": 1,
+          "speed": 0.45,
+          "scrambleChars": ".:",
+          "note": "Minimal chars, premium restrained"
+        },
+        "heyfede": {
+          "radius": 110,
+          "duration": 0.8,
+          "speed": 0.6,
+          "scrambleChars": "✦•❋",
+          "note": "Food-icon scramble chars, playful"
+        },
+        "kaqua": {
+          "radius": 100,
+          "duration": 0.7,
+          "speed": 0.5,
+          "scrambleChars": "d0-9",
+          "note": "Numeric scramble, tech readout feel"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-scrollVelocity",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "ScrollVelocity — Motion Velocity Marquee",
+    "description": "Marquee rows that speed up/slow based on scroll velocity. Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "texts",
+        "velocity",
+        "damping",
+        "stiffness",
+        "numCopies"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "texts": [
+            "Kuratierte Auswahl · Premium-Selektion ·",
+            "Sorgfältig geprüft · Aus erster Hand ·"
+          ],
+          "velocity": 80,
+          "damping": 50,
+          "stiffness": 400,
+          "note": "Trust-words marquee, restrained speed"
+        },
+        "heyfede": {
+          "texts": [
+            "Frisch & Selbstgemacht ✦ Bubble Waffle ✦",
+            "Hey Fede! Dessertbar ✦ Wetzlar ✦"
+          ],
+          "velocity": 100,
+          "damping": 40,
+          "stiffness": 500,
+          "note": "Brand + product words, lively"
+        },
+        "kaqua": {
+          "texts": [
+            "ISO 9001 · ISO 14001 · ISO 50001 · KESSEL ·",
+            "PP-R/PP-RCT · d20–d630 · Made in Germany ·"
+          ],
+          "velocity": 90,
+          "damping": 55,
+          "stiffness": 380,
+          "note": "Certification trust band"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-variableProximity",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "VariableProximity — Proximity Font Variation",
+    "description": "Variable font weight/opsz changes per-letter based on cursor proximity. Dep: motion, Roboto Flex.",
+    "properties": {
+      "deps": "motion + Roboto Flex variable font",
+      "key_props": [
+        "fromFontVariationSettings",
+        "toFontVariationSettings",
+        "radius",
+        "falloff"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "fromFontVariationSettings": "'wght' 400, 'opsz' 9",
+          "toFontVariationSettings": "'wght' 900, 'opsz' 40",
+          "radius": 90,
+          "falloff": "exponential",
+          "note": "400→900 weight pop, premium drama"
+        },
+        "heyfede": {
+          "fromFontVariationSettings": "'wght' 500, 'opsz' 9",
+          "toFontVariationSettings": "'wght' 800, 'opsz' 30",
+          "radius": 110,
+          "falloff": "gaussian",
+          "note": "Softer gaussian falloff, playful warmth"
+        },
+        "kaqua": {
+          "fromFontVariationSettings": "'wght' 300, 'opsz' 8",
+          "toFontVariationSettings": "'wght' 1000, 'opsz' 40",
+          "radius": 80,
+          "falloff": "linear",
+          "note": "Extreme contrast 300→1000, tech precision"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-shinyText",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "ShinyText — Motion Shine Sweep",
+    "description": "CSS gradient shine sweep across text. Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "color",
+        "shineColor",
+        "speed",
+        "spread",
+        "direction",
+        "yoyo",
+        "delay"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "color": "hsl(20 8% 10%)",
+          "shineColor": "hsl(38 55% 60%)",
+          "speed": 2.5,
+          "spread": 100,
+          "direction": "left",
+          "note": "Gold shine on dark text, luxury accent"
+        },
+        "heyfede": {
+          "color": "#2d1f19",
+          "shineColor": "#E4C0A8",
+          "speed": 2,
+          "spread": 120,
+          "direction": "left",
+          "note": "Peach shine on dark text, warm"
+        },
+        "kaqua": {
+          "color": "oklch(0.94 0.008 300)",
+          "shineColor": "oklch(0.68 0.12 220)",
+          "speed": 3,
+          "spread": 90,
+          "direction": "left",
+          "note": "Aqua shine on light text, tech highlight"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-textType",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "TextType — GSAP Typewriter",
+    "description": "Typewriter effect with variable speed, multi-text loop, cursor blink. Dep: gsap.",
+    "properties": {
+      "deps": "gsap",
+      "key_props": [
+        "text",
+        "typingSpeed",
+        "deletingSpeed",
+        "pauseDuration",
+        "showCursor",
+        "cursorCharacter",
+        "textColors",
+        "loop"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "text": [
+            "Kuratierte Auswahl",
+            "Aus erster Hand",
+            "Scheckheftgepflegt"
+          ],
+          "typingSpeed": 55,
+          "deletingSpeed": 28,
+          "pauseDuration": 2200,
+          "showCursor": true,
+          "cursorCharacter": "|",
+          "textColors": [
+            "hsl(0 72% 42%)"
+          ],
+          "note": "Premium auto keywords, red color cycle"
+        },
+        "heyfede": {
+          "text": [
+            "Frisch & Selbstgemacht",
+            "Mit Liebe ❤",
+            "Täglich frisch!"
+          ],
+          "typingSpeed": 65,
+          "deletingSpeed": 35,
+          "pauseDuration": 1800,
+          "showCursor": true,
+          "cursorCharacter": "✦",
+          "textColors": [
+            "#CC624C"
+          ],
+          "note": "Playful sparkle cursor, terracotta"
+        },
+        "kaqua": {
+          "text": [
+            "Leading in Water Supply.",
+            "Führend in der Wasserversorgung.",
+            "d20 bis d630."
+          ],
+          "typingSpeed": 45,
+          "deletingSpeed": 22,
+          "pauseDuration": 2500,
+          "showCursor": true,
+          "cursorCharacter": "_",
+          "textColors": [
+            "oklch(0.44 0.17 302)"
+          ],
+          "note": "Bilingual brand claim cycle, code cursor"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-stepper",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "Stepper — Motion Multi-Step",
+    "description": "AnimatePresence slide transitions between steps, spring height. Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "initialStep",
+        "backButtonText",
+        "nextButtonText",
+        "disableStepIndicators"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "backButtonText": "Zurück",
+          "nextButtonText": "Weiter",
+          "cssOverrides": "--step-active: hsl(0 72% 42%); --step-connector: hsl(0 72% 42%);",
+          "use": "Probefahrt / Finanzierung / Inzahlungnahme stepper",
+          "note": "Red active steps, formal German labels"
+        },
+        "heyfede": {
+          "backButtonText": "Zurück",
+          "nextButtonText": "Weiter",
+          "cssOverrides": "--step-active: #CC624C; border-radius: 100px (pill);",
+          "use": "Bestellformular / Box-Konfigurator",
+          "note": "Terracotta steps, rounded pill variant"
+        },
+        "kaqua": {
+          "backButtonText": "Zurück",
+          "nextButtonText": "Weiter",
+          "cssOverrides": "--step-active: oklch(0.44 0.17 302);",
+          "use": "RFQ 4-Schritt-Projektanfrage",
+          "note": "Brand purple, mapped to k-steps"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-carousel",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "Carousel — Motion 3D Carousel",
+    "description": "Motion.js drag carousel, 3D rotateY per item, loop, autoplay. Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "baseWidth",
+        "autoplay",
+        "autoplayDelay",
+        "pauseOnHover",
+        "loop",
+        "round"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "baseWidth": 320,
+          "autoplay": true,
+          "autoplayDelay": 3500,
+          "pauseOnHover": true,
+          "loop": true,
+          "round": false,
+          "note": "Fahrzeug-Cards carousel, stops on hover"
+        },
+        "heyfede": {
+          "baseWidth": 280,
+          "autoplay": true,
+          "autoplayDelay": 2800,
+          "pauseOnHover": true,
+          "loop": true,
+          "round": false,
+          "note": "Produkt-Cards, etwas kleiner"
+        },
+        "kaqua": {
+          "baseWidth": 340,
+          "autoplay": false,
+          "autoplayDelay": 3000,
+          "loop": true,
+          "round": false,
+          "note": "Manuelle Tool-Cards, B2B-Nutzer kontrollieren"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede"
+    ]
+  },
+  {
+    "id": "rb-borderGlow",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "BorderGlow — Edge-Proximity Glow Card",
+    "description": "Mesh-gradient border + outer glow that follows cursor to card edge. No deps.",
+    "properties": {
+      "deps": "none",
+      "key_props": [
+        "edgeSensitivity",
+        "glowColor",
+        "backgroundColor",
+        "borderRadius",
+        "glowRadius",
+        "glowIntensity",
+        "coneSpread",
+        "animated",
+        "colors"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "edgeSensitivity": 25,
+          "glowColor": "0 72% 42%",
+          "backgroundColor": "#fff",
+          "borderRadius": 16,
+          "glowRadius": 36,
+          "glowIntensity": 1.2,
+          "coneSpread": 22,
+          "colors": [
+            "#c0282a",
+            "#b8860b",
+            "hsl(30 25% 80%)"
+          ],
+          "note": "Red-gold glow, white card, premium product"
+        },
+        "heyfede": {
+          "edgeSensitivity": 30,
+          "glowColor": "12 70% 54%",
+          "backgroundColor": "#fafaf8",
+          "borderRadius": 24,
+          "glowRadius": 44,
+          "glowIntensity": 1,
+          "coneSpread": 28,
+          "colors": [
+            "#CC624C",
+            "#E4C0A8",
+            "#eedfcc"
+          ],
+          "note": "Terracotta glow, warm card"
+        },
+        "kaqua": {
+          "edgeSensitivity": 22,
+          "glowColor": "302 39% 52%",
+          "backgroundColor": "oklch(0.185 0.02 300)",
+          "borderRadius": 16,
+          "glowRadius": 40,
+          "glowIntensity": 1.4,
+          "coneSpread": 20,
+          "colors": [
+            "oklch(0.44 0.17 302)",
+            "oklch(0.68 0.12 220)",
+            "oklch(0.76 0.12 305)"
+          ],
+          "note": "Purple+aqua glow, dark OLED card"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-magnet",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "Magnet — Magnetic Element Pull",
+    "description": "Mouse proximity pulls any element toward cursor. No deps.",
+    "properties": {
+      "deps": "none",
+      "key_props": [
+        "padding",
+        "magnetStrength",
+        "activeTransition",
+        "inactiveTransition"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "padding": 80,
+          "magnetStrength": 2.5,
+          "activeTransition": "transform 0.3s ease-out",
+          "inactiveTransition": "transform 0.6s ease-in-out",
+          "note": "Restrained pull, premium feel — on CTAs"
+        },
+        "heyfede": {
+          "padding": 100,
+          "magnetStrength": 2,
+          "activeTransition": "transform 0.25s cubic-bezier(0.34,1.56,0.64,1)",
+          "inactiveTransition": "transform 0.5s ease-in-out",
+          "note": "Springy return, playful — on logo/buttons"
+        },
+        "kaqua": {
+          "padding": 60,
+          "magnetStrength": 3,
+          "activeTransition": "transform 0.2s ease-out",
+          "inactiveTransition": "transform 0.4s ease-in-out",
+          "note": "Tight fast pull, tech tool feel"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "apex"
+    ]
+  },
+  {
+    "id": "rb-clickSpark",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "ClickSpark — Canvas Click Sparks",
+    "description": "Canvas spark lines on click, configurable count/color/radius. No deps.",
+    "properties": {
+      "deps": "none",
+      "key_props": [
+        "sparkColor",
+        "sparkSize",
+        "sparkRadius",
+        "sparkCount",
+        "duration",
+        "easing",
+        "extraScale"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "sparkColor": "hsl(38 55% 48%)",
+          "sparkSize": 10,
+          "sparkRadius": 18,
+          "sparkCount": 8,
+          "duration": 380,
+          "easing": "ease-out",
+          "note": "Gold sparks, restrained — on CTAs"
+        },
+        "heyfede": {
+          "sparkColor": "#CC624C",
+          "sparkSize": 12,
+          "sparkRadius": 22,
+          "sparkCount": 10,
+          "duration": 450,
+          "easing": "ease-out",
+          "note": "Terracotta sparks, on order buttons"
+        },
+        "kaqua": {
+          "sparkColor": "oklch(0.68 0.12 220)",
+          "sparkSize": 8,
+          "sparkRadius": 15,
+          "sparkCount": 6,
+          "duration": 300,
+          "easing": "ease-out",
+          "note": "Aqua sparks, tech precise feedback"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "apex"
+    ]
+  },
+  {
+    "id": "rb-logoLoop",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "LogoLoop — Smooth Logo Marquee",
+    "description": "requestAnimationFrame smooth logo marquee, velocity-eased hover pause, vertical support. No deps.",
+    "properties": {
+      "deps": "none",
+      "key_props": [
+        "logos",
+        "speed",
+        "direction",
+        "logoHeight",
+        "gap",
+        "hoverSpeed",
+        "fadeOut",
+        "fadeOutColor",
+        "scaleOnHover"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "speed": 100,
+          "direction": "left",
+          "logoHeight": 40,
+          "gap": 48,
+          "hoverSpeed": 0,
+          "fadeOut": true,
+          "fadeOutColor": "hsl(30 25% 97%)",
+          "scaleOnHover": true,
+          "note": "Marken-Logos: Audi BMW Mercedes Porsche Tesla (Wordmarks)"
+        },
+        "heyfede": {
+          "speed": 90,
+          "direction": "left",
+          "logoHeight": 36,
+          "gap": 40,
+          "hoverSpeed": 0,
+          "fadeOut": true,
+          "fadeOutColor": "#f5efe8",
+          "note": "Partner-Logos + Google-Sterne + Lieferando"
+        },
+        "kaqua": {
+          "speed": 110,
+          "direction": "left",
+          "logoHeight": 32,
+          "gap": 56,
+          "hoverSpeed": 20,
+          "fadeOut": true,
+          "fadeOutColor": "var(--background)",
+          "note": "ISO-Badges + Zertifikate + KESSEL-Logo"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-countUp",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "CountUp — Motion Spring Number",
+    "description": "useInView spring count-up with separator and decimals. Dep: motion.",
+    "properties": {
+      "deps": "motion",
+      "key_props": [
+        "from",
+        "to",
+        "separator",
+        "direction",
+        "duration",
+        "delay",
+        "startWhen"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "separator": ".",
+          "duration": 2,
+          "delay": 0.2,
+          "note": "Fahrzeuge: 312, Jahre: 14, Kunden: 4.980 — Mono tabular-nums"
+        },
+        "heyfede": {
+          "separator": ".",
+          "duration": 1.8,
+          "delay": 0.1,
+          "note": "Bewertungen: 84, Sterne: 4,8, Bestellungen: 1.200+"
+        },
+        "kaqua": {
+          "separator": ".",
+          "duration": 2.5,
+          "delay": 0.3,
+          "note": "Märkte: 27, Länder: 19, ISO-Zertifikate: 3"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-progressIndicator",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "ProgressIndicator — Spring Step Dots",
+    "description": "Spring-animated dot progress bar + Back/Continue buttons. Dep: motion, lucide-react.",
+    "properties": {
+      "deps": "motion lucide-react",
+      "steps": 3,
+      "key_props": [
+        "step state + back/continue callbacks"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "progressColor": "hsl(0 72% 42%)",
+          "dotColor": "white",
+          "use": "Probefahrt 3-Schritt / Finanzierung / Kontaktformular",
+          "note": "Red progress, clean cream bg"
+        },
+        "heyfede": {
+          "progressColor": "#CC624C",
+          "dotColor": "white",
+          "use": "Box-Konfigurator Schritte",
+          "note": "Terracotta progress, pill shape override"
+        },
+        "kaqua": {
+          "progressColor": "oklch(0.44 0.17 302)",
+          "dotColor": "white",
+          "use": "RFQ 3 Schritte",
+          "note": "Brand purple, maps to k-step pattern"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-handwrittenTitle",
+    "category": "Animations",
+    "project": "react-bits",
+    "name": "HandWrittenTitle — SVG Path Draw",
+    "description": "framer-motion SVG pathLength animation around title. Dep: framer-motion.",
+    "properties": {
+      "deps": "framer-motion",
+      "key_props": [
+        "title",
+        "subtitle"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "title": "Premium-Selektion",
+          "subtitle": "Sorgfältig geprüft. Aus erster Hand.",
+          "svgColor": "hsl(0 72% 42%)",
+          "note": "Red drawn loop around headline, signature premium"
+        },
+        "heyfede": {
+          "title": "Hey Fede!",
+          "subtitle": "Frisch & Selbstgemacht",
+          "svgColor": "#CC624C",
+          "note": "Terracotta loop, signature handmade feel"
+        },
+        "kaqua": {
+          "title": "Leading in Water Supply.",
+          "subtitle": "PP-R/PP-RCT · d20–d630",
+          "svgColor": "oklch(0.44 0.17 302)",
+          "note": "Purple draw, tech-brand headline statement"
+        }
+      }
+    },
+    "best_for": [
+      "heyfede",
+      "apex"
+    ]
+  },
+  {
+    "id": "rb-rotatingEarth",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "RotatingEarth (d3) — Wireframe Globe",
+    "description": "D3 orthographic globe, country outlines + dots, drag rotate + zoom. Dep: d3.",
+    "properties": {
+      "deps": "d3",
+      "key_props": [
+        "width",
+        "height"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "note": "Nicht direkt relevant — kein Geo-Use-Case. Optional für \"Weltweite Marken\" Hero-Section"
+        },
+        "heyfede": {
+          "note": "Nicht relevant"
+        },
+        "kaqua": {
+          "strokeColor": "#5B2D8C",
+          "dotColor": "#9a6fc4",
+          "bg": "#0A0A0F",
+          "note": "★ BESTE KAQUA-VERWENDUNG: als OLED dark Globus-Alternative zum WebGL KAquaLoader-Globe"
+        }
+      }
+    },
+    "best_for": [
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-textParallax",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "TextParallaxContent — Sticky Scroll Sections",
+    "description": "framer-motion sticky image sections with parallax text overlay. Dep: framer-motion.",
+    "properties": {
+      "deps": "framer-motion",
+      "key_props": [
+        "imgUrl",
+        "subheading",
+        "heading",
+        "children"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "sections": [
+            {
+              "subheading": "Qualität",
+              "heading": "Sorgfältig geprüft."
+            },
+            {
+              "subheading": "Erfahrung",
+              "heading": "Seit 14 Jahren."
+            },
+            {
+              "subheading": "Vertrauen",
+              "heading": "Kuratierte Auswahl."
+            }
+          ],
+          "note": "3-Section Scroll-Story für About / Über uns Page"
+        },
+        "heyfede": {
+          "sections": [
+            {
+              "subheading": "Frisch",
+              "heading": "Täglich gemacht."
+            },
+            {
+              "subheading": "Liebe",
+              "heading": "Für jeden Gast."
+            },
+            {
+              "subheading": "Qualität",
+              "heading": "Kein Kompromiss."
+            }
+          ],
+          "note": "3-Section brand story"
+        },
+        "kaqua": {
+          "sections": [
+            {
+              "subheading": "Made in Germany",
+              "heading": "Waldsolms, Hessen."
+            },
+            {
+              "subheading": "Zertifiziert",
+              "heading": "ISO 9001 · 14001 · 50001."
+            },
+            {
+              "subheading": "Weltweit",
+              "heading": "27 Märkte."
+            }
+          ],
+          "note": "★ IDEAL: K-Aqua Brand-Story als Scroll-Erlebnis"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-floatingIconsHero",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "FloatingIconsHero — Magnetic Float Hero",
+    "description": "Spring-physics icon grid hero with magnetic cursor repulsion. Dep: framer-motion.",
+    "properties": {
+      "deps": "framer-motion",
+      "key_props": [
+        "title",
+        "subtitle",
+        "ctaText",
+        "ctaHref",
+        "icons"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "title": "Kuratierte Fahrzeuge.",
+          "subtitle": "Premium-Selektion: Audi, BMW, Porsche, Mercedes, Tesla — sorgfältig geprüft.",
+          "ctaText": "Fahrzeuge entdecken",
+          "icons": "Marken-Wordmark-Icons: Audi-Ringe, BMW-Roundel, Stern, Wappen (SVG)"
+        },
+        "heyfede": {
+          "title": "Hey Fede!",
+          "subtitle": "Bubble Waffles, Pancake-Boxen, Shakes — frisch für dich.",
+          "ctaText": "Jetzt bestellen",
+          "icons": "Food-SVG-Icons: Waffle, Pancake, Shake, Erdbeere, Schokolade"
+        },
+        "kaqua": {
+          "title": "Leading in Water Supply.",
+          "subtitle": "PP-R/PP-RCT-Rohrsysteme d20–d630. Dreifach ISO-zertifiziert.",
+          "ctaText": "Produktsystem entdecken",
+          "icons": "Technik-Icons: Rohr, Zertifikat, Globus, Fabrik, Schweißgerät"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "heyfede",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "rb-mapArc",
+    "category": "Components",
+    "project": "react-bits",
+    "name": "MapArc (mapcn) — MapLibre GL Arc Map",
+    "description": "MapLibre GL interactive arc lines between coordinates, globe view, cluster, marker tooltips. Dep: maplibre-gl.",
+    "properties": {
+      "deps": "maplibre-gl",
+      "key_props": [
+        "data",
+        "curvature",
+        "paint",
+        "hoverPaint",
+        "onClick"
+      ],
+      "brandAdapted": {
+        "apex": {
+          "use": "Händler-Standorte-Karte: Dep.-Arcs zum nächsten Apex Motors Standort",
+          "paint": {
+            "line-color": "hsl(0 72% 42%)",
+            "line-dasharray": [
+              2,
+              3
+            ],
+            "line-width": 2
+          },
+          "note": "Rote gestrichelte Arcs: Kundenstandort → Händler"
+        },
+        "heyfede": {
+          "use": "Nicht relevant (keine geo use-case)",
+          "note": "Skip"
+        },
+        "kaqua": {
+          "use": "★ BESTE KAQUA-VERWENDUNG: 27-Märkte-Globe-Arcs von Waldsolms zu Kunden",
+          "paint": {
+            "line-color": "oklch(0.44 0.17 302)",
+            "line-dasharray": [
+              2,
+              2
+            ],
+            "line-width": 2
+          },
+          "hoverPaint": {
+            "line-color": "oklch(0.68 0.12 220)",
+            "line-width": 3
+          },
+          "projection": {
+            "type": "globe"
+          },
+          "note": "Hauptfeature: Waldsolms-Hub → alle 27 Städte als Arcs"
+        }
+      }
+    },
+    "best_for": [
+      "apex",
+      "kaqua"
+    ]
+  },
+  {
+    "id": "coday-token-colors",
+    "category": "Tokens",
+    "project": "coday",
+    "name": "Coday — Farb-Tokens (Teal / Slate / Amber)",
+    "description": "Tier-1-Primitive (50–950 Ramps) → Tier-2-Semantik. Signatur-Teal #147a7a (primary-700), Slate-Ink #0f172a (secondary-900) für dunkle Flächen, sparsames Amber #f59e0b (accent-500) nur für Eyebrows & Preis-Highlights — nie als Button-Primary. Zinc-Neutrals für Surfaces. Light-default + [data-theme=dark] Mapping.",
+    "properties": {
+      "model": "hex tier-1 + semantic tier-2",
+      "primary-700": "#147a7a",
+      "primary-800": "#115e5e",
+      "secondary-900": "#0f172a",
+      "accent-500": "#f59e0b",
+      "accent-700": "#d97706",
+      "neutral-50": "#fafafa",
+      "bg-primary": "var(--color-neutral-50)",
+      "text-primary": "var(--color-secondary-900)",
+      "text-link": "var(--color-primary-700)",
+      "border-default": "var(--color-neutral-200)",
+      "darkMode": "[data-theme=dark] → bg secondary-950, text neutral-50, link primary-400"
+    },
+    "translations": {}
+  },
+  {
+    "id": "coday-token-type",
+    "category": "Tokens",
+    "project": "coday",
+    "name": "Coday — Typografie (Outfit + Inter)",
+    "description": "Display = Outfit, Body = Inter, Mono = ui-monospace. φ-basierte Skala (1.618). Hero-Headlines uppercase + black 900 + tracking -0.05em. Body Inter 400, line-height 1.65. Overlines Inter 700 uppercase + 0.05em.",
+    "properties": {
+      "font-display": "'Outfit', ui-sans-serif, system-ui, sans-serif",
+      "font-sans": "'Inter', ui-sans-serif, system-ui, sans-serif",
+      "font-mono": "ui-monospace, 'SF Mono', Menlo, Consolas, monospace",
+      "scale-phi": "0.618 / 0.786 / 1 / 1.272 / 1.618 / 2.058 / 2.618 / 4.236 / 6.854 rem",
+      "text-display": "clamp(2.618rem, 5vw+0.75rem, 6.854rem), w900, uppercase, ls -0.05em",
+      "text-h1": "clamp(2.058rem, 3vw+0.75rem, 4.236rem), w900, uppercase",
+      "body": "1rem / 1.65, Inter 400",
+      "overline": "0.618rem, w700, uppercase, ls 0.05em"
+    }
+  },
+  {
+    "id": "coday-token-radius-shadow",
+    "category": "Tokens",
+    "project": "coday",
+    "name": "Coday — Radien, Schatten, Spacing",
+    "description": "Radius: Buttons/Inputs xl (16), Cards 2xl (24), Pills full. Fünf Elevation-Stufen xs→xl + branded --shadow-glow (Teal). Fibonacci-Spacing 0/4/8/12/16/24/32/48/64/96/128/192/256. Container max 1280px.",
+    "properties": {
+      "radius-xl": "16px",
+      "radius-2xl": "24px",
+      "radius-full": "9999px",
+      "shadow-sm": "0 1px 3px rgba(0,0,0,.10), 0 1px 2px rgba(0,0,0,.06)",
+      "shadow-md": "0 4px 6px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06)",
+      "shadow-glow": "0 0 20px rgba(20,122,122,.30)",
+      "space": "Fibonacci 0–256px",
+      "container": "max-width 1280px"
+    }
+  },
+  {
+    "id": "coday-token-motion",
+    "category": "Tokens",
+    "project": "coday",
+    "name": "Coday — Motion-Tokens",
+    "description": "Durations 150/300/500/700ms. Easings: default (standard), spring (entry reveals), bounce (selten). Subtil, funktional, nie dekorativ.",
+    "properties": {
+      "duration-fast": "150ms",
+      "duration-normal": "300ms",
+      "duration-slow": "500ms",
+      "ease-default": "cubic-bezier(0.4,0,0.2,1)",
+      "ease-spring": "cubic-bezier(0.22,1,0.36,1)",
+      "ease-bounce": "cubic-bezier(0.34,1.56,0.64,1)"
+    }
+  },
+  {
+    "id": "coday-comp-button",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Buttons (.btn)",
+    "description": "Basis 48px (44px min-touch), radius-xl, Outfit 600. Varianten primary (Teal + Glow), secondary (Slate), outline (2px Teal/20%), ghost. Hover -2px translate + Glow-Bump, active scale(0.97). Icon führend ODER folgend, nie beides.",
+    "properties": {
+      "selectors": ".btn / .btn.primary / .btn.secondary / .btn.outline / .btn.ghost / .btn.lg / .btn.sm",
+      "height": "48px (lg 56, sm 40)",
+      "radius": "var(--radius-xl)",
+      "primary-bg": "var(--color-primary-700) → 800 hover",
+      "hover": "translateY(-2px) + shadow-glow",
+      "active": "scale(0.97)"
+    }
+  },
+  {
+    "id": "coday-comp-form",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Form Inputs (.inp / .field)",
+    "description": "Inputs/Textarea radius-xl, 48px, 1px border-default. Fokus: border primary-500 + Ring 3px rgba(20,184,166,.15) (WCAG focus-visible). Error-State färbt Rahmen + Helper über --color-error.",
+    "properties": {
+      "selectors": ".inp / .field / .field.err / .helper",
+      "height": "48px",
+      "focus-ring": "0 0 0 3px rgba(20,184,166,.15)",
+      "error": "border var(--color-error)"
+    }
+  },
+  {
+    "id": "coday-comp-card",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Feature / Branchen-Cards (.fcard)",
+    "description": "Flache weiße Fläche, Haarlinie border-default, radius-2xl, shadow-sm resting. Hover -2px + shadow-md. Phosphor-Icon im 48px Teal-Tint-Quadrat (radius-lg). Kein farbiger Akzent-Border, keine Emoji-Cards, keine Rainbow-Gradients.",
+    "properties": {
+      "selectors": ".fcard / .fcard .ico / .ttl / .dsc",
+      "radius": "var(--radius-2xl)",
+      "shadow": "sm → md hover",
+      "hover": "translateY(-2px)",
+      "icon-box": "48px, rgba(20,122,122,.1), radius-lg"
+    }
+  },
+  {
+    "id": "coday-comp-badge",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Badges & Chips (.chip)",
+    "description": "Pills radius-full, Inter 600 / 13px. Glass-Chip (Hero-Badge / Nav-Pill) bg white/80 + backdrop-blur + border black/5. cprimary (primary-100/800), caccent (accent-100/800), cneutral (Tag-Pills), cdark (Slate).",
+    "properties": {
+      "selectors": ".chip.glass / .chip.cprimary / .chip.caccent / .chip.cneutral / .chip.cdark",
+      "radius": "var(--radius-full)",
+      "glass": "rgba(255,255,255,.8) + blur(8px) + border rgba(0,0,0,.05)"
+    }
+  },
+  {
+    "id": "coday-comp-dark-surface",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Dark Surface / Footer & Stats",
+    "description": "Flat secondary-900 mit einem soften white/10 blur-Orb in der Ecke für Tiefe. Stats-Strip = 4 Big-Number-Cells (Outfit 900), Amber für einen Highlight-Wert. Footer-Slogan 'Wir töten Ineffizienz.'",
+    "properties": {
+      "bg": "var(--color-secondary-900)",
+      "glow-orb": "rgba(255,255,255,.09) blur(120px) radius-full",
+      "stats": "4 cells, font-display 900, ein Amber-Highlight"
+    }
+  },
+  {
+    "id": "coday-comp-compare",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Vergleich 'Traditionell vs. Coday'",
+    "description": "Zentraler rhetorischer Brand-Move: Kontrast-Paar in zwei Spalten. Linke Spalte neutral (traditionelle Agentur), rechte Spalte Teal-getönt (bg-accent) mit medium-weight Vorteilen. Konkrete Zahlen statt Adjektive.",
+    "properties": {
+      "layout": "grid 1fr 1fr, Divider border-default",
+      "coday-col-bg": "var(--color-bg-accent)",
+      "eyebrow": "overline, Teal vs. tertiary"
+    }
+  },
+  {
+    "id": "coday-comp-logo",
+    "category": "Components",
+    "project": "coday",
+    "name": "Coday — Logo-Marken",
+    "description": "Wordmark (coday-full.webp) auf hell, weiße Variante (coday-logo-footer.webp) auf dunkel, 8-Punkt-Starburst (coday-starburst.svg) als Favicon-Quelle. Assets unter assets/coday/.",
+    "properties": {
+      "full": "coday-full.webp (hell)",
+      "footer": "coday-logo-footer.webp (dunkel/weiß)",
+      "starburst": "coday-starburst.svg (Teal-Gradient, Favicon)"
+    }
+  },
+  {
+    "id": "coday-anim-set",
+    "category": "Animations",
+    "project": "coday",
+    "name": "Coday — Motion-Set (Vanilla)",
+    "description": "Subtile funktionale Patterns: fade-in-up (y:20→0+fade, ease-spring), animate-float (Hero-Orbs 4s), Shimmer-Sweep auf Primary-CTA Hover, gradient-text Headlines, Logo-Marquee (nahtloser Loop). Zahl-Counter mit ease-out Tween.",
+    "properties": {
+      "keyframes": "cd-fadeup / cd-float / cd-shimmer / cd-marquee",
+      "shimmer": "translateX -130%→240%, .9s ease on :hover",
+      "float": "translateY ±10px, 4s ease-in-out infinite",
+      "marquee": "translateX 0→-50%, 18s linear, verdoppelter Track + mask-fade",
+      "counter": "ease-out cubic, toLocaleString('de-DE')"
+    },
+    "animation_free_fallback": "prefers-reduced-motion: alle Durations → 0.001ms; Counter zeigt Endwert, Reveals opacity:1"
+  },
+  {
+    "id": "coday-a11y-motion",
+    "category": "Accessibility",
+    "project": "coday",
+    "name": "Coday — Accessibility",
+    "description": "WCAG-konformer Focus-Visible (outline 2px primary-500, offset 2px). Min-Touch 44×44px. prefers-reduced-motion global auf 0.01ms verkürzt. Disabled opacity 0.5 + not-allowed. Icons stützen Text, ersetzen ihn nie.",
+    "properties": {
+      "focus-visible": "outline 2px var(--color-primary-500), offset 2px",
+      "min-touch": "44x44px",
+      "reduced-motion": "global 0.01ms",
+      "disabled": "opacity 0.5, cursor not-allowed"
+    }
+  },
+  {
+    "id": "coday-i18n-voice",
+    "category": "Translations",
+    "project": "coday",
+    "name": "Coday — Voice & Copy (DE-first)",
+    "description": "Direkt, selbstbewusst, ergebnis-fokussiert. Formelles 'Sie' default (80%+), 'Du' nur für Ad-Punch. Drei-Beat-Fragmente, Kontrast-Paare, konkrete Zahlen. Keine Buzzword-Slop, keine Emoji. Mittelpunkt '·' als Separator.",
+    "properties": {
+      "hero": "Wir bauen Ihren Digitalen Erfolg.",
+      "subhead": "Schnell. Skalierbar. Professionell.",
+      "tagline": "Der Agentur-Killer / The Agency Killer",
+      "cta": "Jetzt Gespräch buchen · Projekt starten · Kostenlose Anfrage · Potenzial-Analyse starten",
+      "languages": "DE primär, EN vorhanden"
+    },
+    "translations": {
+      "de": "Wir bauen Ihren Digitalen Erfolg.",
+      "en": "We build your digital success."
+    }
+  }
+]
