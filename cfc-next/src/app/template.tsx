@@ -1,35 +1,45 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
+  // The liquid wipe sweeps UP to reveal the page
+  const anim = {
+    initial: {
+      d: "M 0 100 C 30 100, 70 100, 100 100 L 100 0 L 0 0 Z"
+    },
+    animate: {
+      d: [
+        "M 0 100 C 30 100, 70 100, 100 100 L 100 0 L 0 0 Z",
+        "M 0 0 C 30 80, 70 80, 100 0 L 100 0 L 0 0 Z",
+        "M 0 0 C 30 0, 70 0, 100 0 L 100 0 L 0 0 Z"
+      ],
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as const, times: [0, 0.6, 1] }
+    }
+  };
+
   return (
-    <AnimatePresence mode="wait">
-      <motion.div key={pathname} className="flex-1 flex flex-col relative w-full min-h-screen">
-        {/* Liquid Transition SVG */}
-        <motion.div
-          className="fixed inset-0 z-[8500] pointer-events-none flex items-center justify-center"
-          initial={{ zIndex: 8500 }}
-          animate={{ zIndex: -1, transitionEnd: { zIndex: -1 } }}
-          exit={{ zIndex: 8500 }}
+    <div key={pathname} className="flex-1 flex flex-col relative w-full min-h-screen">
+      {/* Liquid Transition Wipe */}
+      <div className="fixed inset-0 z-[8500] pointer-events-none flex items-center justify-center">
+        <motion.svg 
+          viewBox="0 0 100 100" 
+          preserveAspectRatio="none" 
+          className="w-full h-full fill-brand-red"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0, transition: { delay: 0.8, duration: 0.1 } }}
         >
-          <motion.svg 
-            viewBox="0 0 100 100" 
-            preserveAspectRatio="none" 
-            className="w-full h-full fill-brand-red"
-            initial={{ d: "M0 100 V100 H100 V100 C70 100 30 100 0 100 Z" }}
-            animate={{ d: "M0 0 V0 H100 V0 C70 0 30 0 0 0 Z" }}
-            exit={{ d: "M0 100 V0 H100 V0 C70 120 30 80 0 100 Z" }}
-            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-          >
-            <motion.path />
-          </motion.svg>
-        </motion.div>
-        
-        {children}
-      </motion.div>
-    </AnimatePresence>
+          <motion.path 
+            variants={anim}
+            initial="initial"
+            animate="animate"
+          />
+        </motion.svg>
+      </div>
+      
+      {children}
+    </div>
   );
 }

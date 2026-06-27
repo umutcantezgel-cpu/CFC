@@ -3,61 +3,65 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
-  const [stage, setStage] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    // Stage 0: Morphing SVG
-    const t1 = setTimeout(() => setStage(1), 800);
-    // Stage 1: Scramble
-    const t2 = setTimeout(() => setStage(2), 2000);
-    // Stage 2: Disintegration
-    const t3 = setTimeout(() => setStage(3), 2800);
-    // Stage 3: Camera pull-back
-    const t4 = setTimeout(() => {
-      setStage(4);
-      setTimeout(onComplete, 600);
-    }, 3600);
-
-    return () => {
-      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4);
-    };
+    // Keep the preloader visible for 1.2s to show the logo, then trigger exit animation
+    const t = setTimeout(() => {
+      setIsAnimating(false);
+      // Wait for exit animation to complete before removing from DOM
+      setTimeout(onComplete, 1200); 
+    }, 1200);
+    return () => clearTimeout(t);
   }, [onComplete]);
+
+  // Liquid SVG Wipe Animation
+  const anim = {
+    initial: {
+      d: "M 0 100 L 100 100 L 100 0 L 0 0 Z"
+    },
+    exit: {
+      d: [
+        "M 0 100 L 100 100 L 100 0 L 0 0 Z",
+        "M 0 0 C 30 80, 70 80, 100 0 L 100 0 L 0 0 Z",
+        "M 0 0 C 30 0, 70 0, 100 0 L 100 0 L 0 0 Z"
+      ],
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] as const, times: [0, 0.6, 1] }
+    }
+  };
 
   return (
     <AnimatePresence>
-      {stage < 4 && (
+      {isAnimating && (
         <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.5, filter: "blur(20px)" }}
-          transition={{ duration: 0.6, ease: [0.85, 0, 0.15, 1] }}
-          className="fixed inset-0 z-[9999] bg-maroon-stroke flex flex-col items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[9999] pointer-events-none flex flex-col items-center justify-center"
         >
-          {/* Stage 1: Scramble Text */}
+          {/* Logo animation */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: stage >= 1 ? 1 : 0, y: stage >= 1 ? 0 : 20 }}
-            className="text-white font-display text-4xl md:text-7xl uppercase tracking-widest relative z-20 text-stroke-maroon mix-blend-difference"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 1.5, opacity: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+            className="absolute z-20 flex flex-col items-center"
           >
-            {stage === 1 && "F R I T T I E R T"}
-            {stage === 2 && "H E I S S"}
-            {stage === 3 && "K N U S P R I G"}
-            {stage === 0 && "C F C"}
+            <img src="/favicon.png" alt="CFC Logo" className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-cream-bg shadow-[0px_0px_40px_rgba(0,0,0,0.5)] object-contain" />
+            <div className="mt-6 text-cream-bg font-display text-4xl uppercase tracking-widest text-stroke-maroon drop-shadow-lg">
+              Wetzlars Bestes
+            </div>
           </motion.div>
 
-          {/* Stage 2 & 3: Grid Disintegration */}
-          {stage >= 2 && (
-            <motion.div 
-              initial={{ scale: 1, opacity: 1 }}
-              animate={{ scale: 2, opacity: 0, rotate: 45 }}
-              transition={{ duration: 0.8, ease: "circIn" }}
-              className="absolute inset-0 grid grid-cols-5 grid-rows-5 gap-2 z-10"
-            >
-              {Array.from({ length: 25 }).map((_, i) => (
-                <div key={i} className="bg-brand-red w-full h-full rounded-sm" style={{ transitionDelay: `${i * 20}ms` }} />
-              ))}
-            </motion.div>
-          )}
-
+          {/* Liquid Background */}
+          <motion.svg 
+            viewBox="0 0 100 100" 
+            preserveAspectRatio="none" 
+            className="w-full h-full fill-brand-red absolute inset-0 z-10"
+          >
+            <motion.path 
+              variants={anim}
+              initial="initial"
+              exit="exit"
+            />
+          </motion.svg>
         </motion.div>
       )}
     </AnimatePresence>
